@@ -132,9 +132,9 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
   )
 }
 
-// 生成静态参数，只允许支持的语言
-export function generateStaticParams() {
-  return SUPPORTED_LOCALES.map((locale) => ({
-    locale,
-  }))
-}
+// 禁用静态参数生成
+// export function generateStaticParams() {
+//   return SUPPORTED_LOCALES.map((locale) => ({
+//     locale,
+//   }))
+// }
