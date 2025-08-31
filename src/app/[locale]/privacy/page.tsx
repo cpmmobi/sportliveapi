@@ -4,13 +4,24 @@ import MainLayout from '@/components/layout/main-layout'
 import { useTranslations } from 'next-intl'
 import { Metadata } from 'next'
 
-export async function generateMetadata({ params }: { params: { locale: string } }): Promise<Metadata> {
-  const { getTranslations } = await import('next-intl/server')
-  const t = await getTranslations({ locale: params.locale, namespace: 'privacy' })
+export function generateMetadata({ params }: { params: { locale: string } }): Metadata {
+  const locale = params.locale
+  
+  const titles = {
+    'en': 'Privacy Policy - SportLiveAPI',
+    'zh': '隐私政策 - SportLiveAPI',
+    'zh-TW': '隱私政策 - SportLiveAPI'
+  }
+  
+  const descriptions = {
+    'en': 'SportLiveAPI privacy policy and data protection information',
+    'zh': 'SportLiveAPI隐私政策和数据保护信息',
+    'zh-TW': 'SportLiveAPI隱私政策和數據保護信息'
+  }
   
   return {
-    title: t('title') + ' - SportLiveAPI',
-    description: t('description'),
+    title: titles[locale as keyof typeof titles] || titles['en'],
+    description: descriptions[locale as keyof typeof descriptions] || descriptions['en'],
   }
 }
 

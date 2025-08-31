@@ -27,10 +27,9 @@ function isValidLocale(locale: string): locale is SupportedLocale {
   return SUPPORTED_LOCALES.includes(locale as SupportedLocale)
 }
 
-// 生成动态metadata
-export async function generateMetadata({ params }: { params: { locale: string } }): Promise<Metadata> {
+// 生成静态metadata
+export function generateMetadata({ params }: { params: { locale: string } }): Metadata {
   const locale = params.locale
-  const messages = await getMessages(locale)
   
   const isZh = locale === 'zh' || locale === 'zh-TW'
   

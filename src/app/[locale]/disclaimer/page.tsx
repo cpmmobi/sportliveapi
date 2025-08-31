@@ -3,7 +3,7 @@ import MainLayout from '@/components/layout/main-layout'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Metadata } from 'next'
 
-export async function generateMetadata({ params }: { params: { locale: string } }): Promise<Metadata> {
+export function generateMetadata({ params }: { params: { locale: string } }): Metadata {
   const locale = params.locale
   
   if (locale === 'en') {
