@@ -1380,6 +1380,7 @@
     },
     "dataCollection": {
       "title": "Information We Collect",
+      "description": "We collect the following types of information to provide and improve our services:",
       "provided": {
         "title": "Information You Provide",
         "items": {

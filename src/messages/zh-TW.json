@@ -1348,6 +1348,7 @@
     },
     "dataCollection": {
       "title": "資訊收集",
+      "description": "我們收集以下類型的資訊以提供和改進我們的服務：",
       "provided": {
         "title": "您提供的資訊",
         "items": {
