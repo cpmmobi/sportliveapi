@@ -1,8 +1,5 @@
 'use client'
 
-// 强制动态渲染
-export const dynamic = 'force-dynamic'
-
 import React, { useState } from 'react'
 import { useTranslations } from 'next-intl'
 import MainLayout from '@/components/layout/main-layout'

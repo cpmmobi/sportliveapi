@@ -8,13 +8,6 @@ const nextConfig = {
   },
   experimental: {
     optimizePackageImports: ['lucide-react']
-  },
-  // 禁用静态导出以避免预渲染问题
-  output: undefined,
-  trailingSlash: false,
-  // 配置动态路由
-  generateBuildId: async () => {
-    return 'build-' + Date.now()
   }
 }
 
