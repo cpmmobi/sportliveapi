@@ -1,0 +1,1328 @@
+{
+  "hero": {
+    "badge": "🌍 领先的体育流媒体技术提供商",
+    "title": "专业体育流媒体服务",
+    "subtitle": "助力体育内容创作",
+    "description": "提供RTMP推送、播放链接、数据接口等灵活接入方式，涵盖足球、篮球、赛车、冰球等12大运动类别。",
+    "disclaimer": "专注技术服务提供，不涉及内容版权业务",
+    "cta_primary": "申请测试与报价",
+    "api_demo_title": "API接口示例"
+  },
+  "features": {
+    "global_coverage": {
+      "title": "全球覆盖",
+      "description": "世界各地的流媒体节点"
+    },
+    "fast_transmission": {
+      "title": "极速传输",
+      "description": "先进技术架构，实现超低延迟播放体验"
+    },
+    "quality_assurance": {
+      "title": "品质保证",
+      "description": "企业级技术支撑，提供稳定优质的流媒体服务"
+    },
+    "streaming": {
+      "title": "播放链接服务",
+      "description": "提供稳定的播放链接服务"
+    }
+  },
+  "navigation": {
+    "home": "首页",
+    "services": "服务介绍",
+    "faq": "常见问题",
+    "about": "关于我们",
+    "disclaimer": "免责声明",
+    "privacy": "隐私政策"
+  },
+  "common": {
+    "get_quote": "获取试用和报价",
+    "contact_us": "联系我们",
+    "learn_more": "了解更多"
+  },
+  "contact": {
+    "meta": {
+      "title": "联系我们 | SportLiveAPI",
+      "description": "联系我们的团队，获取专业的技术支持和定制化的体育直播流解决方案。我们在这里帮助您成功。"
+    },
+    "title": "联系我们",
+    "description": "我们很乐意听取您的意见。无论您是想咨询功能、价格、还是有其他问题，我们随时准备回答您的所有问题。",
+    "form": {
+      "name": "姓名",
+      "email": "电子邮箱",
+      "contactMethod": "联系方式",
+      "message": "消息",
+      "submit": "发送消息",
+      "success": "消息发送成功！",
+      "error": "消息发送失败，请重试。"
+    },
+    "promises": {
+      "quickTrial": {
+        "title": "快速试用",
+        "description": "通过快速试用体验我们的服务。"
+      },
+      "freeDemo": {
+        "title": "免费演示",
+        "description": "请求免费的个性化演示。"
+      },
+      "professionalQuote": {
+        "title": "专业报价",
+        "description": "接收详细的无义务报价。"
+      }
+    },
+    "whyChooseUs": {
+      "title": "为什么选择我们",
+      "reasons": [
+        {
+          "title": "专家团队",
+          "description": "我们的团队由拥有多年经验的行业专家组成。"
+        },
+        {
+          "title": "定制化解决方案",
+          "description": "我们提供根据您的特定需求量身定制的解决方案。"
+        },
+        {
+          "title": "快速响应",
+          "description": "我们以快速高效的客户服务为荣。"
+        },
+        {
+          "title": "数据安全",
+          "description": "您的数据在我们这里是安全的。我们遵守最高的安全标准。"
+        },
+        {
+          "title": "客户至上",
+          "description": "我们始终将客户的需求放在首位。"
+        }
+      ]
+    },
+    "serviceProcess": {
+      "title": "服务流程",
+      "steps": {
+        "0": {
+          "title": "需求分析",
+          "description": "了解您的业务需求和技术要求"
+        },
+        "1": {
+          "title": "方案设计",
+          "description": "制定定制化的技术解决方案"
+        },
+        "2": {
+          "title": "接口对接",
+          "description": "提供API文档和技术支持"
+        },
+        "3": {
+          "title": "测试上线",
+          "description": "全面测试确保服务稳定运行"
+        }
+      }
+    },
+    "urgentContact": {
+      "title": "紧急联系方式",
+      "description": "对于紧急问题，请通过以下方式联系我们：",
+      "email": "business@sportliveapi.com",
+      "workingHours": "工作时间：周一至周五 9:00-18:00 (北京时间)"
+    },
+    "validation": {
+      "nameRequired": "姓名为必填项",
+      "emailRequired": "邮箱为必填项",
+      "emailInvalid": "请输入有效的邮箱地址",
+      "contactMethodRequired": "联系方式为必填项",
+      "messageRequired": "消息为必填项",
+      "sportsRequired": "请至少选择一种体育项目",
+      "useCaseRequired": "请选择使用场景"
+    },
+    "sports": {
+      "football": "⚽ 足球",
+      "basketball": "🏀 篮球",
+      "baseball": "⚾ 棒球",
+      "tennis": "🎾 网球",
+      "esports": "🎮 电竞",
+      "pingpong": "🏓 乒乓球",
+      "badminton": "🏸 羽毛球",
+      "volleyball": "🏐 排球",
+      "cricket": "🏏 板球",
+      "snooker": "🎱 斯诺克",
+      "racing": "🏎️ 赛车",
+      "hockey": "🏒 冰球"
+    },
+    "useCase": {
+      "label": "使用场景",
+      "websiteApp": "网站/APP体育直播集成",
+      "obsStreaming": "OBS推流（仅主播使用）",
+      "bothScenarios": "以上两种场景都有"
+    },
+    "streamerType": {
+      "label": "主播类型",
+      "team": "团队/企业",
+      "individual": "个人主播"
+    },
+    "privacy": {
+      "title": "隐私保护",
+      "description": "我们尊重您的隐私，不会将您的信息分享给第三方。"
+    },
+    "name": "邮箱地址",
+    "contactMethod": "联系方式",
+    "contactMethodDescription": "请提供您的Telegram（@username）或WhatsApp号码",
+    "sportsInterests": {
+      "label": "感兴趣的体育项目"
+    },
+    "platformInfo": {
+      "label": "网站/APP或平台信息（可选）"
+    },
+    "platformInfoPlaceholder": "为了便于后续沟通，请输入您的平台名称",
+    "requirements": {
+      "label": "详细需求说明（可选）"
+    },
+    "requirementsPlaceholder": "请描述您的具体需求、预期流量、技术栈等...",
+    "individualWarning": "温馨提示：当前直播源方案主要服务于团队及企业客户，个人用户使用成本可能略高。",
+    "submit": "提交咨询",
+    "submitting": "提交中...",
+    "success": "表单提交成功！",
+    "successMessage": "感谢您的咨询！我们将在24小时内联系您。",
+    "nextSteps": {
+      "title": "接下来的步骤",
+      "step1": "我们的技术团队将审核您的需求",
+      "step2": "在24小时内通过您提供的联系方式与您联系",
+      "step3": "为您提供定制化的技术方案和报价",
+      "step4": "安排技术对接和测试环境"
+    },
+    "contactForm": {
+      "integrationTypes": {
+        "rtmp": "RTMP推流",
+        "streaming": "播放链接",
+        "api": "数据接口",
+        "custom": "定制集成"
+      },
+      "streamerTypes": {
+        "individual": "个人主播",
+        "team": "团队/企业"
+      },
+      "streamerScales": {
+        "small": "1-10人",
+        "medium": "11-50人",
+        "large": "50人以上"
+      },
+      "labels": {
+        "interestedSports": "感兴趣的体育项目",
+        "integrationType": "集成类型",
+        "streamerType": "主播类型",
+        "streamerScale": "主播规模",
+        "websiteInfo": "网站/APP或平台信息（可选）",
+        "websitePlaceholder": "为了便于后续沟通，请输入您的平台名称",
+        "detailedRequirements": "详细需求说明（可选）",
+        "requirementsPlaceholder": "请描述您的具体需求、预期流量、技术栈等..."
+      },
+      "messages": {
+        "submitting": "提交中...",
+        "submitSuccess": "表单提交成功！",
+        "submitError": "提交失败，请重试",
+        "thankYou": "感谢您的咨询！",
+        "followUp": "我们将在24小时内联系您，详细了解您的需求。",
+        "privacyNote": "我们尊重您的隐私，不会将您的信息分享给第三方。",
+        "individualNote": "温馨提示：当前直播源方案主要服务于团队及企业客户，个人用户使用成本可能略高。"
+      }
+    }
+  },
+  "services": {
+    "hero": {
+      "title": "专业体育流媒体服务",
+      "description": "提供RTMP推送、播放链接、数据接口等灵活接入方式，涵盖足球、篮球、赛车、冰球等12大运动类别。",
+      "cta": "申请测试与报价"
+    },
+    "features": {
+      "title": "核心服务特性",
+      "description": "基于先进技术架构，为您提供稳定可靠的流媒体解决方案",
+      "items": {
+        "0": {
+          "title": "RTMP推流服务",
+          "description": "专业级推流解决方案，支持多种编码格式和传输协议",
+          "details": {
+            "0": "支持H.264/H.265编码",
+            "1": "自适应码率调节",
+            "2": "断线自动重连",
+            "3": "实时质量监控"
+          }
+        },
+        "1": {
+          "title": "播放链接服务",
+          "description": "高质量流媒体播放解决方案，支持多种播放协议",
+          "details": {
+            "0": "支持HLS/DASH协议",
+            "1": "多码率自适应",
+            "2": "CDN全球加速",
+            "3": "播放质量统计"
+          }
+        },
+        "2": {
+          "title": "数据接口服务",
+          "description": "丰富的体育数据API，覆盖12大运动类别",
+          "details": {
+            "0": "实时比分数据",
+            "1": "赛程赛果信息",
+            "2": "球队球员统计",
+            "3": "历史数据查询"
+          }
+        },
+        "3": {
+          "title": "数据分析",
+          "description": "深度数据分析和洞察",
+          "details": {
+            "0": "实时数据处理",
+            "1": "高级分析算法",
+            "2": "可视化报表"
+          }
+        },
+        "4": {
+          "title": "云端存储",
+          "description": "安全可靠的云端存储服务",
+          "details": {
+            "0": "多重备份保护",
+            "1": "弹性扩容",
+            "2": "全球CDN加速"
+          }
+        }
+      }
+    },
+    "solutions": {
+      "title": "三大服务类型",
+      "description": "根据不同业务场景，提供灵活的技术接入方案",
+      "rtmp": {
+        "title": "RTMP推流服务",
+        "description": "专业的实时流媒体推送协议，支持低延迟直播",
+        "useCases": {
+          "title": "应用场景",
+          "items": {
+            "0": "体育赛事直播",
+            "1": "游戏竞技直播",
+            "2": "教育培训直播",
+            "3": "企业会议直播"
+          }
+        },
+        "features": {
+          "title": "核心功能",
+          "items": {
+            "0": "低延迟传输",
+            "1": "高清画质支持",
+            "2": "断线重连机制",
+            "3": "多码率自适应"
+          }
+        }
+      },
+      "streaming": {
+        "title": "流媒体服务",
+        "description": "全方位的流媒体解决方案，支持多种播放格式",
+        "useCases": {
+          "title": "应用场景",
+          "items": {
+            "0": "点播视频服务",
+            "1": "直播回放",
+            "2": "多屏互动",
+            "3": "内容分发网络"
+          }
+        },
+        "features": {
+          "title": "核心功能",
+          "items": {
+            "0": "多格式支持",
+            "1": "CDN加速",
+            "2": "智能转码",
+            "3": "播放统计分析"
+          }
+        }
+      }
+    },
+    "specs": {
+      "title": "技术规格",
+      "description": "支持主流编码标准和传输协议，确保最佳兼容性",
+      "categories": {
+        "0": {
+          "title": "视频编码",
+          "items": {
+            "0": "H.264 (AVC)",
+            "1": "H.265 (HEVC)",
+            "2": "VP8/VP9",
+            "3": "AV1"
+          }
+        },
+        "1": {
+          "title": "音频编码",
+          "items": {
+            "0": "AAC",
+            "1": "MP3",
+            "2": "Opus",
+            "3": "AC-3"
+          }
+        },
+        "2": {
+          "title": "传输协议",
+          "items": {
+            "0": "RTMP/RTMPS",
+            "1": "HLS",
+            "2": "DASH",
+            "3": "WebRTC"
+          }
+        },
+        "3": {
+          "title": "性能监控",
+          "items": {
+            "0": "实时性能监控",
+            "1": "异常告警",
+            "2": "性能优化建议",
+            "3": "负载均衡"
+          }
+        },
+        "4": {
+          "title": "安全防护",
+          "items": {
+            "0": "DDoS防护",
+            "1": "访问控制",
+            "2": "数据加密",
+            "3": "SSL证书"
+          }
+        }
+      }
+    },
+    "serviceFeatures": {
+      "0": {
+        "title": "国际化部署",
+        "description": "全球分布式流媒体基础设施",
+        "details": {
+          "0": "跨洲际服务节点覆盖",
+          "1": "多层CDN架构部署",
+          "2": "智能化路由调度"
+        }
+      },
+      "1": {
+        "title": "极速响应",
+        "description": "亚秒级延迟传输体验",
+        "details": {
+          "0": "先进流媒体引擎",
+          "1": "网络链路优化",
+          "2": "实时性能监测"
+        }
+      },
+      "2": {
+        "title": "可靠保障",
+        "description": "企业级服务质量承诺",
+        "details": {
+          "0": "全天候系统监控",
+          "1": "多重容灾备份",
+          "2": "快速故障恢复"
+        }
+      },
+      "3": {
+        "title": "赛事覆盖",
+        "description": "89.5%国际赛事资源覆盖",
+        "details": {
+          "0": "丰富的赛事内容库",
+          "1": "专业运营团队",
+          "2": "持续优化升级"
+        }
+      }
+    },
+    "technicalSpecs": {
+      "0": {
+        "category": "视频编码标准",
+        "items": {
+          "0": "H.264/AVC",
+          "1": "H.265/HEVC",
+          "2": "VP8/VP9",
+          "3": "AV1"
+        }
+      },
+      "1": {
+        "category": "传输协议支持",
+        "items": {
+          "0": "RTMP/RTMPS",
+          "1": "HLS (m3u8)",
+          "2": "DASH",
+          "3": "WebRTC"
+        }
+      },
+      "2": {
+        "category": "画质规格",
+        "items": {
+          "0": "4K超高清 (3840×2160)",
+          "1": "全高清 (1920×1080)",
+          "2": "高清 (1280×720)",
+          "3": "自适应比特率"
+        }
+      },
+      "3": {
+        "category": "音频编码",
+        "items": {
+          "0": "AAC",
+          "1": "MP3",
+          "2": "Opus",
+          "3": "多语言声道"
+        }
+      }
+    },
+    "integrationSteps": {
+      "0": {
+        "title": "业务需求分析",
+        "description": "深入了解客户业务场景与技术架构需求",
+        "duration": "1-2天"
+      },
+      "1": {
+        "title": "技术接口集成",
+        "description": "提供完整API文档与专业技术指导",
+        "duration": "1-2天"
+      },
+      "2": {
+        "title": "系统测试验证",
+        "description": "全方位功能测试与性能验证",
+        "duration": "1-2天"
+      },
+      "3": {
+        "title": "生产环境部署",
+        "description": "正式启动稳定的流媒体服务",
+        "duration": "即时"
+      }
+    },
+    "useCases": {
+      "0": {
+        "title": "移动体育应用",
+        "description": "为体育类移动端产品提供高质量实时流媒体解决方案",
+        "features": {
+          "0": "多清晰度档位",
+          "1": "智能码率适配",
+          "2": "移动网络优化",
+          "3": "用户行为分析"
+        }
+      },
+      "1": {
+        "title": "体育门户网站",
+        "description": "为体育资讯网站集成专业级直播播放能力",
+        "features": {
+          "0": "跨平台播放器",
+          "1": "HTML5兼容",
+          "2": "自适应布局",
+          "3": "SEO优化"
+        }
+      },
+      "2": {
+        "title": "专业主播工作室",
+        "description": "为体育解说团队提供纯净、高清、全覆盖、低延迟的信号源",
+        "features": {
+          "0": "纯净信号源",
+          "1": "超高清画质",
+          "2": "全球赛事覆盖",
+          "3": "毫秒级延迟"
+        }
+      },
+      "3": {
+        "title": "电竞赛事平台",
+        "description": "为电子竞技赛事提供专业级流媒体技术支撑",
+        "features": {
+          "0": "极低延迟传输",
+          "1": "高并发承载",
+          "2": "多信号源接入",
+          "3": "实时互动支持"
+        }
+      }
+    },
+    "streamingFormats": {
+      "title": "支持格式：",
+      "items": {
+        "0": "HLS (m3u8) - iOS/Web优选",
+        "1": "DASH - 自适应码率",
+        "2": "RTMP - 传统播放器",
+        "3": "WebRTC - 超低延迟"
+      }
+    },
+    "scenarios": {
+      "title": "应用场景",
+      "description": "为不同类型的体育内容平台提供专业技术支撑",
+      "items": {
+        "0": {
+          "title": "体育媒体平台",
+          "description": "为体育新闻网站和应用提供直播和点播服务",
+          "features": {
+            "0": "多路直播同时进行",
+            "1": "赛事回放功能",
+            "2": "精彩片段剪辑",
+            "3": "实时数据展示"
+          }
+        },
+        "1": {
+          "title": "电竞平台",
+          "description": "支持电竞赛事直播和游戏内容创作",
+          "features": {
+            "0": "超低延迟直播",
+            "1": "多视角切换",
+            "2": "弹幕互动支持",
+            "3": "赛事数据统计"
+          }
+        },
+        "2": {
+          "title": "教育培训",
+          "description": "体育教学和训练视频的在线传播",
+          "features": {
+            "0": "课程录制回放",
+            "1": "技术动作分析",
+            "2": "远程指导直播",
+            "3": "学习进度跟踪"
+          }
+        },
+        "3": {
+          "title": "企业会议",
+          "description": "专业的企业视频会议解决方案",
+          "features": {
+            "0": "多方会议",
+            "1": "屏幕共享",
+            "2": "会议录制",
+            "3": "安全加密"
+          }
+        },
+        "4": {
+          "title": "企业会议",
+          "description": "专业的企业视频会议解决方案",
+          "features": {
+            "0": "多方会议",
+            "1": "屏幕共享",
+            "2": "会议录制",
+            "3": "实时聊天"
+          }
+        }
+      }
+    },
+    "integration": {
+      "title": "集成流程",
+      "description": "简化的接入流程，快速启动您的流媒体服务",
+      "steps": {
+        "0": {
+          "title": "需求分析",
+          "description": "了解您的业务需求和技术要求",
+          "duration": "1-2个工作日"
+        },
+        "1": {
+          "title": "方案设计",
+          "description": "制定定制化的技术解决方案",
+          "duration": "2-3个工作日"
+        },
+        "2": {
+          "title": "接口对接",
+          "description": "提供API文档和技术支持",
+          "duration": "3-5个工作日"
+        },
+        "3": {
+          "title": "测试上线",
+          "description": "全面测试确保服务稳定运行",
+          "duration": "1-2个工作日"
+        }
+      }
+    },
+    "cta": {
+      "title": "开始使用我们的服务",
+      "description": "联系我们获取专业的技术支持和定制化解决方案",
+      "contact": "联系我们",
+      "button": "联系我们",
+      "documentation": "查看技术文档"
+    }
+  },
+  "faq": {
+    "title": "常见问题",
+    "description": "查找关于我们体育直播API服务的常见问题解答",
+    "categories": {
+      "title": "问题分类",
+      "all": {
+        "name": "全部问题",
+        "count": "显示全部问题"
+      },
+      "general": {
+        "name": "常规问题",
+        "count": "常规问题"
+      },
+      "technical": {
+        "name": "技术问题",
+        "count": "技术问题"
+      },
+      "pricing": {
+        "name": "价格问题",
+        "count": "价格问题"
+      },
+      "support": {
+        "name": "支持问题",
+        "count": "支持问题"
+      }
+    },
+    "featured": {
+      "title": "热门问题"
+    },
+    "list": {
+      "allQuestions": "所有问题",
+      "foundCount": "找到相关问题"
+    },
+    "items": {
+      "0": {
+        "question": "什么是RTMP推流服务？",
+        "answer": "RTMP（Real-Time Messaging Protocol）是一种实时消息传输协议，主要用于音视频流媒体的传输。我们提供稳定的RTMP推流服务，支持各种直播场景。"
+      },
+      "1": {
+        "question": "支持哪些体育项目？",
+        "answer": "我们支持足球、篮球、网球、棒球、美式足球、冰球、赛车、高尔夫、拳击、MMA、排球、羽毛球等12大运动类别的流媒体服务。"
+      },
+      "2": {
+        "question": "如何保证流媒体质量？",
+        "answer": "我们采用全球CDN网络、智能负载均衡、实时监控等技术，确保流媒体传输的稳定性和低延迟。同时提供多种清晰度选择和自适应码率调节。"
+      },
+      "3": {
+        "question": "是否提供技术支持？",
+        "answer": "是的，我们提供7x24小时技术支持服务，包括API文档、SDK集成指导、故障排查等全方位技术支持。"
+      },
+      "4": {
+        "question": "如何申请测试账号？",
+        "answer": "您可以通过联系我们页面提交申请，我们会在24小时内为您开通测试账号，并提供详细的接入文档和技术支持。"
+      },
+      "5": {
+        "question": "数据更新频率如何？",
+        "answer": "我们的数据实时更新，比赛进行中每秒更新多次，确保您获得最新的比赛状态和统计数据。"
+      },
+      "6": {
+        "question": "是否支持历史数据查询？",
+        "answer": "是的，我们提供完整的历史数据查询功能，包括过往赛季的比赛结果、球员统计、球队表现等数据。"
+      },
+      "7": {
+        "question": "API的稳定性如何保证？",
+        "answer": "我们采用分布式架构和多重备份机制，保证99.9%的服务可用性。同时提供负载均衡和故障转移功能。"
+      },
+      "8": {
+        "question": "如何处理大量并发请求？",
+        "answer": "我们的系统支持高并发访问，采用CDN加速和智能缓存技术，确保在高峰期也能提供稳定快速的服务。"
+      },
+      "9": {
+        "question": "是否提供免费试用？",
+        "answer": "是的，我们提供免费试用套餐，包含基础功能和有限的API调用次数，让您充分体验我们的服务。"
+      },
+      "10": {
+        "question": "如何升级或更改套餐？",
+        "answer": "您可以随时在控制面板中升级或更改套餐，变更会立即生效，费用按比例计算。"
+      }
+    },
+    "cta": {
+      "title": "还有其他问题？",
+      "description": "如果您没有找到想要的答案，请随时联系我们的技术支持团队",
+      "button": "联系技术支持",
+      "email": "发送邮件至 business@sportliveapi.com",
+      "workingHours": "工作时间：周一至周五 9:00-18:00 (北京时间)"
+    }
+  },
+  "about": {
+    "hero": {
+      "title": "关于 SportLiveAPI",
+      "description": "我们是一支专注于体育直播流技术服务的专业团队，拥有10年行业经验，为全球客户提供稳定可靠的流媒体解决方案。"
+    },
+    "experience": {
+      "title": "专业团队经验",
+      "description1": "我们的核心团队成员来自 Onefootball、直播吧、SportRadar 等知名体育科技公司，在体育直播流技术开发和运营方面拥有丰富经验。",
+      "description2": "自2014年以来，我们深耕体育直播流领域，服务全球数百家客户，涵盖从小型直播平台到大型体育赛事的各种场景。",
+      "description3": "我们深刻理解体育直播流领域的技术挑战，致力于为客户提供最专业、最可靠的技术解决方案。",
+      "stats": {
+        "founded": "公司成立",
+        "years": "年经验",
+        "members": "团队成员"
+      }
+    },
+    "team": {
+      "title": "团队背景",
+      "description": "我们的团队成员来自顶级体育科技公司，拥有丰富的行业经验和技术专长。",
+      "companies": {
+        "onefootball": {
+          "description": "欧洲最大的足球媒体平台，全球用户超过1亿",
+          "expertise": "直播流技术 & 用户体验"
+        },
+        "zhibo8": {
+          "name": "直播吧",
+          "icon": "直",
+          "description": "中国领先的体育直播平台，服务数千万用户",
+          "expertise": "高并发流媒体 & CDN优化"
+        },
+        "sportradar": {
+          "description": "全球体育数据和技术服务提供商",
+          "expertise": "体育数据处理 & API开发"
+        }
+      }
+    },
+    "promise": {
+      "title": "我们的服务承诺",
+      "description": "我们致力于提供最高质量的体育直播流技术服务，以专业的技术支持和可靠的服务保障为客户创造价值。",
+      "features": {
+        "enterprise": {
+          "title": "企业级服务",
+          "description": "专业的技术架构和服务标准，确保系统稳定性和可靠性"
+        },
+        "response": {
+          "title": "快速响应",
+          "description": "7x24小时技术支持团队，提供及时的问题解决和技术咨询"
+        },
+        "technical": {
+          "title": "技术专长",
+          "description": "在流媒体领域的深厚技术积累，持续优化服务质量"
+        },
+        "global": {
+          "title": "全球覆盖",
+          "description": "遍布全球的CDN节点和技术支持，提供稳定的全球服务"
+        }
+      }
+    },
+    "technical": {
+      "title": "技术专长",
+      "features": {
+        "streaming": {
+          "title": "先进流媒体技术",
+          "description": "支持RTMP、HLS、WebRTC等多种流媒体协议，提供低延迟、高质量的直播体验"
+        },
+        "network": {
+          "title": "全球网络优化",
+          "description": "智能CDN调度和网络优化，确保全球范围内的稳定流媒体质量"
+        },
+        "api": {
+          "title": "灵活API集成",
+          "description": "丰富的API接口和SDK支持，实现快速集成和定制化开发"
+        },
+        "monitoring": {
+          "title": "实时监控",
+          "description": "全面的监控系统，提供实时的流媒体状态和质量分析"
+        }
+      },
+      "stats": {
+        "title": "技术指标",
+        "coverage": "全球覆盖",
+        "latency": "超低延迟",
+        "quality": "超高清画质",
+        "team": "专业团队",
+        "team_value": "50+"
+      }
+    },
+    "cta": {
+      "title": "准备开始了吗？",
+      "description": "联系我们的专业团队，获取定制化的体育直播流解决方案和技术支持。",
+      "contact": "联系我们",
+      "button": "联系我们",
+      "documentation": "查看文档"
+    }
+  },
+  "sports": {
+    "title": "12大运动类别完整覆盖",
+    "subtitle": "涵盖全球主流体育赛事，满足不同用户群体需求",
+    "description": "涵盖全球主流体育赛事，满足不同用户群体需求",
+    "categories": {
+      "0": {
+        "name": "足球",
+        "description": "世界第一运动，全球最受欢迎的体育项目",
+        "leaguesCount": "4",
+        "leagues": {
+          "0": "英超",
+          "1": "西甲",
+          "2": "欧冠",
+          "3": "世界杯"
+        }
+      },
+      "1": {
+        "name": "篮球",
+        "description": "高强度对抗运动，深受年轻群体喜爱",
+        "leaguesCount": "3",
+        "leagues": {
+          "0": "NBA",
+          "1": "CBA",
+          "2": "欧洲篮球联赛"
+        }
+      },
+      "2": {
+        "name": "网球",
+        "description": "优雅的个人竞技运动，技巧性极强",
+        "leaguesCount": "4",
+        "leagues": {
+          "0": "温网",
+          "1": "法网",
+          "2": "美网",
+          "3": "澳网"
+        }
+      },
+      "3": {
+        "name": "棒球",
+        "description": "美国国球，策略性团队运动",
+        "leaguesCount": "3",
+        "leagues": {
+          "0": "MLB",
+          "1": "NPB",
+          "2": "中华职棒"
+        }
+      },
+      "4": {
+        "name": "电竞",
+        "description": "新兴竞技项目，年轻人的热门选择",
+        "leaguesCount": "4",
+        "leagues": {
+          "0": "英雄联盟",
+          "1": "DOTA2",
+          "2": "CS:GO",
+          "3": "王者荣耀"
+        }
+      },
+      "5": {
+        "name": "乒乓球",
+        "description": "中国国球，技巧与速度的完美结合",
+        "leaguesCount": "4",
+        "leagues": {
+          "0": "世乒赛",
+          "1": "奥运会",
+          "2": "世界杯",
+          "3": "中超联赛"
+        }
+      },
+      "6": {
+        "name": "羽毛球",
+        "description": "轻盈灵动的球拍运动，深受亚洲喜爱",
+        "leaguesCount": "4",
+        "leagues": {
+          "0": "世锦赛",
+          "1": "奥运会",
+          "2": "汤尤杯",
+          "3": "全英赛"
+        }
+      },
+      "7": {
+        "name": "排球",
+        "description": "团队协作的典型代表，观赏性强",
+        "leaguesCount": "3",
+        "leagues": {
+          "0": "世锦赛",
+          "1": "奥运会",
+          "2": "世界杯"
+        }
+      },
+      "8": {
+        "name": "板球",
+        "description": "英联邦国家的传统运动，策略性强",
+        "leaguesCount": "3",
+        "leagues": {
+          "0": "世界杯",
+          "1": "IPL",
+          "2": "英格兰县际赛"
+        }
+      },
+      "9": {
+        "name": "斯诺克",
+        "description": "绅士运动，精准度要求极高",
+        "leaguesCount": "4",
+        "leagues": {
+          "0": "世锦赛",
+          "1": "英锦赛",
+          "2": "大师赛",
+          "3": "中国公开赛"
+        }
+      },
+      "10": {
+        "name": "赛车",
+        "description": "速度与激情的完美诠释",
+        "leaguesCount": "4",
+        "leagues": {
+          "0": "F1",
+          "1": "MotoGP",
+          "2": "WRC",
+          "3": "勒芒24小时"
+        }
+      },
+      "11": {
+        "name": "冰球",
+        "description": "冰上运动之王，对抗激烈",
+        "leaguesCount": "4",
+        "leagues": {
+          "0": "NHL",
+          "1": "KHL",
+          "2": "奥运会",
+          "3": "世锦赛"
+        }
+      }
+    },
+    "technicalServices": {
+      "title": "双重技术接入模式",
+      "description": "灵活的技术接入方案，满足不同业务场景需求",
+      "rtmp": {
+        "title": "RTMP流媒体推送",
+        "description": "客户提供推流域名，我们负责推送直播流",
+        "codeTitle": "推流接入示例",
+        "codeComment": "配置推流参数",
+        "pushComment": "配置推流参数",
+        "apiComment": "查询比赛对应的直播链接"
+      },
+      "streaming": {
+        "title": "播放链接提供",
+        "description": "直接提供可播放的直播链接，即插即用",
+        "codeTitle": "API接口查询比赛和直播链接对应",
+        "codeComment": "查询比赛对应的直播链接",
+        "apiComment": "查询比赛对应的直播链接"
+      }
+    }
+  },
+  "team": {
+    "title": "资深团队深度理解",
+    "description1": "秉承对体育事业的深度热忱，团队自<strong>2014年</strong>起，持续为亚太地区中文市场提供超过<strong>10年</strong>的专业服务。",
+    "description2": "团队汇聚了<strong>数十名资深体育行业专家</strong>，众多成员拥有<strong>直播吧、onefootball、SportRadar</strong>等知名体育科技企业的丰富履历。",
+    "companiesTitle": "核心成员背景企业",
+    "companies": {
+      "0": {
+        "name": "直播吧",
+        "description": "国内领先的体育信息服务平台"
+      },
+      "1": {
+        "name": "onefootball",
+        "description": "国际知名足球内容媒体平台"
+      },
+      "2": {
+        "name": "SportRadar",
+        "description": "全球体育数据与技术解决方案提供商"
+      }
+    },
+    "consultButton": "咨询技术专家",
+    "learnMoreButton": "深入了解",
+    "achievements": {
+      "0": {
+        "title": "十年深耕经验",
+        "description": "自2014年起专注体育技术领域",
+        "detail": "持续服务亚太地区中文市场"
+      },
+      "1": {
+        "title": "专家团队",
+        "description": "数十名体育行业资深专家",
+        "detail": "汇聚知名体育科技企业精英"
+      },
+      "2": {
+        "title": "全球覆盖",
+        "description": "世界各地的流媒体节点",
+        "detail": "89.5%国际联赛覆盖率"
+      },
+      "3": {
+        "title": "技术优势",
+        "description": "领先的流媒体解决方案",
+        "detail": "超低延迟、超高清晰度"
+      }
+    },
+    "whyChooseUs": {
+      "title": "选择我们的理由",
+      "subtitle": "专业、稳定、值得信赖的体育流媒体技术解决方案提供商"
+    },
+    "stats": {
+      "0": {
+        "number": "10+",
+        "label": "年深度服务经验",
+        "description": "专注企业级技术服务"
+      },
+      "1": {
+        "number": "12+",
+        "label": "大运动类别覆盖",
+        "description": "深刻洞察商业需求"
+      },
+      "2": {
+        "number": "89.5%",
+        "label": "国际联赛覆盖率",
+        "description": "敏捷响应客户诉求"
+      },
+      "3": {
+        "number": "24/7",
+        "label": "技术支撑保障",
+        "description": "高效沟通与快速执行"
+      }
+    },
+    "services": {
+      "0": {
+        "title": "服务品质承诺",
+        "description": "提供全面技术支撑"
+      },
+      "1": {
+        "title": "专业技术保障",
+        "description": "360度技术服务保障"
+      },
+      "2": {
+        "title": "全球服务网络",
+        "description": "覆盖国际体育赛事"
+      }
+    },
+    "globalService": "跨地域无界限服务",
+    "experienceButton": "即刻体验专业服务",
+    "serviceCommitment": {
+      "title": "服务品质承诺",
+      "items": {
+        "0": {
+          "title": "专注企业级技术服务",
+          "description": "深刻洞察商业需求"
+        },
+        "1": {
+          "title": "敏捷响应客户诉求",
+          "description": "高效沟通与快速执行"
+        },
+        "2": {
+          "title": "提供全面技术支撑",
+          "description": "360度技术服务保障"
+        },
+        "3": {
+          "title": "覆盖国际体育赛事",
+          "description": "跨地域无界限服务"
+        }
+      }
+    }
+  },
+  "streamingFormats": {
+    "title": "支持格式：",
+    "items": {
+      "hls": "HLS (HTTP Live Streaming) - 苹果开发的自适应流媒体协议",
+      "dash": "DASH (Dynamic Adaptive Streaming) - 国际标准的自适应流媒体协议",
+      "rtmp": "RTMP (Real-Time Messaging Protocol) - 实时消息传输协议",
+      "webrtc": "WebRTC (Web Real-Time Communication) - 网页实时通信技术"
+    }
+  },
+  "footer": {
+    "company": {
+      "description": "专业体育直播流技术服务商，为体育类产品开发者提供稳定、多元化的全球体育赛事直播流技术接入服务。",
+      "cta": "获取试用和报价"
+    },
+    "sections": {
+      "core_services": "核心服务",
+      "resources": "资源中心",
+      "support": "技术支持"
+    },
+    "navigation": {
+      "services": "服务介绍",
+      "about": "关于我们",
+      "faq": "常见问题",
+      "disclaimer": "免责声明",
+      "privacy": "隐私政策",
+      "contact": "联系我们"
+    },
+    "sports": {
+      "title": "支持的体育项目",
+      "items": {
+        "football": "⚽ 足球",
+        "basketball": "🏀 篮球",
+        "baseball": "⚾ 棒球",
+        "tennis": "🎾 网球",
+        "esports": "🎮 电竞",
+        "pingpong": "🏓 乒乓球",
+        "badminton": "🏸 羽毛球",
+        "volleyball": "🏐 排球",
+        "cricket": "🏏 板球",
+        "snooker": "🎱 斯诺克",
+        "racing": "🏎️ 赛车",
+        "hockey": "🏒 冰球"
+      }
+    },
+    "technical_services": {
+      "title": "技术服务形式",
+      "rtmp": {
+        "title": "RTMP推流服务",
+        "description": "客户提供推流域名，我们推送直播流，并提供API查询比赛对应关系"
+      },
+      "streaming": {
+        "title": "直播链接服务",
+        "description": "提供可直接播放的直播链接，并提供API查询比赛对应关系"
+      }
+    },
+    "team": {
+      "title": "专业团队更懂你",
+      "description": "怀揣着对于体育赛事的热爱，我们团队自2014年以来，已经为亚洲区中文地区服务超过10年。我们的团队凝聚了数十位资深的体育赛事从业者，也有不少来自于直播吧、onefootball、SportRadar等工作经验。"
+    },
+    "bottom": {
+      "copyright": "© 2025 SportLiveAPI. 保留所有权利。",
+      "payment": "支付方式：BTC、ETH、USDT、USDC等加密货币",
+      "status": "服务状态：正常运行"
+    }
+  },
+  "disclaimer": {
+    "title": "免责声明",
+    "lastUpdated": "最后更新：2025年8月",
+    "serviceNature": {
+      "title": "服务性质",
+      "description1": "SportLiveAPI是一家专注于",
+      "technicalService": "体育直播流技术服务",
+      "description2": "的技术公司。我们为客户提供体育赛事直播流的技术接入、数据API和相关技术支持服务。",
+      "importantNotice": "重要声明：",
+      "scopeLimit": "我们不参与任何体育内容的版权运营、不提供赛事版权授权、不从事体育博彩相关业务。"
+    },
+    "copyright": {
+      "title": "版权责任",
+      "clientResponsibility": {
+        "title": "客户责任",
+        "items": {
+          "0": "确保拥有合法的体育内容播放权限",
+          "1": "遵守所在地区的法律法规和版权规定",
+          "2": "承担因版权问题产生的全部法律责任",
+          "3": "确保使用我们的技术服务符合当地法律要求"
+        }
+      },
+      "ourPosition": {
+        "title": "我们的立场",
+        "items": {
+          "0": "仅提供技术服务，不涉及内容版权事务",
+          "1": "不对客户使用服务的合法性承担责任",
+          "2": "保留在发现违法使用时终止服务的权利",
+          "3": "积极配合相关部门的合规调查工作"
+        }
+      }
+    },
+    "serviceLimitations": {
+      "title": "服务限制",
+      "technical": {
+        "title": "技术限制",
+        "items": {
+          "0": "网络环境可能影响服务质量",
+          "1": "第三方服务依赖可能导致服务中断",
+          "2": "技术升级期间可能出现短暂服务不可用",
+          "3": "不保证100%的服务可用性"
+        }
+      },
+      "disclaimer": {
+        "title": "免责条款",
+        "items": {
+          "0": "不对因使用服务造成的任何损失承担责任",
+          "1": "不保证服务内容的准确性和完整性",
+          "2": "不对第三方内容的合法性负责",
+          "3": "保留随时修改或终止服务的权利"
+        }
+      }
+    },
+    "compliance": {
+      "title": "合规使用",
+      "subtitle": "我们致力于促进体育技术服务的合规发展",
+      "measures": {
+        "copyright": {
+          "title": "版权保护",
+          "description": "建立完善的版权保护机制，协助客户合规使用体育内容"
+        },
+        "legal": {
+          "title": "法律合规",
+          "description": "严格遵守各地区法律法规，确保服务的合法性"
+        },
+        "content": {
+          "title": "内容审核",
+          "description": "建立内容审核机制，防止违法违规内容传播"
+        },
+        "agreement": {
+          "title": "协议约束",
+          "description": "通过服务协议明确各方责任，规范服务使用"
+        }
+      }
+    },
+    "contact": {
+      "title": "联系与争议解决",
+      "contactUs": {
+        "title": "联系我们",
+        "description": "如有任何法律相关问题或需要协助，请通过以下方式联系我们：",
+        "email": "邮箱",
+        "workingHours": "工作时间",
+        "hours": "周一至周五 9:00-18:00 (UTC+8)"
+      },
+      "dispute": {
+        "title": "争议解决",
+        "description": "如发生争议，我们建议通过以下方式解决：",
+        "methods": {
+          "0": "友好协商解决",
+          "1": "寻求第三方调解",
+          "2": "提交仲裁机构处理",
+          "3": "通过法律途径解决"
+        }
+      }
+    },
+    "updates": {
+      "title": "声明更新",
+      "description": "我们保留随时更新本免责声明的权利。重大变更将通过网站公告或邮件通知的方式告知用户。继续使用我们的服务即表示您接受更新后的声明内容。",
+      "recommendation": {
+        "label": "建议",
+        "text": "请定期查看本页面以了解最新的免责声明内容"
+      }
+    }
+  },
+  "privacy": {
+    "title": "隐私政策",
+    "description": "我们致力于保护您的隐私和个人信息。本隐私政策说明我们如何收集、使用和保护您的信息。",
+    "lastUpdated": "最后更新：2025年8月",
+    "introduction": {
+      "title": "简介",
+      "content": "SportLiveAPI是一家专注于体育流媒体技术服务的公司。我们致力于保护您的隐私和个人信息。本隐私政策说明当您使用我们的服务时，我们如何收集、使用、存储和保护您的个人信息。"
+    },
+    "dataCollection": {
+      "title": "信息收集",
+      "provided": {
+        "title": "您提供的信息",
+        "items": {
+          "0": "联系信息（姓名、电子邮箱、电话号码）",
+          "1": "业务信息（公司名称、行业、业务需求）",
+          "2": "技术需求和使用场景",
+          "3": "沟通记录和反馈"
+        }
+      },
+      "automatic": {
+        "title": "自动收集的信息",
+        "items": {
+          "0": "设备信息（IP地址、浏览器类型、操作系统）",
+          "1": "使用数据（页面浏览、访问时间、功能使用）",
+          "2": "技术日志和性能数据",
+          "3": "Cookie和类似的跟踪技术"
+        }
+      }
+    },
+    "dataUsage": {
+      "title": "信息使用",
+      "description": "我们将收集的信息用于以下目的：",
+      "purposes": {
+        "0": "提供和维护我们的技术服务",
+        "1": "回应您的询问并提供客户支持",
+        "2": "改进我们的服务并开发新功能",
+        "3": "发送服务相关的通知和更新",
+        "4": "遵守法律义务并保护我们的权利",
+        "5": "进行数据分析以优化服务性能"
+      }
+    },
+    "dataSharing": {
+      "title": "信息共享",
+      "description": "我们不会向第三方出售、交易或出租您的个人信息。我们仅在以下情况下可能共享您的信息：",
+      "conditions": {
+        "0": "获得您的明确同意",
+        "1": "遵守法律要求或法院命令",
+        "2": "保护我们的权利、财产或安全",
+        "3": "与协助我们运营的可信服务提供商（在严格保密协议下）"
+      }
+    },
+    "dataSecurity": {
+      "title": "数据安全",
+      "description": "我们实施适当的技术和组织措施来保护您的个人信息，防止未经授权的访问、更改、披露或销毁。这包括加密、访问控制、定期安全评估和员工数据保护培训。"
+    },
+    "userRights": {
+      "title": "用户权利",
+      "description": "您对个人信息享有以下权利：",
+      "rights": {
+        "0": "访问权：请求访问我们持有的您的个人信息",
+        "1": "更正权：请求更正不准确或不完整的信息",
+        "2": "删除权：请求删除您的个人信息",
+        "3": "数据可携权：请求将您的数据转移给其他服务提供商",
+        "4": "反对权：反对某些信息处理活动",
+        "5": "限制权：在特定情况下请求限制处理"
+      }
+    },
+    "dataRetention": {
+      "title": "数据保留",
+      "description": "我们仅在实现本隐私政策中概述的目的、遵守法律义务、解决争议和执行我们的协议所必需的时间内保留您的个人信息。当信息不再需要时，我们会安全地删除或匿名化处理。"
+    },
+    "childrenPrivacy": {
+      "title": "儿童隐私",
+      "description": "我们的服务不面向13岁以下的儿童。我们不会故意收集13岁以下儿童的个人信息。如果我们发现收集了此类信息，我们将立即采取措施删除。"
+    },
+    "dataTransfer": {
+      "title": "国际数据传输",
+      "description": "您的信息可能会被传输到您居住国以外的国家进行处理。我们确保此类传输符合适用的数据保护法律，并实施适当的保障措施来保护您的信息。"
+    },
+    "policyUpdates": {
+      "title": "政策更新",
+      "description": "我们可能会不时更新本隐私政策。我们将通过在网站上发布新政策并更新\"最后更新\"日期来通知您任何重大变更。您在此类变更后继续使用我们的服务即表示接受更新后的政策。"
+    },
+    "contact": {
+      "title": "联系我们",
+      "description": "如果您对本隐私政策或我们的数据处理实践有任何疑问，请联系我们：",
+      "email": "邮箱：business@sportliveapi.com",
+      "address": "地址：[公司地址]",
+      "phone": "电话：[联系电话]",
+      "website": "网站",
+      "contactPage": "联系我们页面"
+    }
+  }
+}

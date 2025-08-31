@@ -10,7 +10,7 @@
     --card-foreground: 0 0% 3.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 3.9%;
-    --primary: 213 100% 40%;
+    --primary: 0 73% 41%;
     --primary-foreground: 0 0% 98%;
     --secondary: 0 0% 96.1%;
     --secondary-foreground: 0 0% 9%;
@@ -22,7 +22,7 @@
     --destructive-foreground: 0 0% 98%;
     --border: 0 0% 89.8%;
     --input: 0 0% 89.8%;
-    --ring: 213 100% 40%;
+    --ring: 0 73% 41%;
     --radius: 0.5rem;
   }
 
@@ -33,7 +33,7 @@
     --card-foreground: 0 0% 98%;
     --popover: 0 0% 3.9%;
     --popover-foreground: 0 0% 98%;
-    --primary: 213 100% 40%;
+    --primary: 0 73% 41%;
     --primary-foreground: 0 0% 98%;
     --secondary: 0 0% 14.9%;
     --secondary-foreground: 0 0% 98%;
@@ -45,7 +45,7 @@
     --destructive-foreground: 0 0% 98%;
     --border: 0 0% 14.9%;
     --input: 0 0% 14.9%;
-    --ring: 213 100% 40%;
+    --ring: 0 73% 41%;
   }
 }
 
@@ -76,24 +76,42 @@
 @layer components {
   /* 渐变背景 */
   .gradient-primary {
-    background: linear-gradient(135deg, #0066CC 0%, #3399FF 100%);
+    background: linear-gradient(135deg, #DC2626 0%, #F87171 100%);
   }
   
   .gradient-secondary {
-    background: linear-gradient(135deg, #003366 0%, #0066CC 100%);
+    background: linear-gradient(135deg, #991B1B 0%, #DC2626 100%);
   }
   
   /* 按钮样式 */
   .btn-primary {
-    @apply inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-brand-primary to-brand-light px-6 py-3 text-white font-medium shadow-button transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-brand-primary/50;
+    @apply inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-brand-primary via-brand-secondary to-brand-light px-8 py-4 text-white font-semibold shadow-2xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 hover:scale-105 focus:outline-none focus:ring-4 focus:ring-brand-primary/30 active:scale-95 relative overflow-hidden;
+  }
+  
+  .btn-primary::before {
+    @apply absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 transition-opacity duration-300;
+    content: '';
+  }
+  
+  .btn-primary:hover::before {
+    @apply opacity-100;
   }
   
   .btn-secondary {
-    @apply inline-flex items-center justify-center rounded-lg border-2 border-brand-primary bg-transparent px-6 py-3 text-brand-primary font-medium transition-all duration-200 hover:bg-brand-primary hover:text-white focus:outline-none focus:ring-2 focus:ring-brand-primary/50;
+    @apply inline-flex items-center justify-center rounded-xl border-2 border-brand-primary bg-transparent px-8 py-4 text-brand-primary font-semibold transition-all duration-300 hover:bg-gradient-to-r hover:from-brand-primary hover:to-brand-light hover:text-white hover:border-transparent hover:shadow-xl hover:-translate-y-1 focus:outline-none focus:ring-4 focus:ring-brand-primary/30 active:scale-95 relative overflow-hidden;
   }
   
   .btn-accent {
-    @apply inline-flex items-center justify-center rounded-lg bg-brand-accent px-6 py-3 text-white font-medium shadow-lg transition-all duration-200 hover:shadow-xl hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-brand-accent/50 animate-pulse-subtle;
+    @apply inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-brand-accent via-brand-primary to-brand-light px-8 py-4 text-white font-semibold shadow-2xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 hover:scale-105 focus:outline-none focus:ring-4 focus:ring-brand-accent/30 active:scale-95 relative overflow-hidden;
+  }
+  
+  .btn-accent::before {
+    @apply absolute inset-0 bg-gradient-to-r from-white/25 to-transparent opacity-0 transition-opacity duration-300;
+    content: '';
+  }
+  
+  .btn-accent:hover::before {
+    @apply opacity-100;
   }
   
   /* 卡片样式 */
@@ -172,14 +190,14 @@
   
   /* 背景图案 */
   .bg-dots {
-    background-image: radial-gradient(circle, #0066CC 1px, transparent 1px);
+    background-image: radial-gradient(circle, #DC2626 1px, transparent 1px);
     background-size: 20px 20px;
     opacity: 0.1;
   }
   
   .bg-grid {
-    background-image: linear-gradient(rgba(0, 102, 204, 0.1) 1px, transparent 1px),
-                      linear-gradient(90deg, rgba(0, 102, 204, 0.1) 1px, transparent 1px);
+    background-image: linear-gradient(rgba(220, 38, 38, 0.1) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(220, 38, 38, 0.1) 1px, transparent 1px);
     background-size: 50px 50px;
   }
 }

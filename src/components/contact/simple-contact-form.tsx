@@ -12,59 +12,63 @@ import { Check } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { trackFormSubmit, trackServiceInterest, trackContactPreference } from '@/lib/analytics'
 import { getUserSourceInfo } from '@/lib/user-source-tracker'
+import { useTranslations } from 'next-intl'
 
 // 简化的表单验证Schema - 保护客户隐私，只收集必要信息
-const formSchema = z.object({
-  email: z.string().email('请输入有效的邮箱地址'),
+const createFormSchema = (t: any) => z.object({
+  email: z.string().email(t('validation.emailInvalid')),
   contactMethod: z.string()
-    .min(1, '请输入Telegram或QQ联系方式')
+    .min(1, t('validation.contactMethodRequired'))
     .refine((value) => {
       // Telegram格式：@开头的用户名
-      const telegramPattern = /^@[a-zA-Z0-9_]{5,32}$/
+      const telegramPattern = /^@[a-zA-Z0-9_]{4,31}$/
       // QQ格式：5-11位数字
       const qqPattern = /^[1-9][0-9]{4,10}$/
       return telegramPattern.test(value) || qqPattern.test(value)
     }, {
       message: 'Telegram格式：@username（5-32位字符），QQ格式：5-11位数字'
     }),
-  sportsInterests: z.array(z.string()).min(1, '请至少选择一种体育项目'),
-  useCase: z.string().min(1, '请选择使用场景'),
+  sportsInterests: z.array(z.string()).min(1, t('validation.sportsRequired')),
+  useCase: z.string().min(1, t('validation.useCaseRequired')),
   streamerType: z.string().optional(), // 主播规模
   platformInfo: z.string().optional(), // 平台信息
-  requirements: z.string().optional(),
+  requirements: z.string().optional() // 详细需求
 })
 
-type FormData = z.infer<typeof formSchema>
-
-const sportsOptions = [
-  { value: 'football', label: '⚽ 足球' },
-  { value: 'basketball', label: '🏀 篮球' },
-  { value: 'baseball', label: '⚾ 棒球' },
-  { value: 'tennis', label: '🎾 网球' },
-  { value: 'esports', label: '🎮 电竞' },
-  { value: 'pingpong', label: '🏓 乒乓球' },
-  { value: 'badminton', label: '🏸 羽毛球' },
-  { value: 'volleyball', label: '🏐 排球' },
-  { value: 'cricket', label: '🏏 板球' },
-  { value: 'snooker', label: '🎱 斯诺克' },
-  { value: 'racing', label: '🏎️ 赛车' },
-  { value: 'hockey', label: '🏒 冰球' },
-]
-
-const integrationOptions = [
-  { value: 'website_app', label: '网站/APP接入赛事直播' },
-  { value: 'obs_streaming', label: '仅网络主播在OBS直播使用' },
-  { value: 'both_scenarios', label: '以上两种场景都有' },
-]
-
-const streamerTypeOptions = [
-  { value: 'team', label: '主播团体' },
-  { value: 'individual', label: '个体主播' },
-]
+type FormData = z.infer<ReturnType<typeof createFormSchema>>
 
 export default function SimpleContactForm() {
+  const t = useTranslations('contact');
   const [isSubmitted, setIsSubmitted] = useState(false)
   const [isSubmitting, setIsSubmitting] = useState(false)
+  
+  const formSchema = createFormSchema(t)
+  
+  const sportsOptions = [
+    { value: 'football', label: t('sports.football') },
+    { value: 'basketball', label: t('sports.basketball') },
+    { value: 'baseball', label: t('sports.baseball') },
+    { value: 'tennis', label: t('sports.tennis') },
+    { value: 'esports', label: t('sports.esports') },
+    { value: 'pingpong', label: t('sports.pingpong') },
+    { value: 'badminton', label: t('sports.badminton') },
+    { value: 'volleyball', label: t('sports.volleyball') },
+    { value: 'cricket', label: t('sports.cricket') },
+    { value: 'snooker', label: t('sports.snooker') },
+    { value: 'racing', label: t('sports.racing') },
+    { value: 'hockey', label: t('sports.hockey') },
+  ]
+
+  const integrationOptions = [
+    { value: 'website_app', label: t('useCase.websiteApp') },
+    { value: 'obs_streaming', label: t('useCase.obsStreaming') },
+    { value: 'both_scenarios', label: t('useCase.bothScenarios') },
+  ]
+
+  const streamerTypeOptions = [
+    { value: 'team', label: t('streamerType.team') },
+    { value: 'individual', label: t('streamerType.individual') },
+  ]
   
   const form = useForm<FormData>({
     resolver: zodResolver(formSchema),
@@ -83,38 +87,38 @@ export default function SimpleContactForm() {
     setIsSubmitting(true)
     
     try {
-      console.log('提交表单数据:', data)
+      console.log('Form submission data:', data)
       
       // 获取用户来源信息
       const userSource = getUserSourceInfo()
-      console.log('🔍 前端获取的用户来源信息:', userSource)
-      console.log('🔗 当前URL:', window.location.href)
-      console.log('📄 Referrer:', document.referrer)
+      console.log('User source info:', userSource)
+      console.log('Current URL:', window.location.href)
+      console.log('Referrer:', document.referrer)
       
       // 调试URL参数解析
       const urlParams = new URLSearchParams(window.location.search);
-      console.log('🎯 UTM参数解析:')
+      console.log('UTM parameters:')
       console.log('  utm_source:', urlParams.get('utm_source'))
       console.log('  utm_medium:', urlParams.get('utm_medium'))
       console.log('  utm_campaign:', urlParams.get('utm_campaign'))
       console.log('  utm_term:', urlParams.get('utm_term'))
       
       // 调试语言信息
-      console.log('🌐 浏览器语言信息:')
-      console.log('  主要语言:', navigator.language)
-      console.log('  所有语言:', navigator.languages)
+      console.log('Browser language info:')
+      console.log('  Primary language:', navigator.language)
+      console.log('  All languages:', navigator.languages)
       
       // 调试引荐信息
       if (document.referrer) {
-        console.log('🔗 引荐网站信息:')
-        console.log('  完整URL:', document.referrer)
+        console.log('Referrer info:')
+        console.log('  Full URL:', document.referrer)
         try {
           const referrerUrl = new URL(document.referrer)
-          console.log('  域名:', referrerUrl.hostname)
-          console.log('  路径:', referrerUrl.pathname)
-          console.log('  参数:', referrerUrl.search)
+          console.log('  Domain:', referrerUrl.hostname)
+          console.log('  Path:', referrerUrl.pathname)
+          console.log('  Parameters:', referrerUrl.search)
         } catch (e) {
-          console.log('  解析失败:', e)
+          console.log('  Parse failed:', e)
         }
       }
       
@@ -137,23 +141,23 @@ export default function SimpleContactForm() {
       
       if (result.success) {
         setIsSubmitted(true)
-        console.log('✅ 表单提交成功:', result.message)
+        console.log('Form submitted successfully:', result.message)
         
         // 追踪表单提交成功
         trackFormSubmit('contact_form', true)
       } else {
-        console.error('❌ 表单提交失败:', result.error)
+        console.error('Form submission failed:', result.error)
         
         // 追踪表单提交失败
         trackFormSubmit('contact_form', false)
-        alert(result.error || '提交失败，请稍后重试')
+        alert(result.error || t('messages.submitError'))
       }
     } catch (error) {
-      console.error('💥 提交表单时出错:', error)
+      console.error('Error submitting form:', error)
       
       // 追踪表单提交错误
       trackFormSubmit('contact_form', false)
-      alert('网络错误，请检查网络连接后重试')
+      alert(t('messages.submitError'))
     } finally {
       setIsSubmitting(false)
     }
@@ -168,18 +172,18 @@ export default function SimpleContactForm() {
               <Check className="h-8 w-8 text-white" />
             </div>
             <h2 className="text-h2 font-bold text-brand-gray-800 mb-4">
-              提交成功！
+              {t('success')}
             </h2>
             <p className="text-body text-brand-gray-400 mb-8">
-              感谢您的咨询，我们的专业团队将在24小时内与您联系，为您提供定制化的解决方案和报价。
+              {t('successMessage')}
             </p>
             <div className="bg-brand-gray-50 rounded-lg p-6">
-              <h3 className="font-semibold text-brand-gray-800 mb-2">接下来会发生什么？</h3>
+              <h3 className="font-semibold text-brand-gray-800 mb-2">{t('nextSteps.title')}</h3>
               <ul className="text-left text-body text-brand-gray-400 space-y-2">
-                <li>• 我们的技术顾问将联系您了解详细需求</li>
-                <li>• 为您制定专属的技术方案和报价</li>
-                <li>• 安排技术演示和试用</li>
-                <li>• 提供完整的集成支持</li>
+                <li>• {t('nextSteps.step1')}</li>
+                <li>• {t('nextSteps.step2')}</li>
+                <li>• {t('nextSteps.step3')}</li>
+                <li>• {t('nextSteps.step4')}</li>
               </ul>
             </div>
           </CardContent>
@@ -193,7 +197,7 @@ export default function SimpleContactForm() {
       <Card>
         <CardHeader>
           <CardTitle className="text-h3 text-center">
-            获取试用和报价
+            {t('title')}
           </CardTitle>
           
           {/* 隐私保护说明 */}
@@ -201,9 +205,9 @@ export default function SimpleContactForm() {
             <div className="flex items-start space-x-3">
               <div className="text-blue-600 text-xl">🔒</div>
               <div>
-                <h4 className="font-semibold text-blue-800 mb-1">隐私保护承诺</h4>
+                <h4 className="font-semibold text-blue-800 mb-1">{t('privacy.title')}</h4>
                 <p className="text-small text-blue-600">
-                  我们重视您的隐私，仅收集必要的联系信息。您的信息将被严格保密，仅用于提供技术服务。
+                  {t('privacy.description')}
                 </p>
               </div>
             </div>
@@ -215,7 +219,7 @@ export default function SimpleContactForm() {
             {/* 联系信息 */}
             <div className="space-y-4">
               <FormField>
-                <FormLabel htmlFor="email">邮箱地址 *</FormLabel>
+                <FormLabel htmlFor="email">{t('name')} *</FormLabel>
                 <Input
                   id="email"
                   type="email"
@@ -228,14 +232,14 @@ export default function SimpleContactForm() {
               </FormField>
 
               <FormField>
-                <FormLabel htmlFor="contactMethod">Telegram 或 QQ *</FormLabel>
+                <FormLabel htmlFor="contactMethod">{t('contactMethod')} *</FormLabel>
                 <Input
                   id="contactMethod"
                   {...form.register('contactMethod')}
                   placeholder="@username 或 12345678"
                 />
                 <FormDescription>
-                  Telegram格式：@username（如@alice_dev），QQ格式：数字号码（如12345678）
+                  {t('contactMethodDescription')}
                 </FormDescription>
                 {form.formState.errors.contactMethod && (
                   <FormMessage>{form.formState.errors.contactMethod.message}</FormMessage>
@@ -246,7 +250,7 @@ export default function SimpleContactForm() {
             {/* 业务需求 */}
             <div className="space-y-4">
               <FormField>
-                <FormLabel>感兴趣的体育项目 *</FormLabel>
+                <FormLabel>{t('sportsInterests.label')} *</FormLabel>
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-3 mt-2">
                   {sportsOptions.map((sport) => (
                     <label
@@ -273,8 +277,8 @@ export default function SimpleContactForm() {
                 )}
               </FormField>
 
-                            <FormField>
-                <FormLabel>使用场景 *</FormLabel>
+              <FormField>
+                <FormLabel>{t('useCase.label')} *</FormLabel>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mt-2">
                   {integrationOptions.map((option) => (
                     <label
@@ -304,7 +308,7 @@ export default function SimpleContactForm() {
               {/* 关联问题1：主播规模（仅当选择"仅网络主播在OBS直播使用"时显示） */}
               {form.watch('useCase') === 'obs_streaming' && (
                 <FormField>
-                  <FormLabel>主播规模 *</FormLabel>
+                  <FormLabel>{t('streamerType.label')} *</FormLabel>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mt-2">
                     {streamerTypeOptions.map((option) => (
                       <label
@@ -330,35 +334,33 @@ export default function SimpleContactForm() {
                   {form.watch('streamerType') === 'individual' && (
                     <div className="mt-2 p-3 bg-red-50 border border-red-200 rounded-lg">
                       <p className="text-red-600 text-small">
-                        温馨提示：当前直播源方案主要服务于团队及企业客户，个人用户使用成本可能略高。
+                        {t('individualWarning')}
                       </p>
                     </div>
                   )}
                 </FormField>
               )}
 
-
-
               {/* 关联问题2：平台信息（当选择"网站/APP接入赛事直播"或"以上两种场景都有"时显示） */}
               {(form.watch('useCase') === 'website_app' || form.watch('useCase') === 'both_scenarios') && (
                 <FormField>
-                  <FormLabel>网站/APP或平台信息（可选）</FormLabel>
+                  <FormLabel>{t('platformInfo.label')}</FormLabel>
                   <Input
                     {...form.register('platformInfo')}
-                    placeholder="为了便于后续沟通，请输入您的平台名称"
+                    placeholder={t('platformInfoPlaceholder')}
                     className="mt-2"
                   />
                 </FormField>
               )}
 
               <FormField>
-                <FormLabel htmlFor="requirements">详细需求说明（可选）</FormLabel>
+                <FormLabel htmlFor="requirements">{t('requirements.label')}</FormLabel>
                 <textarea
-                  id="requirements"
-                  {...form.register('requirements')}
-                  placeholder="请描述您的具体需求、预期流量、技术栈等..."
-                  className="w-full p-3 border border-brand-gray-200 rounded-lg resize-none h-24 text-small"
-                />
+                    id="requirements"
+                    {...form.register('requirements')}
+                    placeholder={t('requirementsPlaceholder')}
+                    className="w-full p-3 border border-brand-gray-200 rounded-lg resize-none h-24 text-small"
+                  />
               </FormField>
             </div>
 
@@ -367,7 +369,7 @@ export default function SimpleContactForm() {
               className="w-full"
               disabled={isSubmitting}
             >
-              {isSubmitting ? '提交中...' : '获取试用和报价'}
+              {isSubmitting ? t('submitting') : t('submit')}
             </Button>
           </form>
         </CardContent>

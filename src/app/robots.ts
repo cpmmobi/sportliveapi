@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: ['/api/', '/_next/', '/admin/', '/private/'],
     },
-    sitemap: 'https://www.sportstreamhd.com/sitemap.xml',
+    sitemap: 'https://www.sportliveapi.com/sitemap.xml',
   }
 }

@@ -1,0 +1,1466 @@
+{
+  "hero": {
+    "badge": "🌍 Leading Sports Streaming Technology Provider",
+    "title": "Professional Sports Streaming Services",
+    "subtitle": "Empowering Sports Content Creation",
+    "description": "Providing flexible integration methods including RTMP push, streaming links, and data APIs, covering 12 major sports categories including football, basketball, racing, and ice hockey.",
+    "disclaimer": "Focused on technical service provision, not involved in content copyright business",
+    "cta_primary": "Get Trial & Quote",
+    "api_demo_title": "API Interface Example"
+  },
+  "features": {
+    "global_coverage": {
+      "title": "Global Coverage",
+      "description": "Streaming media nodes worldwide"
+    },
+    "fast_transmission": {
+      "title": "Ultra-Fast Transmission",
+      "description": "Advanced technical architecture for ultra-low latency streaming experience"
+    },
+    "quality_assurance": {
+      "title": "Quality Assurance",
+      "description": "Enterprise-grade technical support providing stable and high-quality streaming services"
+    },
+    "rtmp": {
+      "title": "RTMP Streaming Service",
+      "description": "Professional RTMP streaming solution",
+      "useCases": {
+        "title": "Use Cases",
+        "items": {
+          "0": "Gaming Live Streaming",
+          "1": "Education & Training",
+          "2": "Enterprise Meetings",
+          "3": "Event Broadcasting"
+        }
+      },
+      "features": {
+        "title": "Core Features",
+        "items": {
+          "0": "Low Latency Streaming",
+          "1": "Multi-bitrate Support",
+          "2": "Auto Reconnection",
+          "3": "Stream Monitoring"
+        }
+      }
+    },
+    "streaming": {
+      "title": "Streaming Link Service",
+      "description": "Provide stable streaming link service",
+      "useCases": {
+        "title": "Use Cases",
+        "items": {
+          "0": "Video On Demand",
+          "1": "Live Viewing",
+          "2": "Mobile Playback",
+          "3": "Multi-screen Interaction"
+        }
+      },
+      "features": {
+        "title": "Core Features",
+        "items": {
+          "0": "Multi-format Support",
+          "1": "Adaptive Bitrate",
+          "2": "CDN Acceleration",
+          "3": "Playback Analytics"
+        }
+      }
+    }
+  },
+  "navigation": {
+    "home": "Home",
+    "services": "Services",
+    "faq": "FAQ",
+    "about": "About Us",
+    "disclaimer": "Disclaimer",
+    "privacy": "Privacy Policy"
+  },
+  "contact": {
+    "meta": {
+      "title": "Contact Us",
+      "description": "Contact us for support or inquiries."
+    },
+    "title": "Contact Us",
+    "description": "We are here to help. Please fill out the form below and we will get back to you as soon as possible.",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "contactMethod": "Contact Method",
+      "message": "Message",
+      "submit": "Submit"
+    },
+    "promises": {
+      "quickTrial": {
+        "title": "Quick Trial",
+        "description": "Experience our service with a quick trial."
+      },
+      "freeDemo": {
+        "title": "Free Demo",
+        "description": "Request a free, personalized demo."
+      },
+      "professionalQuote": {
+        "title": "Professional Quote",
+        "description": "Receive a detailed, no-obligation quote."
+      }
+    },
+    "whyChooseUs": {
+      "title": "Why Choose Us",
+      "reasons": [
+        {
+          "title": "Expert Team",
+          "description": "Our team consists of industry experts with years of experience."
+        },
+        {
+          "title": "Customized Solutions",
+          "description": "We provide solutions tailored to your specific needs."
+        },
+        {
+          "title": "Fast Response",
+          "description": "We pride ourselves on our quick and efficient customer service."
+        },
+        {
+          "title": "Data Security",
+          "description": "Your data is safe with us. We adhere to the highest security standards."
+        },
+        {
+          "title": "Customer First",
+          "description": "We always put our customers' needs first."
+        }
+      ]
+    },
+    "serviceProcess": {
+      "title": "Service Process",
+      "steps": [
+        {
+          "title": "Requirement Analysis",
+          "description": "We analyze your specific needs and technical requirements"
+        },
+        {
+          "title": "Solution Design",
+          "description": "Create a customized technical solution and integration plan"
+        },
+        {
+          "title": "Technical Demo",
+          "description": "Provide live demonstration and trial access"
+        },
+        {
+          "title": "Integration Support",
+          "description": "Complete integration support and ongoing technical assistance"
+        }
+      ]
+    },
+    "urgentContact": {
+      "title": "Need Urgent Support?",
+      "description": "For urgent technical issues or immediate consultation needs, contact us directly",
+      "email": "business@sportliveapi.com",
+      "workingHours": "24/7 Support Available"
+    },
+    "validation": {
+      "nameRequired": "Name is required",
+      "emailRequired": "Email is required",
+      "emailInvalid": "Please enter a valid email address",
+      "contactMethodRequired": "Contact method is required",
+      "messageRequired": "Message is required",
+      "sportsRequired": "Please select at least one sport",
+      "useCaseRequired": "Please select a use case"
+    },
+    "sports": {
+      "football": "⚽ Football",
+      "basketball": "🏀 Basketball",
+      "baseball": "⚾ Baseball",
+      "tennis": "🎾 Tennis",
+      "esports": "🎮 Esports",
+      "pingpong": "🏓 Table Tennis",
+      "badminton": "🏸 Badminton",
+      "volleyball": "🏐 Volleyball",
+      "cricket": "🏏 Cricket",
+      "snooker": "🎱 Snooker",
+      "racing": "🏎️ Racing",
+      "hockey": "🏒 Ice Hockey"
+    },
+    "useCase": {
+      "label": "Use Case",
+      "websiteApp": "Website/App Sports Streaming Integration",
+      "obsStreaming": "OBS Streaming (Streamer Only)",
+      "bothScenarios": "Both Scenarios Above"
+    },
+    "streamerType": {
+      "label": "Streamer Type",
+      "team": "Team/Enterprise",
+      "individual": "Individual Streamer"
+    },
+    "privacy": {
+      "title": "Privacy Protection",
+      "description": "We respect your privacy and will not share your information with third parties."
+    },
+    "name": "Email",
+    "contactMethod": "Contact Method",
+    "contactMethodDescription": "Telegram format: @username (e.g. @alice_dev), Whatsapp format: number (e.g. 12345678)",
+    "sportsInterests": {
+      "label": "Sports of Interest"
+    },
+    "platformInfo": {
+      "label": "Website/App or Platform Information (Optional)"
+    },
+    "platformInfoPlaceholder": "Please enter your platform name for better communication",
+    "requirements": {
+      "label": "Detailed Requirements (Optional)"
+    },
+    "requirementsPlaceholder": "Please describe your specific needs, expected traffic, tech stack, etc...",
+    "individualWarning": "Note: Our current streaming solution primarily serves teams and enterprises. Individual users may face higher costs.",
+    "submit": "Submit Inquiry",
+    "submitting": "Submitting...",
+    "success": "Form submitted successfully!",
+    "successMessage": "Thank you for your inquiry! We will contact you within 24 hours.",
+    "nextSteps": {
+      "title": "Next Steps",
+      "step1": "Our technical team will review your requirements",
+      "step2": "Contact you within 24 hours via your provided contact method",
+      "step3": "Provide customized technical solutions and quotes",
+      "step4": "Arrange technical integration and testing environment"
+    },
+    "contactForm": {
+      "validation": {
+        "nameRequired": "Name is required",
+        "emailRequired": "Email is required",
+        "emailInvalid": "Please enter a valid email address",
+        "contactMethodRequired": "Contact method is required",
+        "messageRequired": "Message is required"
+      },
+      "sportsOptions": {
+        "football": "Football",
+        "basketball": "Basketball",
+        "tennis": "Tennis",
+        "baseball": "Baseball",
+        "volleyball": "Volleyball",
+        "badminton": "Badminton",
+        "tabletennis": "Table Tennis",
+        "golf": "Golf",
+        "racing": "Racing",
+        "icehockey": "Ice Hockey",
+        "esports": "E-sports",
+        "other": "Other"
+      },
+      "integrationOptions": {
+        "rtmp": "RTMP Push",
+        "streaming": "Streaming Links",
+        "api": "Data API",
+        "custom": "Custom Integration"
+      },
+      "streamerTypes": {
+        "individual": "Individual Streamer",
+        "team": "Team/Enterprise"
+      },
+      "streamerScales": {
+        "small": "1-10 people",
+        "medium": "11-50 people",
+        "large": "50+ people"
+      },
+      "labels": {
+        "interestedSports": "Interested Sports",
+        "integrationType": "Integration Type",
+        "streamerType": "Streamer Type",
+        "streamerScale": "Streamer Scale",
+        "websiteInfo": "Website/App or Platform Info (Optional)",
+        "websitePlaceholder": "Please enter your platform name for better communication",
+        "detailedRequirements": "Detailed Requirements (Optional)",
+        "requirementsPlaceholder": "Please describe your specific needs, expected traffic, tech stack, etc..."
+      },
+      "messages": {
+         "submitting": "Submitting...",
+         "submitSuccess": "Form submitted successfully!",
+         "submitError": "Submission failed, please try again",
+         "thankYou": "Thank you for your inquiry!",
+         "followUp": "We will contact you within 24 hours to discuss your needs in detail.",
+         "privacyNote": "We respect your privacy and will not share your information with third parties.",
+         "individualNote": "Note: Our current streaming solution is primarily designed for teams and enterprise clients. Individual users may find the cost slightly higher."
+       },
+       "sports": {
+         "football": "⚽ Football",
+         "basketball": "🏀 Basketball",
+         "baseball": "⚾ Baseball",
+         "tennis": "🎾 Tennis",
+         "esports": "🎮 E-sports",
+         "pingpong": "🏓 Table Tennis",
+         "badminton": "🏸 Badminton",
+         "volleyball": "🏐 Volleyball",
+         "cricket": "🏏 Cricket",
+         "snooker": "🎱 Snooker",
+         "racing": "🏎️ Racing",
+         "hockey": "🏒 Ice Hockey"
+       },
+       "useCase": {
+         "label": "Use Case",
+         "websiteApp": "Website/App Live Sports Integration",
+         "obsStreaming": "OBS Streaming for Streamers Only",
+         "bothScenarios": "Both Scenarios Above"
+       },
+       "streamerType": {
+         "label": "Streamer Scale",
+         "team": "Streamer Team",
+         "individual": "Individual Streamer",
+         "individualWarning": "Note: Our current streaming solution is primarily designed for teams and enterprise clients. Individual users may find the cost slightly higher."
+       },
+       "sportsInterests": {
+         "label": "Interested Sports"
+       },
+       "platformInfo": {
+         "label": "Website/App or Platform Info (Optional)",
+         "placeholder": "Please enter your platform name for better communication"
+       },
+       "requirements": {
+         "label": "Detailed Requirements (Optional)",
+         "placeholder": "Please describe your specific needs, expected traffic, tech stack, etc..."
+       },
+       "contactMethod": {
+         "description": "Telegram format: @username (e.g. @alice_dev), Whatsapp format: number (e.g. 12345678)"
+       },
+       "privacy": {
+         "title": "Privacy Protection Commitment",
+         "description": "We value your privacy and only collect necessary contact information. Your information will be strictly confidential and used only for providing technical services."
+       },
+       "validation": {
+          "sportsRequired": "Please select at least one sport",
+          "useCaseRequired": "Please select a use case"
+        },
+        "contactMethodDescription": "Telegram format: @username (e.g. @alice_dev), Whatsapp format: number (e.g. 12345678)",
+        "individualWarning": "Note: Our current streaming solution is primarily designed for teams and enterprise clients. Individual users may find the cost slightly higher.",
+        "platformInfoPlaceholder": "Please enter your platform name for better communication",
+        "requirementsPlaceholder": "Please describe your specific needs, expected traffic, tech stack, etc...",
+        "title": "Get Trial & Quote",
+        "name": "Name",
+        "contactMethod": "Contact Method",
+        "submit": "Submit",
+        "submitting": "Submitting...",
+        "success": "Thank you!",
+        "successMessage": "Thank you for your inquiry! Our professional team will contact you within 24 hours to provide you with customized solutions and quotes.",
+        "nextSteps": {
+          "title": "What happens next?",
+          "step1": "Our technical consultant will contact you to understand detailed requirements",
+          "step2": "Create a dedicated technical solution and quote for you",
+          "step3": "Arrange technical demonstration and trial",
+          "step4": "Provide complete integration support"
+        }
+    }
+  },
+  "common": {
+    "get_quote": "Get Trial & Quote",
+    "contact_us": "Contact Us",
+    "learn_more": "Learn More"
+  },
+  "services": {
+    "hero": {
+      "title": "Professional Sports Streaming Services",
+      "description": "Providing flexible integration methods including RTMP push, streaming links, and data APIs, covering 12 major sports categories including football, basketball, racing, and ice hockey.",
+      "cta": "Get Trial & Quote"
+    },
+    "features": {
+      "title": "Core Service Features",
+      "description": "Based on advanced technical architecture, providing stable and reliable streaming media solutions",
+      "items": {
+        "0": {
+          "title": "RTMP Streaming Service",
+          "description": "Professional streaming solution supporting multiple encoding formats and transmission protocols",
+          "details": {
+            "0": "Support H.264/H.265 Encoding",
+            "1": "Adaptive Bitrate Control",
+            "2": "Auto-reconnection on Disconnect",
+            "3": "Real-time Quality Monitoring"
+          }
+        },
+        "1": {
+          "title": "Streaming Link Service",
+          "description": "High-quality streaming media playback solution supporting multiple playback protocols",
+          "details": {
+            "0": "Support HLS/DASH Protocols",
+            "1": "Multi-bitrate Adaptive",
+            "2": "Global CDN Acceleration",
+            "3": "Playback Quality Statistics"
+          }
+        },
+        "2": {
+          "title": "Data API Service",
+          "description": "Rich sports data APIs covering 12 major sports categories",
+          "details": {
+            "0": "Real-time Score Data",
+            "1": "Schedule & Results",
+            "2": "Team & Player Statistics",
+            "3": "Historical Data Query"
+          }
+        },
+        "3": {
+          "title": "Data Analytics",
+          "description": "Deep data analysis and insights",
+          "details": {
+            "0": "Real-time data processing",
+            "1": "Advanced analytics algorithms",
+            "2": "Visual reporting"
+          }
+        },
+        "4": {
+          "title": "Cloud Storage",
+          "description": "Secure and reliable cloud storage service",
+          "details": {
+            "0": "Multi-layer backup protection",
+            "1": "Elastic scaling",
+            "2": "Global CDN acceleration"
+          }
+        }
+      }
+    },
+    "solutions": {
+      "title": "Three Service Types",
+      "description": "Providing flexible technical integration solutions for different business scenarios",
+      "rtmp": {
+        "title": "RTMP Streaming Service",
+        "description": "Professional real-time streaming media push protocol supporting low-latency live streaming",
+        "useCases": {
+          "title": "Use Cases",
+          "items": {
+            "0": "Sports Event Live Streaming",
+            "1": "Gaming Competition Live Streaming",
+            "2": "Education & Training Live Streaming",
+            "3": "Enterprise Meeting Live Streaming"
+          }
+        },
+        "features": {
+          "title": "Core Features",
+          "items": {
+            "0": "Low Latency Transmission",
+            "1": "High Definition Quality Support",
+            "2": "Auto-reconnection Mechanism",
+            "3": "Multi-bitrate Adaptive"
+          }
+        }
+      },
+      "streaming": {
+        "title": "Streaming Media Service",
+        "description": "Comprehensive streaming media solution supporting multiple playback formats",
+        "useCases": {
+          "title": "Use Cases",
+          "items": {
+            "0": "Web Player Integration",
+            "1": "Mobile App Integration",
+            "2": "Smart TV Applications",
+            "3": "Third-party Platform Integration"
+          }
+        },
+        "features": {
+          "title": "Service Features",
+          "items": {
+            "0": "Multiple Format Support",
+            "1": "Global CDN Acceleration",
+            "2": "Adaptive Bitrate Streaming",
+            "3": "Real-time Quality Monitoring"
+          }
+        }
+      },
+      "api": {
+        "title": "Data API Service",
+        "description": "Rich sports data interface covering comprehensive match information and statistics",
+        "useCases": {
+          "title": "Use Cases",
+          "items": {
+            "0": "Sports News Websites",
+            "1": "Fantasy Sports Platforms",
+            "2": "Betting Analysis Tools",
+            "3": "Sports Statistics Applications"
+          }
+        },
+        "features": {
+          "title": "Data Features",
+          "items": {
+            "0": "Real-time Score Updates",
+            "1": "Comprehensive Match Data",
+            "2": "Historical Statistics",
+            "3": "Multi-language Support"
+          }
+        }
+      }
+    },
+    "specs": {
+      "title": "Technical Specifications",
+      "description": "Supporting mainstream encoding standards and transmission protocols for optimal compatibility",
+      "categories": {
+        "0": {
+          "title": "Video Encoding",
+          "items": {
+            "0": "H.264 (AVC)",
+            "1": "H.265 (HEVC)",
+            "2": "VP8/VP9",
+            "3": "AV1"
+          }
+        },
+        "1": {
+          "title": "Audio Encoding",
+          "items": {
+            "0": "AAC",
+            "1": "MP3",
+            "2": "Opus",
+            "3": "AC-3"
+          }
+        },
+        "2": {
+          "title": "Transmission Protocols",
+          "items": {
+            "0": "RTMP/RTMPS",
+            "1": "HLS",
+            "2": "DASH",
+            "3": "WebRTC"
+          }
+        },
+        "3": {
+          "title": "Performance Monitoring",
+          "items": {
+            "0": "Real-time performance monitoring",
+            "1": "Exception alerts",
+            "2": "Performance optimization suggestions",
+            "3": "Load balancing"
+          }
+        },
+        "4": {
+          "title": "Security Protection",
+          "items": {
+            "0": "DDoS protection",
+            "1": "Access control",
+            "2": "Data encryption",
+            "3": "SSL Certificate"
+          }
+        }
+      }
+    },
+    "serviceFeatures": {
+      "0": {
+        "title": "Global Deployment",
+        "description": "Global distributed streaming media infrastructure",
+        "details": {
+          "0": "Cross-continental service node coverage",
+          "1": "Multi-layer CDN architecture deployment",
+          "2": "Intelligent routing scheduling"
+        }
+      },
+      "1": {
+        "title": "Ultra-fast Response",
+        "description": "Sub-second latency transmission experience",
+        "details": {
+          "0": "Advanced streaming media engine",
+          "1": "Network link optimization",
+          "2": "Real-time performance monitoring"
+        }
+      },
+      "2": {
+        "title": "Reliable Guarantee",
+        "description": "Enterprise-level service quality commitment",
+        "details": {
+          "0": "24/7 system monitoring",
+          "1": "Multiple disaster recovery backup",
+          "2": "Rapid fault recovery"
+        }
+      },
+      "3": {
+        "title": "Event Coverage",
+        "description": "89.5% international event resource coverage",
+        "details": {
+          "0": "Rich event content library",
+          "1": "Professional operation team",
+          "2": "Continuous optimization and upgrade"
+        }
+      }
+    },
+    "technicalSpecs": {
+      "0": {
+        "category": "Video Encoding Standards",
+        "items": {
+          "0": "H.264/AVC",
+          "1": "H.265/HEVC",
+          "2": "VP8/VP9",
+          "3": "AV1"
+        }
+      },
+      "1": {
+        "category": "Transmission Protocol Support",
+        "items": {
+          "0": "RTMP/RTMPS",
+          "1": "HLS (m3u8)",
+          "2": "DASH",
+          "3": "WebRTC"
+        }
+      },
+      "2": {
+        "category": "Video Quality Specifications",
+        "items": {
+          "0": "4K Ultra HD (3840×2160)",
+          "1": "Full HD (1920×1080)",
+          "2": "HD (1280×720)",
+          "3": "Adaptive Bitrate"
+        }
+      },
+      "3": {
+        "category": "Audio Encoding",
+        "items": {
+          "0": "AAC",
+          "1": "MP3",
+          "2": "Opus",
+          "3": "Multi-language Audio Channels"
+        }
+      }
+    },
+    "integrationSteps": {
+      "0": {
+        "title": "Business Requirements Analysis",
+        "description": "In-depth understanding of customer business scenarios and technical architecture requirements",
+        "duration": "1-2 days"
+      },
+      "1": {
+        "title": "Technical Interface Integration",
+        "description": "Provide complete API documentation and professional technical guidance",
+        "duration": "1-2 days"
+      },
+      "2": {
+        "title": "System Testing and Verification",
+        "description": "Comprehensive functional testing and performance verification",
+        "duration": "1-2 days"
+      },
+      "3": {
+        "title": "Production Environment Deployment",
+        "description": "Officially launch stable streaming media services",
+        "duration": "Instant"
+      }
+    },
+    "useCases": {
+      "0": {
+        "title": "Mobile Sports Applications",
+        "description": "Provide high-quality real-time streaming media solutions for sports mobile products",
+        "features": {
+          "0": "Multiple resolution levels",
+          "1": "Intelligent bitrate adaptation",
+          "2": "Mobile network optimization",
+          "3": "User behavior analysis"
+        }
+      },
+      "1": {
+        "title": "Sports Portal Websites",
+        "description": "Integrate professional-grade live streaming capabilities for sports news websites",
+        "features": {
+          "0": "Cross-platform player",
+          "1": "HTML5 compatibility",
+          "2": "Responsive layout",
+          "3": "SEO optimization"
+        }
+      },
+      "2": {
+        "title": "Professional Broadcasting Studios",
+        "description": "Provide clean, high-definition, comprehensive coverage, low-latency signal sources for sports commentary teams",
+        "features": {
+          "0": "Clean signal source",
+          "1": "Ultra-high definition quality",
+          "2": "Global event coverage",
+          "3": "Millisecond-level latency"
+        }
+      },
+      "3": {
+        "title": "Esports Event Platforms",
+        "description": "Provide professional-grade streaming media technical support for esports events",
+        "features": {
+          "0": "Ultra-low latency transmission",
+          "1": "High concurrency support",
+          "2": "Multi-signal source access",
+          "3": "Real-time interaction support"
+        }
+      }
+    },
+    "streamingFormats": {
+      "title": "Supported Formats:",
+      "items": {
+        "0": "HLS (m3u8) - iOS/Web Preferred",
+        "1": "DASH - Adaptive Bitrate",
+        "2": "RTMP - Traditional Players",
+        "3": "WebRTC - Ultra Low Latency"
+      }
+    },
+    "scenarios": {
+      "title": "Application Scenarios",
+      "description": "Providing professional technical support for different types of sports content platforms",
+      "items": {
+        "0": {
+          "title": "Sports Media Platforms",
+          "description": "Providing live streaming and on-demand services for sports news websites and applications",
+          "features": {
+            "0": "Multiple concurrent live streams",
+            "1": "Event replay functionality",
+            "2": "Highlight clip editing",
+            "3": "Real-time data display"
+          }
+        },
+        "1": {
+          "title": "Esports Platforms",
+          "description": "Supporting esports event streaming and gaming content creation",
+          "features": {
+            "0": "Ultra-low latency streaming",
+            "1": "Multi-angle switching",
+            "2": "Interactive chat support",
+            "3": "Event data statistics"
+          }
+        },
+        "2": {
+          "title": "Education & Training",
+          "description": "Online distribution of sports education and training videos",
+          "features": {
+            "0": "Course recording & playback",
+            "1": "Technical movement analysis",
+            "2": "Remote coaching live streams",
+            "3": "Learning progress tracking"
+          }
+        },
+        "3": {
+          "title": "Enterprise Meetings",
+          "description": "Professional enterprise video conferencing solution",
+          "features": {
+            "0": "Multi-party meetings",
+            "1": "Screen sharing",
+            "2": "Meeting recording",
+            "3": "Security encryption"
+          }
+        }
+      }
+    },
+    "integration": {
+      "title": "Integration Process",
+      "description": "Simplified integration process to quickly launch your streaming media services",
+      "steps": {
+        "0": {
+          "title": "Requirements Analysis",
+          "description": "Understanding your business needs and technical requirements",
+          "duration": "1-2 business days"
+        },
+        "1": {
+          "title": "Solution Design",
+          "description": "Developing customized technical solutions",
+          "duration": "2-3 business days"
+        },
+        "2": {
+          "title": "API Integration",
+          "description": "Providing API documentation and technical support",
+          "duration": "3-5 business days"
+        },
+        "3": {
+          "title": "Testing & Launch",
+          "description": "Comprehensive testing to ensure stable service operation",
+          "duration": "1-2 business days"
+        }
+      }
+    },
+    "cta": {
+      "title": "Start Using Our Services",
+      "description": "Contact us for professional technical support and customized solutions",
+      "contact": "Contact Us",
+      "button": "Contact Us",
+      "documentation": "View Technical Documentation"
+    }
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "description": "Find answers to common questions about our sports live API service",
+    "categories": {
+      "title": "Question Categories",
+      "all": {
+        "name": "All Questions",
+        "count": "Show all questions"
+      },
+      "general": {
+        "name": "General Questions",
+        "count": "General questions"
+      },
+      "technical": {
+        "name": "Technical Questions",
+        "count": "Technical questions"
+      },
+      "pricing": {
+        "name": "Pricing Questions",
+        "count": "Pricing questions"
+      },
+      "support": {
+        "name": "Support Questions",
+        "count": "Support questions"
+      }
+    },
+    "featured": {
+      "title": "Popular Questions"
+    },
+    "list": {
+      "allQuestions": "All Questions",
+      "foundCount": "Found related questions"
+    },
+    "items": {
+      "0": {
+        "question": "What is Sports Live API?",
+        "answer": "Sports Live API is a professional real-time sports data interface service that provides live match streaming, event data, team information and other features to help developers quickly build sports applications."
+      },
+      "1": {
+        "question": "How to get started with the API?",
+        "answer": "First register an account to get an API key, then check our development documentation and integrate according to the sample code. We provide SDK support for multiple programming languages."
+      },
+      "2": {
+        "question": "Which sports are supported?",
+        "answer": "We support mainstream sports such as football, basketball, tennis, baseball, ice hockey, covering major leagues and events worldwide."
+      },
+      "3": {
+        "question": "Are there usage limits for the API?",
+        "answer": "Different packages have different call frequency limits. The free version allows 100 requests per minute, while paid versions provide higher call quotas and priority support."
+      },
+      "4": {
+        "question": "How to get technical support?",
+        "answer": "We provide 24/7 technical support. You can get help through email, online customer service or technical forums. Paid users enjoy priority technical support services."
+      },
+      "5": {
+        "question": "How often is data updated?",
+        "answer": "Our data is updated in real-time, with multiple updates per second during live matches to ensure you get the latest match status and statistics."
+      },
+      "6": {
+        "question": "Do you support historical data queries?",
+        "answer": "Yes, we provide comprehensive historical data query functionality, including past season match results, player statistics, team performance and other data."
+      },
+      "7": {
+        "question": "How is API stability guaranteed?",
+        "answer": "We use distributed architecture and multiple backup mechanisms to ensure 99.9% service availability. We also provide load balancing and failover functionality."
+      },
+      "8": {
+        "question": "How do you handle high concurrent requests?",
+        "answer": "Our system supports high concurrent access, using CDN acceleration and intelligent caching technology to ensure stable and fast service even during peak periods."
+      },
+      "9": {
+        "question": "Do you offer a free trial?",
+        "answer": "Yes, we provide a free trial package that includes basic features and limited API calls, allowing you to fully experience our service."
+      },
+      "10": {
+        "question": "How to upgrade or change plans?",
+        "answer": "You can upgrade or change plans anytime in the control panel. Changes take effect immediately and fees are calculated proportionally."
+      }
+    },
+    "cta": {
+      "title": "Have other questions?",
+      "description": "If you haven't found the answer you're looking for, please feel free to contact our technical support team",
+      "button": "Contact Technical Support",
+      "email": "Send email to business@sportliveapi.com",
+      "workingHours": "Working hours: Monday to Friday 9:00-18:00 (Beijing Time)"
+    }
+  },
+  "about": {
+    "meta": {
+      "title": "About Us",
+      "description": "Learn more about our company, team, and background."
+    },
+    "hero": {
+      "title": "We are a creative agency",
+      "description": "We are a passionate team of designers, developers, and strategists who are committed to helping our clients achieve their goals. We believe in the power of creativity and technology to make a difference in the world."
+    },
+    "experience": {
+      "title": "Professional Team Experience",
+      "description1": "Our core team members come from well-known sports technology companies such as Onefootball, Zhibo8, and SportRadar, with rich experience in sports streaming technology development and operations.",
+      "description2": "Since 2014, we have been deeply involved in the sports streaming field, serving hundreds of clients worldwide, covering various scenarios from small live streaming platforms to large sports events.",
+      "description3": "We understand the technical challenges in the sports streaming field and are committed to providing the most professional and reliable technical solutions for our clients.",
+      "stats": {
+        "founded": "Company Founded",
+        "years": "Years Experience",
+        "members": "Team Members"
+      }
+    },
+    "team": {
+      "title": "Team Background",
+      "description": "Our team members come from top sports technology companies with rich industry experience and technical expertise.",
+      "companies": {
+        "onefootball": {
+          "description": "Europe's largest football media platform with over 100 million users worldwide",
+          "expertise": "Live streaming technology & user experience"
+        },
+        "zhibo8": {
+          "name": "Zhibo8",
+          "icon": "直",
+          "description": "China's leading sports live streaming platform serving tens of millions of users",
+          "expertise": "High-concurrency streaming & CDN optimization"
+        },
+        "sportradar": {
+          "description": "Global sports data and technology service provider",
+          "expertise": "Sports data processing & API development"
+        }
+      }
+    },
+    "promise": {
+      "title": "Our Service Promise",
+      "description": "We are committed to providing the highest quality sports streaming technology services with professional technical support and reliable service guarantee.",
+      "features": {
+        "enterprise": {
+          "title": "Enterprise-grade Service",
+          "description": "Professional technical architecture and service standards to ensure system stability and reliability"
+        },
+        "response": {
+          "title": "Rapid Response",
+          "description": "24/7 technical support team providing timely problem resolution and technical consultation"
+        },
+        "technical": {
+          "title": "Technical Expertise",
+          "description": "Deep technical accumulation in streaming media field, continuously optimizing service quality"
+        },
+        "global": {
+          "title": "Global Coverage",
+          "description": "Worldwide CDN nodes and technical support providing stable services globally"
+        }
+      }
+    },
+    "technical": {
+      "title": "Technical Expertise",
+      "features": {
+        "streaming": {
+          "title": "Advanced Streaming Technology",
+          "description": "Supporting multiple streaming protocols including RTMP, HLS, WebRTC, providing low-latency, high-quality streaming experience"
+        },
+        "network": {
+          "title": "Global Network Optimization",
+          "description": "Intelligent CDN scheduling and network optimization ensuring stable streaming quality worldwide"
+        },
+        "api": {
+          "title": "Flexible API Integration",
+          "description": "Rich API interfaces and SDK support enabling quick integration and customized development"
+        },
+        "monitoring": {
+          "title": "Real-time Monitoring",
+          "description": "Comprehensive monitoring system providing real-time stream status and quality analysis"
+        }
+      },
+      "stats": {
+        "title": "Technical Indicators",
+        "coverage": "Global Coverage",
+        "latency": "Ultra-low Latency",
+        "quality": "Ultra HD Quality",
+        "team": "Professional Team",
+        "team_value": "50+"
+      }
+    },
+    "cta": {
+      "title": "Ready to Start?",
+      "description": "Contact our professional team to get customized sports streaming solutions and technical support.",
+      "contact": "Contact Us",
+      "button": "Contact Us",
+      "documentation": "View Documentation"
+    }
+  },
+  "sports": {
+    "title": "Complete Coverage of 12 Major Sports Categories",
+    "subtitle": "Covering global mainstream sports events to meet diverse user needs",
+    "description": "Covering global mainstream sports events to meet diverse user needs",
+    "categories": {
+      "0": {
+        "name": "Football",
+        "description": "The world's most popular sport, loved globally",
+        "leaguesCount": "4",
+        "leagues": {
+          "0": "Premier League",
+          "1": "La Liga",
+          "2": "Champions League",
+          "3": "World Cup"
+        }
+      },
+      "1": {
+        "name": "Basketball",
+        "description": "High-intensity competitive sport, popular among young people",
+        "leaguesCount": "3",
+        "leagues": {
+          "0": "NBA",
+          "1": "CBA",
+          "2": "EuroLeague"
+        }
+      },
+      "2": {
+        "name": "Tennis",
+        "description": "Elegant individual competitive sport with high skill requirements",
+        "leaguesCount": "4",
+        "leagues": {
+          "0": "Wimbledon",
+          "1": "French Open",
+          "2": "US Open",
+          "3": "Australian Open"
+        }
+      },
+      "3": {
+        "name": "Baseball",
+        "description": "America's national pastime, strategic team sport",
+        "leaguesCount": "3",
+        "leagues": {
+          "0": "MLB",
+          "1": "NPB",
+          "2": "KBO"
+        }
+      },
+      "4": {
+        "name": "Esports",
+        "description": "Emerging competitive sport, popular choice for young people",
+        "leaguesCount": "4",
+        "leagues": {
+          "0": "League of Legends",
+          "1": "DOTA2",
+          "2": "CS:GO",
+          "3": "Honor of Kings"
+        }
+      },
+      "5": {
+        "name": "Table Tennis",
+        "description": "China's national sport, perfect combination of skill and speed",
+        "leaguesCount": "3",
+        "leagues": {
+          "0": "World Championships",
+          "1": "Olympics",
+          "2": "World Cup"
+        }
+      },
+      "6": {
+        "name": "Badminton",
+        "description": "Light and agile racket sport, popular in Asia",
+        "leaguesCount": "3",
+        "leagues": {
+          "0": "World Championships",
+          "1": "Olympics",
+          "2": "Thomas & Uber Cup"
+        }
+      },
+      "7": {
+        "name": "Volleyball",
+        "description": "Typical representative of team cooperation, highly entertaining",
+        "leaguesCount": "3",
+        "leagues": {
+          "0": "World Championships",
+          "1": "Olympics",
+          "2": "World Cup"
+        }
+      },
+      "8": {
+        "name": "Cricket",
+        "description": "Traditional sport of Commonwealth countries, highly strategic",
+        "leaguesCount": "3",
+        "leagues": {
+          "0": "World Cup",
+          "1": "IPL",
+          "2": "County Championship"
+        }
+      },
+      "9": {
+        "name": "Snooker",
+        "description": "Gentleman's sport requiring extreme precision",
+        "leaguesCount": "4",
+        "leagues": {
+          "0": "World Championship",
+          "1": "UK Championship",
+          "2": "Masters",
+          "3": "China Open"
+        }
+      },
+      "10": {
+        "name": "Racing",
+        "description": "Perfect interpretation of speed and passion",
+        "leaguesCount": "4",
+        "leagues": {
+          "0": "F1",
+          "1": "MotoGP",
+          "2": "WRC",
+          "3": "Le Mans 24 Hours"
+        }
+      },
+      "11": {
+        "name": "Ice Hockey",
+        "description": "King of ice sports, intense competition",
+        "leaguesCount": "3",
+        "leagues": {
+          "0": "NHL",
+          "1": "KHL",
+          "2": "Olympics"
+        }
+      }
+    },
+    "technicalServices": {
+      "title": "Dual Technical Integration Modes",
+      "description": "Flexible technical integration solutions to meet different business scenario needs",
+      "rtmp": {
+        "title": "RTMP Streaming Push",
+        "description": "Clients provide streaming domain, we handle live stream pushing",
+        "codeTitle": "Streaming Integration Example",
+        "codeComment": "Configure streaming parameters",
+        "pushComment": "Configure push parameters",
+        "apiComment": "Query live links corresponding to matches"
+      },
+      "streaming": {
+        "title": "Streaming Link Provision",
+        "description": "Direct provision of playable streaming links, plug-and-play",
+        "codeTitle": "API Query for Match and Streaming Link Correspondence",
+        "codeComment": "Query streaming links corresponding to matches",
+        "apiComment": "Query live links corresponding to matches"
+      }
+    }
+  },
+  "team": {
+    "title": "Experienced Team with Deep Understanding",
+    "description1": "With deep passion for sports, our team has been providing professional services to the Asia-Pacific Chinese market for over <strong>10 years</strong> since <strong>2014</strong>.",
+    "description2": "Our team brings together <strong>dozens of senior sports industry experts</strong>, many members have rich experience from well-known sports technology companies such as <strong>Zhibo8, Onefootball, SportRadar</strong>.",
+    "companiesTitle": "Core Team Background Companies",
+    "companies": {
+      "0": {
+        "name": "Zhibo8",
+        "description": "Leading domestic sports information service platform"
+      },
+      "1": {
+        "name": "Onefootball",
+        "description": "International renowned football content media platform"
+      },
+      "2": {
+        "name": "SportRadar",
+        "description": "Global sports data and technology solution provider"
+      }
+    },
+    "consultButton": "Consult Technical Experts",
+    "learnMoreButton": "Learn More",
+    "achievements": {
+      "0": {
+        "title": "Ten Years of Deep Experience",
+        "description": "Focused on sports technology since 2014",
+        "detail": "Continuous service to Asia-Pacific Chinese market"
+      },
+      "1": {
+        "title": "Expert Team",
+        "description": "Dozens of senior sports industry experts",
+        "detail": "Gathering elites from renowned sports tech companies"
+      },
+      "2": {
+        "title": "Global Coverage",
+        "description": "Streaming nodes worldwide",
+        "detail": "89.5% international league coverage"
+      },
+      "3": {
+        "title": "Technical Advantages",
+        "description": "Leading streaming solutions",
+        "detail": "Ultra-low latency, ultra-high definition"
+      }
+    },
+    "whyChooseUs": {
+      "title": "Why Choose Us",
+      "subtitle": "Professional, stable, and trustworthy sports streaming technology solution provider"
+    },
+    "stats": {
+      "0": {
+        "number": "10+",
+        "label": "Years of Deep Service Experience",
+        "description": "Focus on enterprise-level technical services"
+      },
+      "1": {
+        "number": "12+",
+        "label": "Major Sports Categories Coverage",
+        "description": "Deep insight into business needs"
+      },
+      "2": {
+        "number": "89.5%",
+        "label": "International League Coverage",
+        "description": "Agile response to customer demands"
+      },
+      "3": {
+        "number": "24/7",
+        "label": "Technical Support Guarantee",
+        "description": "Efficient communication and rapid execution"
+      }
+    },
+    "services": {
+      "0": {
+        "title": "Service Quality Commitment",
+        "description": "Provide comprehensive technical support"
+      },
+      "1": {
+        "title": "Professional Technical Guarantee",
+        "description": "360-degree technical service guarantee"
+      },
+      "2": {
+        "title": "Global Service Network",
+        "description": "Coverage of international sports events"
+      }
+    },
+    "globalService": "Cross-regional borderless service",
+    "experienceButton": "Experience Professional Service Now",
+    "serviceCommitment": {
+      "title": "Service Quality Commitment",
+      "items": {
+        "0": {
+          "title": "Focus on enterprise-level technical services",
+          "description": "Deep insight into business needs"
+        },
+        "1": {
+          "title": "Agile response to customer demands",
+          "description": "Efficient communication and rapid execution"
+        },
+        "2": {
+          "title": "Provide comprehensive technical support",
+          "description": "360-degree technical service guarantee"
+        },
+        "3": {
+          "title": "Coverage of international sports events",
+          "description": "Cross-regional borderless service"
+        }
+      }
+    }
+  },
+  "streamingFormats": {
+    "title": "Supported Formats:",
+    "items": {
+      "hls": "HLS (HTTP Live Streaming) - Adaptive streaming protocol developed by Apple",
+      "dash": "DASH (Dynamic Adaptive Streaming) - International standard adaptive streaming protocol",
+      "rtmp": "RTMP (Real-Time Messaging Protocol) - Real-time messaging protocol",
+      "webrtc": "WebRTC (Web Real-Time Communication) - Web real-time communication technology"
+    }
+  },
+  "footer": {
+    "company": {
+      "description": "Professional sports streaming technology service provider, offering stable and diversified global sports event streaming technology integration services for sports product developers.",
+      "cta": "Get Trial & Quote"
+    },
+    "sections": {
+      "core_services": "Core Services",
+      "resources": "Resources",
+      "support": "Technical Support"
+    },
+    "navigation": {
+      "services": "Services",
+      "about": "About Us",
+      "faq": "FAQ",
+      "disclaimer": "Disclaimer",
+      "privacy": "Privacy Policy",
+      "contact": "Contact Us"
+    },
+    "sports": {
+      "title": "Supported Sports",
+      "items": {
+        "football": "⚽ Football",
+        "basketball": "🏀 Basketball",
+        "baseball": "⚾ Baseball",
+        "tennis": "🎾 Tennis",
+        "esports": "🎮 Esports",
+        "pingpong": "🏓 Table Tennis",
+        "badminton": "🏸 Badminton",
+        "volleyball": "🏐 Volleyball",
+        "cricket": "🏏 Cricket",
+        "snooker": "🎱 Snooker",
+        "racing": "🏎️ Racing",
+        "hockey": "🏒 Ice Hockey"
+      }
+    },
+    "technical_services": {
+      "title": "Technical Service Types",
+      "rtmp": {
+        "title": "RTMP Streaming Service",
+        "description": "Clients provide streaming domain, we push live streams and provide API for match relationship queries"
+      },
+      "streaming": {
+        "title": "Streaming Link Service",
+        "description": "Provide directly playable streaming links and API for match relationship queries"
+      }
+    },
+    "team": {
+      "title": "Professional Team That Understands You",
+      "description": "With a passion for sports events, our team has been serving the Chinese-speaking regions in Asia for over 10 years since 2014. Our team brings together dozens of senior sports industry professionals, many with experience from Zhibo8, OneFootball, SportRadar, and other companies."
+    },
+    "bottom": {
+      "copyright": "© 2025 SportLiveAPI. All rights reserved.",
+      "payment": "Payment Methods: BTC, ETH, USDT, USDC and other cryptocurrencies",
+      "status": "Service Status: Running Normally"
+    }
+  },
+  "disclaimer": {
+    "title": "Disclaimer",
+    "lastUpdated": "Last Updated: January 2025",
+    "serviceNature": {
+      "title": "Service Nature",
+      "description1": "SportLiveAPI is a technology company focused on ",
+      "technicalService": "sports live streaming technical services",
+      "description2": ". We provide technical access, data APIs, and related technical support services for sports event live streaming.",
+      "importantNotice": "Important Notice: ",
+      "scopeLimit": "We do not participate in any sports content copyright operations, do not provide event copyright licensing, and do not engage in sports betting related business."
+    },
+    "copyright": {
+      "title": "Copyright Responsibility",
+      "clientResponsibility": {
+        "title": "Client Responsibility",
+        "items": {
+          "0": "Ensure legal rights to broadcast sports content",
+          "1": "Comply with local laws, regulations, and copyright requirements",
+          "2": "Bear full legal responsibility for copyright issues",
+          "3": "Ensure use of our technical services complies with local legal requirements"
+        }
+      },
+      "ourPosition": {
+        "title": "Our Position",
+        "items": {
+          "0": "Only provide technical services, not involved in content copyright matters",
+          "1": "Not responsible for the legality of client service usage",
+          "2": "Reserve the right to terminate services upon discovering illegal use",
+          "3": "Actively cooperate with relevant authorities in compliance investigations"
+        }
+      }
+    },
+    "serviceLimitations": {
+      "title": "Service Limitations",
+      "technical": {
+        "title": "Technical Limitations",
+        "items": {
+          "0": "Network environment may affect service quality",
+          "1": "Third-party service dependencies may cause service interruptions",
+          "2": "Technical upgrades may cause brief service unavailability",
+          "3": "100% service availability is not guaranteed"
+        }
+      },
+      "disclaimer": {
+        "title": "Disclaimer Terms",
+        "items": {
+          "0": "Not liable for any losses caused by service usage",
+          "1": "Do not guarantee accuracy and completeness of service content",
+          "2": "Not responsible for the legality of third-party content",
+          "3": "Reserve the right to modify or terminate services at any time"
+        }
+      }
+    },
+    "compliance": {
+      "title": "Compliance Usage",
+      "subtitle": "We are committed to promoting compliant development of sports technical services",
+      "measures": {
+        "copyright": {
+          "title": "Copyright Protection",
+          "description": "Establish comprehensive copyright protection mechanisms to assist clients in compliant use of sports content"
+        },
+        "legal": {
+          "title": "Legal Compliance",
+          "description": "Strictly comply with laws and regulations in all regions to ensure service legality"
+        },
+        "content": {
+          "title": "Content Review",
+          "description": "Establish content review mechanisms to prevent illegal content distribution"
+        },
+        "agreement": {
+          "title": "Agreement Constraints",
+          "description": "Clarify responsibilities of all parties through service agreements and regulate service usage"
+        }
+      }
+    },
+    "contact": {
+      "title": "Contact and Dispute Resolution",
+      "contactUs": {
+        "title": "Contact Us",
+        "description": "For any legal-related questions or assistance needed, please contact us through the following methods:",
+        "email": "Email",
+        "workingHours": "Working Hours",
+        "hours": "Monday to Friday 9:00-18:00 (UTC+8)"
+      },
+      "dispute": {
+        "title": "Dispute Resolution",
+        "description": "In case of disputes, we recommend resolving through the following methods:",
+        "methods": {
+          "0": "Friendly negotiation",
+          "1": "Seek third-party mediation",
+          "2": "Submit to arbitration institutions",
+          "3": "Resolve through legal channels"
+        }
+      }
+    },
+    "updates": {
+      "title": "Statement Updates",
+      "description": "We reserve the right to update this disclaimer at any time. Major changes will be communicated to users through website announcements or email notifications. Continued use of our services indicates your acceptance of the updated statement content.",
+      "recommendation": {
+        "label": "Recommendation",
+        "text": "Please check this page regularly to stay informed of the latest disclaimer content"
+      }
+    }
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "description": "We are committed to protecting your privacy and personal information. This privacy policy explains how we collect, use, and protect your information.",
+    "lastUpdated": "Last Updated: August 2025",
+    "introduction": {
+      "title": "Introduction",
+      "content": "SportLiveAPI is a company focused on sports streaming technology services. We are committed to protecting your privacy and personal information. This privacy policy explains how we collect, use, store, and protect your personal information when you use our services."
+    },
+    "dataCollection": {
+      "title": "Information We Collect",
+      "provided": {
+        "title": "Information You Provide",
+        "items": {
+          "0": "Contact information (name, email address, phone number)",
+          "1": "Business information (company name, industry, business needs)",
+          "2": "Technical requirements and usage scenarios",
+          "3": "Communication records and feedback"
+        }
+      },
+      "automatic": {
+        "title": "Automatically Collected Information",
+        "items": {
+          "0": "Device information (IP address, browser type, operating system)",
+          "1": "Usage data (page views, access time, feature usage)",
+          "2": "Technical logs and performance data",
+          "3": "Cookies and similar tracking technologies"
+        }
+      }
+    },
+    "dataUsage": {
+      "title": "How We Use Your Information",
+      "description": "We use the collected information for the following purposes:",
+      "purposes": {
+        "0": "Provide and maintain our technical services",
+        "1": "Respond to your inquiries and provide customer support",
+        "2": "Improve our services and develop new features",
+        "3": "Send service-related notifications and updates",
+        "4": "Comply with legal obligations and protect our rights",
+        "5": "Conduct data analysis to optimize service performance"
+      }
+    },
+    "dataSharing": {
+      "title": "Information Sharing",
+      "description": "We do not sell, trade, or rent your personal information to third parties. We may share your information only in the following circumstances:",
+      "conditions": {
+        "0": "With your explicit consent",
+        "1": "To comply with legal requirements or court orders",
+        "2": "To protect our rights, property, or safety",
+        "3": "With trusted service providers who assist in our operations (under strict confidentiality agreements)"
+      }
+    },
+    "dataSecurity": {
+      "title": "Data Security",
+      "description": "We implement appropriate technical and organizational measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction. This includes encryption, access controls, regular security assessments, and staff training on data protection."
+    },
+    "userRights": {
+      "title": "Your Rights",
+      "description": "You have the following rights regarding your personal information:",
+      "rights": {
+        "0": "Access: Request access to your personal information we hold",
+        "1": "Correction: Request correction of inaccurate or incomplete information",
+        "2": "Deletion: Request deletion of your personal information",
+        "3": "Portability: Request transfer of your data to another service provider",
+        "4": "Objection: Object to certain processing of your information",
+        "5": "Restriction: Request restriction of processing in certain circumstances"
+      }
+    },
+    "dataRetention": {
+      "title": "Data Retention",
+      "description": "We retain your personal information only for as long as necessary to fulfill the purposes outlined in this privacy policy, comply with legal obligations, resolve disputes, and enforce our agreements. When information is no longer needed, we securely delete or anonymize it."
+    },
+    "childrenPrivacy": {
+      "title": "Children's Privacy",
+      "description": "Our services are not intended for children under 13 years of age. We do not knowingly collect personal information from children under 13. If we become aware that we have collected such information, we will take steps to delete it promptly."
+    },
+    "dataTransfer": {
+      "title": "International Data Transfers",
+      "description": "Your information may be transferred to and processed in countries other than your country of residence. We ensure that such transfers comply with applicable data protection laws and implement appropriate safeguards to protect your information."
+    },
+    "policyUpdates": {
+      "title": "Policy Updates",
+      "description": "We may update this privacy policy from time to time. We will notify you of any material changes by posting the new policy on our website and updating the 'Last Updated' date. Your continued use of our services after such changes constitutes acceptance of the updated policy."
+    },
+    "contact": {
+      "title": "Contact Us",
+      "description": "If you have any questions about this privacy policy or our data practices, please contact us:",
+      "email": "Email: business@sportliveapi.com",
+      "address": "Address: [Company Address]",
+      "phone": "Phone: [Contact Number]",
+      "website": "Website",
+      "contactPage": "Contact Us Page"
+    }
+  }
+}

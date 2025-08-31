@@ -1,0 +1,1430 @@
+{
+  "hero": {
+    "badge": "🌍 領先的體育串流媒體技術提供商",
+    "title": "專業體育串流媒體服務",
+    "subtitle": "助力體育內容創作",
+    "description": "提供RTMP推送、播放連結、資料介面等靈活接入方式，涵蓋足球、籃球、賽車、冰球等12大運動類別。",
+    "disclaimer": "專注技術服務提供，不涉及內容版權業務",
+    "cta_primary": "申請測試與報價",
+    "api_demo_title": "API介面示例"
+  },
+  "features": {
+    "global_coverage": {
+      "title": "全球覆蓋",
+      "description": "世界各地的串流媒體節點"
+    },
+    "fast_transmission": {
+      "title": "極速傳輸",
+      "description": "先進技術架構，實現超低延遲播放體驗"
+    },
+    "quality_assurance": {
+      "title": "品質保證",
+      "description": "企業級技術支撐，提供穩定優質的串流媒體服務"
+    }
+  },
+  "navigation": {
+    "home": "首頁",
+    "services": "服務介紹",
+    "faq": "常見問題",
+    "about": "關於我們",
+    "disclaimer": "免責聲明",
+    "privacy": "隱私政策"
+  },
+  "sports": {
+    "title": "全面覆蓋12大運動類別",
+    "subtitle": "涵蓋全球主流體育賽事，滿足多元化用戶需求",
+    "description": "涵蓋全球主流體育賽事，滿足多元化用戶需求",
+    "categories": {
+      "0": {
+        "name": "足球",
+        "description": "全球最受歡迎的運動，深受世界各地喜愛",
+        "leaguesCount": "4",
+        "leagues": {
+          "0": "英超",
+          "1": "西甲",
+          "2": "歐冠",
+          "3": "世界盃"
+        }
+      },
+      "1": {
+        "name": "籃球",
+        "description": "高強度競技運動，深受年輕人喜愛",
+        "leaguesCount": "3",
+        "leagues": {
+          "0": "NBA",
+          "1": "CBA",
+          "2": "歐洲籃球聯賽"
+        }
+      },
+      "2": {
+        "name": "網球",
+        "description": "優雅的個人競技運動，技術要求極高",
+        "leaguesCount": "4",
+        "leagues": {
+          "0": "溫布頓",
+          "1": "法網",
+          "2": "美網",
+          "3": "澳網"
+        }
+      },
+      "3": {
+        "name": "棒球",
+        "description": "美國國球，策略性團隊運動",
+        "leaguesCount": "3",
+        "leagues": {
+          "0": "MLB",
+          "1": "NPB",
+          "2": "CPBL"
+        }
+      },
+      "4": {
+        "name": "電競",
+        "description": "新興競技運動，年輕人的熱門選擇",
+        "leaguesCount": "4",
+        "leagues": {
+          "0": "英雄聯盟",
+          "1": "DOTA2",
+          "2": "CS:GO",
+          "3": "王者榮耀"
+        }
+      },
+      "5": {
+        "name": "乒乓球",
+        "description": "中國國球，技巧與速度的完美結合",
+        "leaguesCount": "4",
+        "leagues": {
+          "0": "世錦賽",
+          "1": "奧運會",
+          "2": "世界盃",
+          "3": "中超聯賽"
+        }
+      },
+      "6": {
+        "name": "羽毛球",
+        "description": "輕盈靈動的球拍運動，在亞洲廣受歡迎",
+        "leaguesCount": "4",
+        "leagues": {
+          "0": "世錦賽",
+          "1": "奧運會",
+          "2": "湯尤盃",
+          "3": "全英賽"
+        }
+      },
+      "7": {
+        "name": "排球",
+        "description": "團隊合作的典型代表，觀賞性極強",
+        "leaguesCount": "3",
+        "leagues": {
+          "0": "世錦賽",
+          "1": "奧運會",
+          "2": "世界盃"
+        }
+      },
+      "8": {
+        "name": "板球",
+        "description": "英聯邦國家的傳統運動，策略性極強",
+        "leaguesCount": "3",
+        "leagues": {
+          "0": "世界盃",
+          "1": "IPL",
+          "2": "郡錦標賽"
+        }
+      },
+      "9": {
+        "name": "斯諾克",
+        "description": "紳士運動，需要極高的精準度",
+        "leaguesCount": "4",
+        "leagues": {
+          "0": "世錦賽",
+          "1": "英錦賽",
+          "2": "大師賽",
+          "3": "中國公開賽"
+        }
+      },
+      "10": {
+        "name": "賽車",
+        "description": "速度與激情的完美詮釋",
+        "leaguesCount": "4",
+        "leagues": {
+          "0": "F1",
+          "1": "MotoGP",
+          "2": "WRC",
+          "3": "勒芒24小時"
+        }
+      },
+      "11": {
+        "name": "冰球",
+        "description": "冰上運動之王，競爭激烈",
+        "leaguesCount": "4",
+        "leagues": {
+          "0": "NHL",
+          "1": "KHL",
+          "2": "奧運會",
+          "3": "世錦賽"
+        }
+      }
+    },
+    "technicalServices": {
+      "title": "雙重技術接入模式",
+      "description": "靈活的技術接入解決方案，滿足不同業務場景需求",
+      "rtmp": {
+        "title": "RTMP串流推送",
+        "description": "客戶提供推流域名，我們負責直播流推送",
+        "codeTitle": "串流接入示例",
+        "codeComment": "配置串流參數",
+        "pushComment": "配置推流參數",
+        "apiComment": "查詢比賽對應的直播連結"
+      },
+      "streaming": {
+        "title": "播放連結提供",
+        "description": "直接提供可播放的串流連結，即插即用",
+        "codeTitle": "API查詢比賽和直播連結對應",
+        "codeComment": "查詢比賽對應的串流連結",
+        "apiComment": "查詢比賽對應的直播連結"
+      }
+    }
+  },
+  "team": {
+    "title": "資深團隊深度理解",
+    "description1": "懷揣著對於體育賽事的熱愛，我們團隊自<strong>2014年</strong>以來，已經為亞太區中文地區提供專業服務超過<strong>10年</strong>。",
+    "description2": "我們的團隊凝聚了<strong>數十位資深體育行業專家</strong>，不少成員擁有來自<strong>直播吧、Onefootball、SportRadar</strong>等知名體育科技公司的豐富經驗。",
+    "companiesTitle": "核心成員背景企業",
+    "companies": {
+      "0": {
+        "name": "直播吧",
+        "description": "國內領先的體育資訊服務平台"
+      },
+      "1": {
+        "name": "Onefootball",
+        "description": "國際知名足球內容媒體平台"
+      },
+      "2": {
+        "name": "SportRadar",
+        "description": "全球體育數據與技術解決方案提供商"
+      }
+    },
+    "consultButton": "諮詢技術專家",
+    "learnMoreButton": "深入了解",
+    "achievements": {
+      "0": {
+        "title": "十年深度經驗",
+        "description": "自2014年專注體育科技",
+        "detail": "持續服務亞太區中文市場"
+      },
+      "1": {
+        "title": "專家團隊",
+        "description": "數十位資深體育行業專家",
+        "detail": "匯聚知名體育科技公司精英"
+      },
+      "2": {
+        "title": "全球覆蓋",
+        "description": "全球串流媒體節點",
+        "detail": "89.5%國際聯賽覆蓋率"
+      },
+      "3": {
+        "title": "技術優勢",
+        "description": "領先的串流解決方案",
+        "detail": "超低延遲、超高清晰度"
+      }
+    },
+    "whyChooseUs": {
+      "title": "選擇我們的理由",
+      "subtitle": "專業、穩定、值得信賴的體育串流媒體技術解決方案提供商"
+    },
+    "stats": {
+      "0": {
+        "number": "10+",
+        "label": "年深度服務經驗",
+        "description": "專注企業級技術服務"
+      },
+      "1": {
+        "number": "12+",
+        "label": "大運動類別覆蓋",
+        "description": "深刻洞察商業需求"
+      },
+      "2": {
+        "number": "89.5%",
+        "label": "國際聯賽覆蓋率",
+        "description": "敏捷響應客戶訴求"
+      },
+      "3": {
+        "number": "24/7",
+        "label": "技術支撐保障",
+        "description": "高效溝通與快速執行"
+      }
+    },
+    "services": {
+      "0": {
+        "title": "服務品質承諾",
+        "description": "提供全面技術支撐"
+      },
+      "1": {
+        "title": "專業技術保障",
+        "description": "360度技術服務保障"
+      },
+      "2": {
+        "title": "全球服務網絡",
+        "description": "覆蓋國際體育賽事"
+      }
+    },
+    "globalService": "跨地域無界限服務",
+    "experienceButton": "即刻體驗專業服務",
+    "serviceCommitment": {
+      "title": "服務品質承諾",
+      "items": {
+        "0": {
+          "title": "專注企業級技術服務",
+          "description": "深刻洞察商業需求"
+        },
+        "1": {
+          "title": "敏捷響應客戶訴求",
+          "description": "高效溝通與快速執行"
+        },
+        "2": {
+          "title": "提供全面技術支撐",
+          "description": "360度技術服務保障"
+        },
+        "3": {
+          "title": "覆蓋國際體育賽事",
+          "description": "跨地域無界限服務"
+        }
+      }
+    }
+  },
+  "streamingFormats": {
+    "title": "支援格式：",
+    "items": {
+      "hls": "HLS (HTTP Live Streaming) - Apple開發的自適應串流協議",
+      "dash": "DASH (Dynamic Adaptive Streaming) - 國際標準自適應串流協議",
+      "rtmp": "RTMP (Real-Time Messaging Protocol) - 即時訊息傳輸協議",
+      "webrtc": "WebRTC (Web Real-Time Communication) - 網頁即時通訊技術"
+    }
+  },
+  "footer": {
+    "main_nav": "主要導航",
+    "resources": "資源中心",
+    "support": "技術支援",
+    "disclaimer": "免責聲明",
+    "privacy": "隱私政策"
+  },
+  "common": {
+    "get_quote": "獲取試用和報價",
+    "contact_us": "聯絡我們",
+    "learn_more": "了解更多"
+  },
+  "contact": {
+    "meta": {
+      "title": "聯絡我們 | SportLiveAPI",
+      "description": "聯絡我們的團隊，獲取專業的技術支援和客製化的體育直播流解決方案。我們在這裡幫助您成功。"
+    },
+    "title": "聯絡我們",
+    "description": "我們很樂意聽取您的意見。無論您是想諮詢功能、價格、還是有其他問題，我們隨時準備回答您的所有問題。",
+    "form": {
+      "name": "姓名",
+      "email": "電子郵箱",
+      "contactMethod": "聯繫方式",
+      "message": "訊息",
+      "submit": "傳送訊息",
+      "success": "訊息傳送成功！",
+      "error": "訊息傳送失敗，請重試。"
+    },
+    "promises": {
+      "quickTrial": {
+        "title": "快速試用",
+        "description": "透過快速試用體驗我們的服務。"
+      },
+      "freeDemo": {
+        "title": "免費演示",
+        "description": "請求免費的個性化演示。"
+      },
+      "professionalQuote": {
+        "title": "專業報價",
+        "description": "接收詳細的無義務報價。"
+      }
+    },
+    "whyChooseUs": {
+      "title": "為什麼選擇我們",
+      "reasons": [
+        {
+          "title": "專家團隊",
+          "description": "我們的團隊由擁有多年經驗的行業專家組成。"
+        },
+        {
+          "title": "客製化解決方案",
+          "description": "我們提供根據您的特定需求量身訂製的解決方案。"
+        },
+        {
+          "title": "快速響應",
+          "description": "我們以快速高效的客戶服務為榮。"
+        },
+        {
+          "title": "數據安全",
+          "description": "您的數據在我們這裡是安全的。我們遵守最高的安全標準。"
+        },
+        {
+          "title": "客戶至上",
+          "description": "我們始終將客戶的需求放在首位。"
+        }
+      ]
+    },
+    "serviceProcess": {
+      "title": "服務流程",
+      "steps": {
+        "0": {
+          "title": "需求分析",
+          "description": "了解您的業務需求和技術要求"
+        },
+        "1": {
+          "title": "方案設計",
+          "description": "制定客製化的技術解決方案"
+        },
+        "2": {
+          "title": "介面接合",
+          "description": "提供API文件和技術支援"
+        },
+        "3": {
+          "title": "測試上線",
+          "description": "全面測試確保服務穩定運行"
+        }
+      }
+    },
+    "urgentContact": {
+      "title": "緊急聯絡方式",
+      "description": "對於緊急問題，請透過以下方式聯絡我們：",
+      "email": "business@sportliveapi.com",
+      "workingHours": "工作時間：週一至週五 9:00-18:00 (北京時間)"
+    },
+    "validation": {
+      "nameRequired": "姓名為必填項",
+      "emailRequired": "電子郵箱為必填項",
+      "emailInvalid": "請輸入有效的電子郵箱地址",
+      "contactMethodRequired": "聯繫方式為必填項",
+      "messageRequired": "訊息為必填項",
+      "sportsRequired": "請至少選擇一種體育項目",
+      "useCaseRequired": "請選擇使用場景"
+    },
+    "sports": {
+      "football": "⚽ 足球",
+      "basketball": "🏀 籃球",
+      "baseball": "⚾ 棒球",
+      "tennis": "🎾 網球",
+      "esports": "🎮 電競",
+      "pingpong": "🏓 乒乓球",
+      "badminton": "🏸 羽毛球",
+      "volleyball": "🏐 排球",
+      "cricket": "🏏 板球",
+      "snooker": "🎱 斯諾克",
+      "racing": "🏎️ 賽車",
+      "hockey": "🏒 冰球"
+    },
+    "useCase": {
+      "label": "使用場景",
+      "websiteApp": "網站/APP接入賽事直播",
+      "obsStreaming": "僅網路主播在OBS直播使用",
+      "bothScenarios": "以上兩種場景都有"
+    },
+    "streamerType": {
+      "label": "主播規模",
+      "team": "主播團體",
+      "individual": "個體主播"
+    },
+    "privacy": {
+      "title": "隱私保護承諾",
+      "description": "我們重視您的隱私，僅收集必要的聯絡資訊。您的資訊將被嚴格保密，僅用於提供技術服務。"
+    },
+    "name": "E-Mail",
+    "contactMethod": "聯繫方式",
+    "contactMethodDescription": "Telegram格式：@username（如@alice_dev），QQ格式：數字號碼（如12345678）",
+    "sportsInterests": {
+      "label": "感興趣的體育項目"
+    },
+    "platformInfo": {
+      "label": "網站/APP或平台資訊（可選）"
+    },
+    "platformInfoPlaceholder": "為了便於後續溝通，請輸入您的平台名稱",
+    "requirements": {
+      "label": "詳細需求說明（可選）"
+    },
+    "requirementsPlaceholder": "請描述您的具體需求、預期流量、技術棧等...",
+    "individualWarning": "溫馨提示：當前直播源方案主要服務於團隊及企業客戶，個人用戶使用成本可能略高。",
+    "submit": "提交",
+    "submitting": "提交中...",
+    "success": "感謝您！",
+    "successMessage": "感謝您的諮詢，我們的專業團隊將在24小時內與您聯繫，為您提供客製化的解決方案和報價。",
+    "nextSteps": {
+      "title": "接下來會發生什麼？",
+      "step1": "我們的技術顧問將聯繫您了解詳細需求",
+      "step2": "在24小時內透過您提供的聯繫方式與您聯繫",
+      "step3": "提供客製化的技術解決方案和報價",
+      "step4": "安排技術整合和測試環境"
+    },
+    "contactForm": {
+      "validation": {
+        "nameRequired": "姓名為必填項",
+        "emailRequired": "電子郵箱為必填項",
+        "emailInvalid": "請輸入有效的電子郵箱地址",
+        "contactMethodRequired": "聯繫方式為必填項",
+        "messageRequired": "訊息為必填項"
+      },
+      "sportsOptions": {
+        "football": "足球",
+        "basketball": "籃球",
+        "tennis": "網球",
+        "baseball": "棒球",
+        "volleyball": "排球",
+        "badminton": "羽毛球",
+        "tabletennis": "乒乓球",
+        "golf": "高爾夫",
+        "racing": "賽車",
+        "icehockey": "冰球",
+        "esports": "電子競技",
+        "other": "其他"
+      },
+      "integrationOptions": {
+        "rtmp": "RTMP推流",
+        "streaming": "串流連結",
+        "api": "數據API",
+        "custom": "客製化整合"
+      },
+      "streamerTypes": {
+        "individual": "個體主播",
+        "team": "團隊/企業"
+      },
+      "streamerScales": {
+        "small": "1-10人",
+        "medium": "11-50人",
+        "large": "50人以上"
+      },
+      "labels": {
+        "interestedSports": "感興趣的體育項目",
+        "integrationType": "整合類型",
+        "streamerType": "主播類型",
+        "streamerScale": "主播規模",
+        "websiteInfo": "網站/APP或平台資訊（可選）",
+        "websitePlaceholder": "為了便於後續溝通，請輸入您的平台名稱",
+        "detailedRequirements": "詳細需求說明（可選）",
+        "requirementsPlaceholder": "請描述您的具體需求、預期流量、技術棧等..."
+      },
+      "messages": {
+         "submitting": "提交中...",
+         "submitSuccess": "表單提交成功！",
+         "submitError": "提交失敗，請重試",
+         "thankYou": "感謝您的諮詢！",
+         "followUp": "我們將在24小時內聯繫您，詳細討論您的需求。",
+         "privacyNote": "我們尊重您的隱私，不會將您的資訊分享給第三方。",
+         "individualNote": "溫馨提示：當前直播源方案主要服務於團隊及企業客戶，個人用戶使用成本可能略高。"
+       },
+       "sports": {
+         "football": "⚽ 足球",
+         "basketball": "🏀 籃球",
+         "baseball": "⚾ 棒球",
+         "tennis": "🎾 網球",
+         "esports": "🎮 電競",
+         "pingpong": "🏓 乒乓球",
+         "badminton": "🏸 羽毛球",
+         "volleyball": "🏐 排球",
+         "cricket": "🏏 板球",
+         "snooker": "🎱 斯諾克",
+         "racing": "🏎️ 賽車",
+         "hockey": "🏒 冰球"
+       },
+       "useCase": {
+         "label": "使用場景",
+         "websiteApp": "網站/APP接入賽事直播",
+         "obsStreaming": "僅網路主播在OBS直播使用",
+         "bothScenarios": "以上兩種場景都有"
+       },
+       "streamerType": {
+         "label": "主播規模",
+         "team": "主播團體",
+         "individual": "個體主播",
+         "individualWarning": "溫馨提示：當前直播源方案主要服務於團隊及企業客戶，個人用戶使用成本可能略高。"
+       },
+       "sportsInterests": {
+         "label": "感興趣的體育項目"
+       },
+       "platformInfo": {
+         "label": "網站/APP或平台資訊（可選）",
+         "placeholder": "為了便於後續溝通，請輸入您的平台名稱"
+       },
+       "requirements": {
+         "label": "詳細需求說明（可選）",
+         "placeholder": "請描述您的具體需求、預期流量、技術棧等..."
+       },
+       "contactMethod": {
+         "description": "Telegram格式：@username（如@alice_dev），QQ格式：數字號碼（如12345678）"
+       },
+       "privacy": {
+         "title": "隱私保護承諾",
+         "description": "我們重視您的隱私，僅收集必要的聯絡資訊。您的資訊將被嚴格保密，僅用於提供技術服務。"
+       },
+       "validation": {
+          "sportsRequired": "請至少選擇一種體育項目",
+          "useCaseRequired": "請選擇使用場景"
+        },
+        "contactMethodDescription": "Telegram格式：@username（如@alice_dev），QQ格式：數字號碼（如12345678）",
+        "individualWarning": "溫馨提示：當前直播源方案主要服務於團隊及企業客戶，個人用戶使用成本可能略高。",
+        "platformInfoPlaceholder": "為了便於後續溝通，請輸入您的平台名稱",
+        "requirementsPlaceholder": "請描述您的具體需求、預期流量、技術棧等...",
+        "title": "獲取試用和報價",
+        "name": "姓名",
+        "contactMethod": "聯繫方式",
+        "submit": "提交",
+        "submitting": "提交中...",
+        "success": "感謝您！",
+        "successMessage": "感謝您的諮詢，我們的專業團隊將在24小時內與您聯繫，為您提供客製化的解決方案和報價。",
+        "nextSteps": {
+          "title": "接下來會發生什麼？",
+          "step1": "我們的技術顧問將聯繫您了解詳細需求",
+          "step2": "為您制定專屬技術方案和報價",
+          "step3": "安排技術演示和試用",
+          "step4": "提供完整的整合支援"
+        }
+    }
+  },
+  "services": {
+    "hero": {
+      "title": "專業體育串流媒體服務",
+      "description": "提供RTMP推送、播放連結、資料介面等靈活接入方式，涵蓋足球、籃球、賽車、冰球等12大運動類別。",
+      "cta": "申請測試與報價"
+    },
+    "features": {
+      "title": "核心服務特性",
+      "description": "基於先進技術架構，為您提供穩定可靠的串流媒體解決方案",
+      "items": {
+        "0": {
+          "title": "RTMP推流服務",
+          "description": "專業級推流解決方案，支援多種編碼格式和傳輸協定",
+          "details": {
+            "0": "支援H.264/H.265編碼",
+            "1": "自適應碼率調節",
+            "2": "斷線自動重連",
+            "3": "即時品質監控"
+          }
+        },
+        "1": {
+          "title": "播放連結服務",
+          "description": "高品質串流媒體播放解決方案，支援多種播放協定",
+          "details": {
+            "0": "支援HLS/DASH協定",
+            "1": "多碼率自適應",
+            "2": "CDN全球加速",
+            "3": "播放品質統計"
+          }
+        },
+        "2": {
+          "title": "資料介面服務",
+          "description": "豐富的體育資料API，涵蓋12大運動類別",
+          "details": {
+            "0": "即時比分資料",
+            "1": "賽程賽果資訊",
+            "2": "球隊球員統計",
+            "3": "歷史資料查詢"
+          }
+        },
+        "3": {
+          "title": "資料分析",
+          "description": "深度資料分析和洞察",
+          "details": {
+            "0": "即時資料處理",
+            "1": "高級分析演算法",
+            "2": "視覺化報表"
+          }
+        },
+        "4": {
+          "title": "雲端儲存",
+          "description": "安全可靠的雲端儲存服務",
+          "details": {
+            "0": "多重備份保護",
+            "1": "彈性擴容",
+            "2": "全球CDN加速"
+          }
+        }
+      }
+    },
+    "solutions": {
+      "title": "三大服務類型",
+      "description": "根據不同業務場景，提供靈活的技術接入方案",
+      "rtmp": {
+        "title": "RTMP推流服務",
+        "description": "專業的即時串流媒體推送協定，支援低延遲直播",
+        "useCases": {
+          "title": "應用場景",
+          "items": {
+            "0": "體育賽事直播",
+            "1": "遊戲競技直播",
+            "2": "教育培訓直播",
+            "3": "企業會議直播"
+          }
+        },
+        "features": {
+          "title": "核心功能",
+          "items": {
+            "0": "低延遲傳輸",
+            "1": "高清畫質支援",
+            "2": "斷線重連機制",
+            "3": "多碼率自適應"
+          }
+        }
+      },
+      "streaming": {
+        "title": "串流媒體服務",
+        "description": "全方位的串流媒體解決方案，支援多種播放格式",
+        "useCases": {
+          "title": "應用場景",
+          "items": {
+            "0": "網頁播放器整合",
+            "1": "行動應用整合",
+            "2": "智慧電視應用",
+            "3": "第三方平台整合"
+          }
+        },
+        "features": {
+          "title": "服務特性",
+          "items": {
+            "0": "多格式支援",
+            "1": "全球CDN加速",
+            "2": "自適應碼率串流",
+            "3": "即時品質監控"
+          }
+        }
+      },
+      "api": {
+        "title": "資料API服務",
+        "description": "豐富的體育資料介面，涵蓋全面的比賽資訊和統計",
+        "useCases": {
+          "title": "應用場景",
+          "items": {
+            "0": "體育新聞網站",
+            "1": "夢幻體育平台",
+            "2": "投注分析工具",
+            "3": "體育統計應用"
+          }
+        },
+        "features": {
+          "title": "資料特性",
+          "items": {
+            "0": "即時比分更新",
+            "1": "全面比賽資料",
+            "2": "歷史統計",
+            "3": "多語言支援"
+          }
+        }
+      }
+    },
+    "specs": {
+      "title": "技術規格",
+      "description": "支援主流編碼標準和傳輸協定，確保最佳相容性",
+      "categories": {
+        "0": {
+          "title": "影片編碼",
+          "items": {
+            "0": "H.264 (AVC)",
+            "1": "H.265 (HEVC)",
+            "2": "VP8/VP9",
+            "3": "AV1"
+          }
+        },
+        "1": {
+          "title": "音訊編碼",
+          "items": {
+            "0": "AAC",
+            "1": "MP3",
+            "2": "Opus",
+            "3": "AC-3"
+          }
+        },
+        "2": {
+          "title": "傳輸協定",
+          "items": {
+            "0": "RTMP/RTMPS",
+            "1": "HLS",
+            "2": "DASH",
+            "3": "WebRTC"
+          }
+        },
+        "3": {
+          "title": "效能監控",
+          "items": {
+            "0": "即時效能監控",
+            "1": "異常警報",
+            "2": "效能最佳化建議",
+            "3": "負載平衡"
+          }
+        },
+        "4": {
+          "title": "安全防護",
+          "items": {
+            "0": "DDoS防護",
+            "1": "存取控制",
+            "2": "資料加密",
+            "3": "SSL憑證"
+          }
+        }
+      }
+    },
+    "serviceFeatures": {
+      "0": {
+        "title": "國際化部署",
+        "description": "全球分佈式串流媒體基礎設施",
+        "details": {
+          "0": "跨大洲服務節點覆蓋",
+          "1": "多層CDN架構部署",
+          "2": "智能路由調度"
+        }
+      },
+      "1": {
+        "title": "極速響應",
+        "description": "亞秒級延遲傳輸體驗",
+        "details": {
+          "0": "先進串流媒體引擎",
+          "1": "網絡鏈路優化",
+          "2": "實時性能監控"
+        }
+      },
+      "2": {
+        "title": "可靠保障",
+        "description": "企業級服務品質承諾",
+        "details": {
+          "0": "24/7系統監控",
+          "1": "多重災備備份",
+          "2": "快速故障恢復"
+        }
+      },
+      "3": {
+        "title": "賽事覆蓋",
+        "description": "89.5%國際賽事資源覆蓋率",
+        "details": {
+          "0": "豐富賽事內容庫",
+          "1": "專業運營團隊",
+          "2": "持續優化升級"
+        }
+      }
+    },
+    "technicalSpecs": {
+      "0": {
+        "category": "視頻編碼標準",
+        "items": {
+          "0": "H.264/AVC",
+          "1": "H.265/HEVC",
+          "2": "VP8/VP9",
+          "3": "AV1"
+        }
+      },
+      "1": {
+        "category": "傳輸協議支持",
+        "items": {
+          "0": "RTMP/RTMPS",
+          "1": "HLS (m3u8)",
+          "2": "DASH",
+          "3": "WebRTC"
+        }
+      },
+      "2": {
+        "category": "視頻品質規格",
+        "items": {
+          "0": "4K超高清 (3840×2160)",
+          "1": "全高清 (1920×1080)",
+          "2": "高清 (1280×720)",
+          "3": "自適應碼率"
+        }
+      },
+      "3": {
+        "category": "音頻編碼",
+        "items": {
+          "0": "AAC",
+          "1": "MP3",
+          "2": "Opus",
+          "3": "多語言音頻通道"
+        }
+      }
+    },
+    "integrationSteps": {
+      "0": {
+        "title": "業務需求分析",
+        "description": "深入了解客戶業務場景和技術架構需求",
+        "duration": "1-2天"
+      },
+      "1": {
+        "title": "技術接口對接",
+        "description": "提供完整API文檔和專業技術指導",
+        "duration": "1-2天"
+      },
+      "2": {
+        "title": "系統測試驗證",
+        "description": "全面功能測試和性能驗證",
+        "duration": "1-2天"
+      },
+      "3": {
+        "title": "生產環境上線",
+        "description": "正式啟動穩定串流媒體服務",
+        "duration": "即時"
+      }
+    },
+    "useCases": {
+      "0": {
+        "title": "移動體育應用",
+        "description": "為體育移動產品提供高品質實時串流媒體解決方案",
+        "features": {
+          "0": "多解析度等級",
+          "1": "智能碼率適配",
+          "2": "移動網絡優化",
+          "3": "用戶行為分析"
+        }
+      },
+      "1": {
+        "title": "體育門戶網站",
+        "description": "為體育新聞網站集成專業級直播功能",
+        "features": {
+          "0": "跨平台播放器",
+          "1": "HTML5兼容性",
+          "2": "響應式佈局",
+          "3": "SEO優化"
+        }
+      },
+      "2": {
+        "title": "專業廣播工作室",
+        "description": "為體育解說團隊提供乾淨、高清、全面覆蓋、低延遲的信號源",
+        "features": {
+          "0": "乾淨信號源",
+          "1": "超高清品質",
+          "2": "全球賽事覆蓋",
+          "3": "毫秒級延遲"
+        }
+      },
+      "3": {
+        "title": "電競賽事平台",
+        "description": "為電競賽事提供專業級串流媒體技術支持",
+        "features": {
+          "0": "超低延遲傳輸",
+          "1": "高並發支持",
+          "2": "多信號源接入",
+          "3": "實時互動支持"
+        }
+      }
+    },
+    "streamingFormats": {
+      "title": "支持格式：",
+      "items": {
+        "0": "HLS (m3u8) - iOS/Web優選",
+        "1": "DASH - 自適應碼率",
+        "2": "RTMP - 傳統播放器",
+        "3": "WebRTC - 超低延遲"
+      }
+    },
+    "scenarios": {
+      "title": "應用場景",
+      "description": "為不同類型的體育內容平台提供專業技術支持",
+      "items": {
+        "0": {
+          "title": "體育媒體平台",
+          "description": "為體育新聞網站和應用程式提供直播和隨選服務",
+          "features": {
+            "0": "多路並發直播",
+            "1": "賽事重播功能",
+            "2": "精彩片段剪輯",
+            "3": "即時資料顯示"
+          }
+        },
+        "1": {
+          "title": "電競平台",
+          "description": "支援電競賽事串流和遊戲內容創作",
+          "features": {
+            "0": "超低延遲串流",
+            "1": "多角度切換",
+            "2": "互動聊天支援",
+            "3": "賽事資料統計"
+          }
+        },
+        "2": {
+          "title": "教育培訓",
+          "description": "體育教育和培訓影片的線上發佈",
+          "features": {
+            "0": "課程錄製與回放",
+            "1": "技術動作分析",
+            "2": "遠端指導直播",
+            "3": "學習進度追蹤"
+          }
+        },
+        "3": {
+          "title": "企業會議",
+          "description": "專業的企業視訊會議解決方案",
+          "features": {
+            "0": "多方會議",
+            "1": "螢幕分享",
+            "2": "會議錄製",
+            "3": "安全加密"
+          }
+        }
+      }
+    },
+    "integration": {
+      "title": "整合流程",
+      "description": "簡化的整合流程，快速啟動您的串流媒體服務",
+      "steps": {
+        "0": {
+          "title": "需求分析",
+          "description": "了解您的業務需求和技術要求",
+          "duration": "1-2個工作日"
+        },
+        "1": {
+          "title": "方案設計",
+          "description": "制定客製化的技術解決方案",
+          "duration": "2-3個工作日"
+        },
+        "2": {
+          "title": "API整合",
+          "description": "提供API文件和技術支援",
+          "duration": "3-5個工作日"
+        },
+        "3": {
+          "title": "測試與上線",
+          "description": "全面測試確保服務穩定運行",
+          "duration": "1-2個工作日"
+        }
+      }
+    },
+    "cta": {
+      "title": "開始使用我們的服務",
+      "description": "聯繫我們獲取專業技術支援和客製化解決方案",
+      "contact": "聯繫我們",
+      "button": "聯繫我們",
+      "documentation": "查看技術文件"
+    }
+  },
+  "about": {
+    "hero": {
+      "title": "關於 SportLiveAPI",
+      "description": "我們是一支專注於體育直播流技術服務的專業團隊，擁有10年行業經驗，為全球客戶提供穩定可靠的流媒體解決方案。"
+    },
+    "experience": {
+      "title": "專業團隊經驗",
+      "description1": "我們的核心團隊成員來自 Onefootball、直播吧、SportRadar 等知名體育科技公司，在體育直播流技術開發和運營方面擁有豐富經驗。",
+      "description2": "自2014年以來，我們深耕體育直播流領域，服務全球數百家客戶，涵蓋從小型直播平台到大型體育賽事的各種場景。",
+      "description3": "我們深刻理解體育直播流領域的技術挑戰，致力於為客戶提供最專業、最可靠的技術解決方案。",
+      "stats": {
+        "founded": "公司成立",
+        "years": "年經驗",
+        "members": "團隊成員"
+      }
+    },
+    "team": {
+      "title": "團隊背景",
+      "description": "我們的團隊成員來自頂級體育科技公司，擁有豐富的行業經驗和技術專長。",
+      "companies": {
+        "onefootball": {
+          "description": "歐洲最大的足球媒體平台，全球用戶超過1億",
+          "expertise": "直播流技術 & 用戶體驗"
+        },
+        "zhibo8": {
+          "name": "直播吧",
+          "icon": "直",
+          "description": "中國領先的體育直播平台，服務數千萬用戶",
+          "expertise": "高並發流媒體 & CDN優化"
+        },
+        "sportradar": {
+          "description": "全球體育數據和技術服務提供商",
+          "expertise": "體育數據處理 & API開發"
+        }
+      }
+    },
+    "promise": {
+      "title": "我們的服務承諾",
+      "description": "我們致力於提供最高質量的體育直播流技術服務，以專業的技術支持和可靠的服務保障為客戶創造價值。",
+      "features": {
+        "enterprise": {
+          "title": "企業級服務",
+          "description": "專業的技術架構和服務標準，確保系統穩定性和可靠性"
+        },
+        "response": {
+          "title": "快速響應",
+          "description": "7x24小時技術支持團隊，提供及時的問題解決和技術諮詢"
+        },
+        "technical": {
+          "title": "技術專長",
+          "description": "在流媒體領域的深厚技術積累，持續優化服務質量"
+        },
+        "global": {
+          "title": "全球覆蓋",
+          "description": "遍布全球的CDN節點和技術支持，提供穩定的全球服務"
+        }
+      }
+    },
+    "technical": {
+      "title": "技術專長",
+      "features": {
+        "streaming": {
+          "title": "先進流媒體技術",
+          "description": "支援RTMP、HLS、WebRTC等多種流媒體協定，提供低延遲、高質量的直播體驗"
+        },
+        "network": {
+          "title": "全球網路優化",
+          "description": "智慧CDN調度和網路優化，確保全球範圍內的穩定流媒體質量"
+        },
+        "api": {
+          "title": "靈活API整合",
+          "description": "豐富的API介面和SDK支援，實現快速整合和客製化開發"
+        },
+        "monitoring": {
+          "title": "即時監控",
+          "description": "全面的監控系統，提供即時的流媒體狀態和質量分析"
+        }
+      },
+      "stats": {
+        "title": "技術指標",
+        "coverage": "全球覆蓋",
+        "latency": "超低延遲",
+        "quality": "超高清畫質",
+        "team": "專業團隊",
+        "team_value": "50+"
+      }
+    },
+    "cta": {
+      "title": "準備開始了嗎？",
+      "description": "聯繫我們的專業團隊，獲取客製化的體育直播流解決方案和技術支援。",
+      "contact": "聯繫我們",
+      "button": "聯繫我們",
+      "documentation": "查看文檔"
+    }
+  },
+  "footer": {
+    "company": {
+      "description": "專業體育直播流技術服務商，為體育類產品開發者提供穩定、多元化的全球體育賽事直播流技術接入服務。",
+      "cta": "獲取試用和報價"
+    },
+    "sections": {
+      "core_services": "核心服務",
+      "resources": "資源中心",
+      "support": "技術支援"
+    },
+    "navigation": {
+      "services": "服務介紹",
+      "about": "關於我們",
+      "faq": "常見問題",
+      "disclaimer": "免責聲明",
+      "privacy": "隱私政策",
+      "contact": "聯繫我們"
+    },
+    "sports": {
+      "title": "支援的體育項目",
+      "items": {
+        "football": "⚽ 足球",
+        "basketball": "🏀 籃球",
+        "baseball": "⚾ 棒球",
+        "tennis": "🎾 網球",
+        "esports": "🎮 電競",
+        "pingpong": "🏓 乒乓球",
+        "badminton": "🏸 羽毛球",
+        "volleyball": "🏐 排球",
+        "cricket": "🏏 板球",
+        "snooker": "🎱 斯諾克",
+        "racing": "🏎️ 賽車",
+        "hockey": "🏒 冰球"
+      }
+    },
+    "technical_services": {
+      "title": "技術服務形式",
+      "rtmp": {
+        "title": "RTMP推流服務",
+        "description": "客戶提供推流域名，我們推送直播流，並提供API查詢比賽對應關係"
+      },
+      "streaming": {
+        "title": "直播連結服務",
+        "description": "提供可直接播放的直播連結，並提供API查詢比賽對應關係"
+      }
+    },
+    "team": {
+      "title": "專業團隊更懂你",
+      "description": "懷揣著對於體育賽事的熱愛，我們團隊自2014年以來，已經為亞洲區中文地區服務超過10年。我們的團隊凝聚了數十位資深的體育賽事從業者，也有不少來自於直播吧、onefootball、SportRadar等工作經驗。"
+    },
+    "bottom": {
+      "copyright": "© 2025 SportLiveAPI. 保留所有權利。",
+      "payment": "支付方式：BTC、ETH、USDT、USDC等加密貨幣",
+      "status": "服務狀態：正常運行"
+    }
+  },
+  "faq": {
+    "title": "常見問題",
+    "description": "查找關於我們體育直播API服務的常見問題解答",
+    "categories": {
+      "title": "問題分類",
+      "all": {
+        "name": "所有問題",
+        "count": "顯示所有問題"
+      },
+      "general": {
+        "name": "一般問題",
+        "count": "一般問題"
+      },
+      "technical": {
+        "name": "技術問題",
+        "count": "技術問題"
+      },
+      "pricing": {
+        "name": "定價問題",
+        "count": "定價問題"
+      },
+      "support": {
+        "name": "支援問題",
+        "count": "支援問題"
+      }
+    },
+    "featured": {
+      "title": "熱門問題"
+    },
+    "list": {
+      "allQuestions": "所有問題",
+      "foundCount": "找到相關問題"
+    },
+    "items": {
+      "0": {
+        "question": "什麼是體育直播API？",
+        "answer": "體育直播API是一個專業的即時體育數據介面服務，提供即時比賽直播、賽事數據、球隊資訊等功能，幫助開發者快速建構體育應用程式。"
+      },
+      "1": {
+        "question": "如何開始使用API？",
+        "answer": "首先註冊帳戶獲取API金鑰，然後查看我們的開發文檔，根據範例程式碼進行整合。我們提供多種程式語言的SDK支援。"
+      },
+      "2": {
+        "question": "支援哪些體育項目？",
+        "answer": "我們支援足球、籃球、網球、棒球、冰球等主流體育項目，涵蓋全球主要聯賽和賽事。"
+      },
+      "3": {
+        "question": "API使用有限制嗎？",
+        "answer": "不同套餐有不同的呼叫頻率限制。免費版本每分鐘允許100次請求，付費版本提供更高的呼叫配額和優先支援。"
+      },
+      "4": {
+        "question": "如何獲得技術支援？",
+        "answer": "我們提供24/7技術支援。您可以透過電子郵件、線上客服或技術論壇獲得幫助。付費用戶享有優先技術支援服務。"
+      },
+      "5": {
+        "question": "數據更新頻率如何？",
+        "answer": "我們的數據是即時更新的，在直播比賽期間每秒更新多次，確保您獲得最新的比賽狀態和統計數據。"
+      },
+      "6": {
+        "question": "是否支援歷史數據查詢？",
+        "answer": "是的，我們提供完整的歷史數據查詢功能，包括過往賽季比賽結果、球員統計、球隊表現等數據。"
+      },
+      "7": {
+        "question": "如何保證API穩定性？",
+        "answer": "我們採用分散式架構和多重備份機制，確保99.9%的服務可用性。同時提供負載平衡和故障轉移功能。"
+      },
+      "8": {
+        "question": "如何處理高併發請求？",
+        "answer": "我們的系統支援高併發存取，採用CDN加速和智慧快取技術，確保即使在高峰期也能提供穩定快速的服務。"
+      },
+      "9": {
+        "question": "是否提供免費試用？",
+        "answer": "是的，我們提供免費試用套餐，包含基本功能和有限的API呼叫次數，讓您充分體驗我們的服務。"
+      },
+      "10": {
+        "question": "如何升級或更改方案？",
+        "answer": "您可以隨時在控制台中升級或更改方案。變更立即生效，費用按比例計算。"
+      }
+    },
+    "cta": {
+      "title": "還有其他問題？",
+      "description": "如果您沒有找到所需的答案，請隨時聯繫我們的技術支援團隊",
+      "button": "聯繫技術支援",
+      "email": "發送郵件至 business@sportliveapi.com",
+      "workingHours": "工作時間：週一至週五 9:00-18:00（北京時間）"
+    }
+  },
+  "disclaimer": {
+    "title": "免責聲明",
+    "lastUpdated": "最後更新：2025年1月",
+    "serviceNature": {
+      "title": "服務性質",
+      "description1": "SportLiveAPI是一家專注於",
+      "technicalService": "體育直播流技術服務",
+      "description2": "的技術公司。我們為客戶提供體育賽事直播流的技術接入、資料API和相關技術支援服務。",
+      "importantNotice": "重要聲明：",
+      "scopeLimit": "我們不參與任何體育內容的版權營運、不提供賽事版權授權、不從事體育博彩相關業務。"
+    },
+    "copyright": {
+      "title": "版權責任",
+      "clientResponsibility": {
+        "title": "客戶責任",
+        "items": {
+          "0": "確保擁有合法的體育內容播放權限",
+          "1": "遵守所在地區的法律法規和版權規定",
+          "2": "承擔因版權問題產生的全部法律責任",
+          "3": "確保使用我們的技術服務符合當地法律要求"
+        }
+      },
+      "ourPosition": {
+        "title": "我們的立場",
+        "items": {
+          "0": "僅提供技術服務，不涉及內容版權事務",
+          "1": "不對客戶使用服務的合法性承擔責任",
+          "2": "保留在發現違法使用時終止服務的權利",
+          "3": "積極配合相關部門的合規調查工作"
+        }
+      }
+    },
+    "serviceLimitations": {
+      "title": "服務限制",
+      "technical": {
+        "title": "技術限制",
+        "items": {
+          "0": "網路環境可能影響服務品質",
+          "1": "第三方服務依賴可能導致服務中斷",
+          "2": "技術升級期間可能出現短暫服務不可用",
+          "3": "不保證100%的服務可用性"
+        }
+      },
+      "disclaimer": {
+        "title": "免責條款",
+        "items": {
+          "0": "不對因使用服務造成的任何損失承擔責任",
+          "1": "不保證服務內容的準確性和完整性",
+          "2": "不對第三方內容的合法性負責",
+          "3": "保留隨時修改或終止服務的權利"
+        }
+      }
+    },
+    "compliance": {
+      "title": "合規使用",
+      "subtitle": "我們致力於促進體育技術服務的合規發展",
+      "measures": {
+        "copyright": {
+          "title": "版權保護",
+          "description": "建立完善的版權保護機制，協助客戶合規使用體育內容"
+        },
+        "legal": {
+          "title": "法律合規",
+          "description": "嚴格遵守各地區法律法規，確保服務的合法性"
+        },
+        "content": {
+          "title": "內容審核",
+          "description": "建立內容審核機制，防止違法違規內容傳播"
+        },
+        "agreement": {
+          "title": "協議約束",
+          "description": "透過服務協議明確各方責任，規範服務使用"
+        }
+      }
+    },
+    "contact": {
+      "title": "聯繫與爭議解決",
+      "contactUs": {
+        "title": "聯繫我們",
+        "description": "如有任何法律相關問題或需要協助，請透過以下方式聯繫我們：",
+        "email": "郵箱",
+        "workingHours": "工作時間",
+        "hours": "週一至週五 9:00-18:00 (UTC+8)"
+      },
+      "dispute": {
+        "title": "爭議解決",
+        "description": "如發生爭議，我們建議透過以下方式解決：",
+        "methods": {
+          "0": "友好協商解決",
+          "1": "尋求第三方調解",
+          "2": "提交仲裁機構處理",
+          "3": "透過法律途徑解決"
+        }
+      }
+    },
+    "updates": {
+      "title": "聲明更新",
+      "description": "我們保留隨時更新本免責聲明的權利。重大變更將透過網站公告或郵件通知的方式告知用戶。繼續使用我們的服務即表示您接受更新後的聲明內容。",
+      "recommendation": {
+        "label": "建議",
+        "text": "請定期查看本頁面以了解最新的免責聲明內容"
+      }
+    }
+  },
+  "privacy": {
+    "title": "隱私政策",
+    "description": "我們致力於保護您的隱私和個人資訊。本隱私政策說明我們如何收集、使用和保護您的資訊。",
+    "lastUpdated": "最後更新：2025年8月",
+    "introduction": {
+      "title": "簡介",
+      "content": "SportLiveAPI是一家專注於體育串流媒體技術服務的公司。我們致力於保護您的隱私和個人資訊。本隱私政策說明當您使用我們的服務時，我們如何收集、使用、儲存和保護您的個人資訊。"
+    },
+    "dataCollection": {
+      "title": "資訊收集",
+      "provided": {
+        "title": "您提供的資訊",
+        "items": {
+          "0": "聯絡資訊（姓名、電子郵箱、電話號碼）",
+          "1": "業務資訊（公司名稱、行業、業務需求）",
+          "2": "技術需求和使用場景",
+          "3": "溝通記錄和回饋"
+        }
+      },
+      "automatic": {
+        "title": "自動收集的資訊",
+        "items": {
+          "0": "設備資訊（IP位址、瀏覽器類型、作業系統）",
+          "1": "使用資料（頁面瀏覽、存取時間、功能使用）",
+          "2": "技術日誌和效能資料",
+          "3": "Cookie和類似的追蹤技術"
+        }
+      }
+    },
+    "dataUsage": {
+      "title": "資訊使用",
+      "description": "我們將收集的資訊用於以下目的：",
+      "purposes": {
+        "0": "提供和維護我們的技術服務",
+        "1": "回應您的詢問並提供客戶支援",
+        "2": "改進我們的服務並開發新功能",
+        "3": "發送服務相關的通知和更新",
+        "4": "遵守法律義務並保護我們的權利",
+        "5": "進行資料分析以優化服務效能"
+      }
+    },
+    "dataSharing": {
+      "title": "資訊共享",
+      "description": "我們不會向第三方出售、交易或出租您的個人資訊。我們僅在以下情況下可能共享您的資訊：",
+      "conditions": {
+        "0": "獲得您的明確同意",
+        "1": "遵守法律要求或法院命令",
+        "2": "保護我們的權利、財產或安全",
+        "3": "與協助我們營運的可信服務提供商（在嚴格保密協議下）"
+      }
+    },
+    "dataSecurity": {
+      "title": "資料安全",
+      "description": "我們實施適當的技術和組織措施來保護您的個人資訊，防止未經授權的存取、更改、披露或銷毀。這包括加密、存取控制、定期安全評估和員工資料保護培訓。"
+    },
+    "userRights": {
+      "title": "用戶權利",
+      "description": "您對個人資訊享有以下權利：",
+      "rights": {
+        "0": "存取權：請求存取我們持有的您的個人資訊",
+        "1": "更正權：請求更正不準確或不完整的資訊",
+        "2": "刪除權：請求刪除您的個人資訊",
+        "3": "資料可攜權：請求將您的資料轉移給其他服務提供商",
+        "4": "反對權：反對某些資訊處理活動",
+        "5": "限制權：在特定情況下請求限制處理"
+      }
+    },
+    "dataRetention": {
+      "title": "資料保留",
+      "description": "我們僅在實現本隱私政策中概述的目的、遵守法律義務、解決爭議和執行我們的協議所必需的時間內保留您的個人資訊。當資訊不再需要時，我們會安全地刪除或匿名化處理。"
+    },
+    "childrenPrivacy": {
+      "title": "兒童隱私",
+      "description": "我們的服務不面向13歲以下的兒童。我們不會故意收集13歲以下兒童的個人資訊。如果我們發現收集了此類資訊，我們將立即採取措施刪除。"
+    },
+    "dataTransfer": {
+      "title": "國際資料傳輸",
+      "description": "您的資訊可能會被傳輸到您居住國以外的國家進行處理。我們確保此類傳輸符合適用的資料保護法律，並實施適當的保障措施來保護您的資訊。"
+    },
+    "policyUpdates": {
+      "title": "政策更新",
+      "description": "我們可能會不時更新本隱私政策。我們將透過在網站上發布新政策並更新『最後更新』日期來通知您任何重大變更。您在此類變更後繼續使用我們的服務即表示接受更新後的政策。"
+    },
+    "contact": {
+      "title": "聯絡我們",
+      "description": "如果您對本隱私政策或我們的資料處理實踐有任何疑問，請聯絡我們：",
+      "email": "郵箱：business@sportliveapi.com",
+      "address": "地址：[公司地址]",
+      "phone": "電話：[聯絡電話]",
+      "website": "網站",
+      "contactPage": "聯絡我們頁面"
+    }
+  }
+}

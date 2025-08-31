@@ -1,26 +1,29 @@
+'use client'
+
 import React from 'react'
 import MainLayout from '@/components/layout/main-layout'
 import { Card, CardContent } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
+import { useTranslations } from 'next-intl'
 
-export const metadata = {
-  title: '关于我们 - SportLiveAPI',
-  description: '了解SportLiveAPI团队，10年专业体育直播流技术服务经验',
+type Props = {
+  params: { locale: string }
 }
 
-export default function AboutPage() {
+export default function AboutClientPage({ params: { locale } }: Props) {
+  const t = useTranslations('about')
+  
   return (
     <MainLayout>
       {/* Hero Section */}
       <section className="space-section bg-gradient-to-br from-brand-secondary to-brand-primary text-white">
         <div className="container-custom text-center">
           <h1 className="text-responsive-h2 font-bold mb-6">
-            专业团队 · 深度理解
+            {t('hero.title')}
           </h1>
           <p className="text-body-lg max-w-3xl mx-auto leading-relaxed">
-            秉承对体育科技的专业追求，我们团队自2014年起深耕亚洲区中文市场，累计服务超过十年。
-            团队汇聚数十位资深体育科技从业者，核心成员拥有直播吧、Onefootball、SportRadar等知名企业的丰富经验。
+            {t('hero.description')}
           </p>
         </div>
       </section>
@@ -31,20 +34,17 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
               <h2 className="text-responsive-h3 font-bold text-brand-gray-800 mb-6">
-                十年技术沉淀 · 专业服务
+                {t('experience.title')}
               </h2>
               <div className="space-y-4 text-body text-brand-gray-400">
                 <p>
-                  自2014年创立至今，SportLiveAPI专注于体育流媒体技术服务领域。
-                  我们深度参与了体育科技行业的变革进程，积累了丰富的企业级技术服务经验。
+                  {t('experience.description1')}
                 </p>
                 <p>
-                  团队成员覆盖体育科技全产业链，涵盖数据工程、流媒体架构、
-                  产品技术等核心领域，具备深厚的行业洞察和技术实力。
+                  {t('experience.description2')}
                 </p>
                 <p>
-                  十年来，我们为亚洲区中文市场的众多体育科技企业提供了稳定高效的技术支撑，
-                  助力客户实现业务增长，赢得了行业的广泛认可与信赖。
+                  {t('experience.description3')}
                 </p>
               </div>
             </div>
@@ -53,20 +53,20 @@ export default function AboutPage() {
               <Card>
                 <CardContent className="p-6 text-center">
                   <div className="text-3xl font-bold text-brand-primary mb-2">2014</div>
-                  <div className="text-body text-brand-gray-400">公司成立年份</div>
+                  <div className="text-body text-brand-gray-400">{t('experience.stats.founded')}</div>
                 </CardContent>
               </Card>
               <div className="grid grid-cols-2 gap-6">
                 <Card>
                   <CardContent className="p-6 text-center">
                     <div className="text-2xl font-bold text-brand-primary mb-2">10+</div>
-                    <div className="text-small text-brand-gray-400">服务年限</div>
+                    <div className="text-small text-brand-gray-400">{t('experience.stats.years')}</div>
                   </CardContent>
                 </Card>
                 <Card>
                   <CardContent className="p-6 text-center">
                     <div className="text-2xl font-bold text-brand-primary mb-2">50+</div>
-                    <div className="text-small text-brand-gray-400">团队成员</div>
+                    <div className="text-small text-brand-gray-400">{t('experience.stats.members')}</div>
                   </CardContent>
                 </Card>
               </div>
@@ -80,10 +80,10 @@ export default function AboutPage() {
         <div className="container-custom">
           <div className="text-center mb-16">
             <h2 className="text-responsive-h3 font-bold text-brand-gray-800 mb-4">
-              核心团队 · 行业精英
+              {t('team.title')}
             </h2>
             <p className="text-body text-brand-gray-400 max-w-2xl mx-auto">
-              核心团队成员具备丰富的体育科技行业实战经验，来自全球知名体育科技企业
+              {t('team.description')}
             </p>
           </div>
 
@@ -95,22 +95,22 @@ export default function AboutPage() {
                 </div>
                 <h3 className="text-h4 font-semibold text-brand-gray-800 mb-3">Onefootball</h3>
                 <p className="text-body text-brand-gray-400 mb-4">
-                  全球领先的足球数字平台，为球迷提供实时比分、新闻和深度数据分析
+                  {t('team.companies.onefootball.description')}
                 </p>
-                <div className="text-small text-brand-primary">数据技术 • 产品设计</div>
+                <div className="text-small text-brand-primary">{t('team.companies.onefootball.expertise')}</div>
               </CardContent>
             </Card>
 
             <Card className="text-center group hover:shadow-card-hover transition-all duration-300">
               <CardContent className="p-8">
                 <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center mx-auto mb-6 text-white text-2xl font-bold group-hover:scale-110 transition-transform duration-200">
-                  直
+                  {t('team.companies.zhibo8.icon')}
                 </div>
-                <h3 className="text-h4 font-semibold text-brand-gray-800 mb-3">直播吧</h3>
+                <h3 className="text-h4 font-semibold text-brand-gray-800 mb-3">{t('team.companies.zhibo8.name')}</h3>
                 <p className="text-body text-brand-gray-400 mb-4">
-                  中国最大的足球社区平台，拥有千万级用户，深耕体育内容和社区运营
+                  {t('team.companies.zhibo8.description')}
                 </p>
-                <div className="text-small text-brand-primary">社区运营 • 内容策略</div>
+                <div className="text-small text-brand-primary">{t('team.companies.zhibo8.expertise')}</div>
               </CardContent>
             </Card>
 
@@ -121,9 +121,9 @@ export default function AboutPage() {
                 </div>
                 <h3 className="text-h4 font-semibold text-brand-gray-800 mb-3">SportRadar</h3>
                 <p className="text-body text-brand-gray-400 mb-4">
-                  全球领先的体育数据技术公司，为全球体育组织提供专业的技术解决方案
+                  {t('team.companies.sportradar.description')}
                 </p>
-                <div className="text-small text-brand-primary">技术架构 • 系统开发</div>
+                <div className="text-small text-brand-primary">{t('team.companies.sportradar.expertise')}</div>
               </CardContent>
             </Card>
           </div>
@@ -135,10 +135,10 @@ export default function AboutPage() {
         <div className="container-custom">
           <div className="text-center mb-16">
             <h2 className="text-responsive-h3 font-bold text-brand-gray-800 mb-4">
-              服务理念 · 品质承诺
+              {t('promise.title')}
             </h2>
             <p className="text-body text-brand-gray-400 max-w-2xl mx-auto">
-              专业、稳定、可信赖的企业级体育流媒体技术服务
+              {t('promise.description')}
             </p>
           </div>
 
@@ -147,9 +147,9 @@ export default function AboutPage() {
               <div className="w-16 h-16 bg-brand-primary/10 rounded-xl flex items-center justify-center mx-auto mb-4">
                 <span className="text-2xl">🎯</span>
               </div>
-              <h3 className="text-h4 font-semibold text-brand-gray-800 mb-3">专注企业级服务</h3>
+              <h3 className="text-h4 font-semibold text-brand-gray-800 mb-3">{t('promise.features.enterprise.title')}</h3>
               <p className="text-body text-brand-gray-400">
-                深度理解企业技术需求，提供专业的B2B技术解决方案
+                {t('promise.features.enterprise.description')}
               </p>
             </div>
 
@@ -157,9 +157,9 @@ export default function AboutPage() {
               <div className="w-16 h-16 bg-brand-primary/10 rounded-xl flex items-center justify-center mx-auto mb-4">
                 <span className="text-2xl">⚡</span>
               </div>
-              <h3 className="text-h4 font-semibold text-brand-gray-800 mb-3">敏捷响应机制</h3>
+              <h3 className="text-h4 font-semibold text-brand-gray-800 mb-3">{t('promise.features.response.title')}</h3>
               <p className="text-body text-brand-gray-400">
-                7×24小时快速响应，高效的技术沟通与执行能力
+                {t('promise.features.response.description')}
               </p>
             </div>
 
@@ -167,9 +167,9 @@ export default function AboutPage() {
               <div className="w-16 h-16 bg-brand-primary/10 rounded-xl flex items-center justify-center mx-auto mb-4">
                 <span className="text-2xl">🔧</span>
               </div>
-              <h3 className="text-h4 font-semibold text-brand-gray-800 mb-3">专业技术保障</h3>
+              <h3 className="text-h4 font-semibold text-brand-gray-800 mb-3">{t('promise.features.technical.title')}</h3>
               <p className="text-body text-brand-gray-400">
-                全栈技术支撑体系，专业团队全程技术护航
+                {t('promise.features.technical.description')}
               </p>
             </div>
 
@@ -177,9 +177,9 @@ export default function AboutPage() {
               <div className="w-16 h-16 bg-brand-primary/10 rounded-xl flex items-center justify-center mx-auto mb-4">
                 <span className="text-2xl">🌍</span>
               </div>
-              <h3 className="text-h4 font-semibold text-brand-gray-800 mb-3">全球赛事覆盖</h3>
+              <h3 className="text-h4 font-semibold text-brand-gray-800 mb-3">{t('promise.features.global.title')}</h3>
               <p className="text-body text-brand-gray-400">
-                跨地域服务能力，全球体育赛事流媒体技术支持
+                {t('promise.features.global.description')}
               </p>
             </div>
           </div>
@@ -192,7 +192,7 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
               <h2 className="text-responsive-h3 font-bold text-brand-gray-800 mb-6">
-                技术实力与创新
+                {t('technical.title')}
               </h2>
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
@@ -200,9 +200,9 @@ export default function AboutPage() {
                     <span className="text-white text-small">1</span>
                   </div>
                   <div>
-                    <h4 className="font-semibold text-brand-gray-800 mb-2">流媒体技术专长</h4>
+                    <h4 className="font-semibold text-brand-gray-800 mb-2">{t('technical.features.streaming.title')}</h4>
                     <p className="text-body text-brand-gray-400">
-                      深度掌握RTMP、HLS、DASH等主流流媒体协议，确保直播流的稳定传输
+                      {t('technical.features.streaming.description')}
                     </p>
                   </div>
                 </div>
@@ -212,9 +212,9 @@ export default function AboutPage() {
                     <span className="text-white text-small">2</span>
                   </div>
                   <div>
-                    <h4 className="font-semibold text-brand-gray-800 mb-2">全球网络优化</h4>
+                    <h4 className="font-semibold text-brand-gray-800 mb-2">{t('technical.features.network.title')}</h4>
                     <p className="text-body text-brand-gray-400">
-                      构建全球CDN网络，优化直播延迟，提供高质量的观看体验
+                      {t('technical.features.network.description')}
                     </p>
                   </div>
                 </div>
@@ -224,9 +224,9 @@ export default function AboutPage() {
                     <span className="text-white text-small">3</span>
                   </div>
                   <div>
-                    <h4 className="font-semibold text-brand-gray-800 mb-2">API设计与开发</h4>
+                    <h4 className="font-semibold text-brand-gray-800 mb-2">{t('technical.features.api.title')}</h4>
                     <p className="text-body text-brand-gray-400">
-                      设计友好的RESTful API，简化客户集成流程，提高开发效率
+                      {t('technical.features.api.description')}
                     </p>
                   </div>
                 </div>
@@ -236,9 +236,9 @@ export default function AboutPage() {
                     <span className="text-white text-small">4</span>
                   </div>
                   <div>
-                    <h4 className="font-semibold text-brand-gray-800 mb-2">系统监控与维护</h4>
+                    <h4 className="font-semibold text-brand-gray-800 mb-2">{t('technical.features.monitoring.title')}</h4>
                     <p className="text-body text-brand-gray-400">
-                      专业系统监控，高质量技术保障，确保服务稳定性
+                      {t('technical.features.monitoring.description')}
                     </p>
                   </div>
                 </div>
@@ -248,23 +248,23 @@ export default function AboutPage() {
             <div>
               <Card className="bg-gradient-to-br from-brand-primary to-brand-light text-white">
                 <CardContent className="p-8">
-                  <h3 className="text-h3 font-bold mb-6">技术指标</h3>
+                  <h3 className="text-h3 font-bold mb-6">{t('technical.stats.title')}</h3>
                   <div className="grid grid-cols-2 gap-6">
                     <div className="text-center">
                       <div className="text-3xl font-bold mb-2">89.5%</div>
-                      <div className="text-white/80">联赛覆盖度</div>
+                      <div className="text-white/80">{t('technical.stats.coverage')}</div>
                     </div>
                     <div className="text-center">
                       <div className="text-3xl font-bold mb-2">&lt;2s</div>
-                      <div className="text-white/80">直播延迟</div>
+                      <div className="text-white/80">{t('technical.stats.latency')}</div>
                     </div>
                     <div className="text-center">
                       <div className="text-3xl font-bold mb-2">4K</div>
-                      <div className="text-white/80">最高画质</div>
+                      <div className="text-white/80">{t('technical.stats.quality')}</div>
                     </div>
                     <div className="text-center">
-                      <div className="text-3xl font-bold mb-2">专业</div>
-                      <div className="text-white/80">技术团队</div>
+                      <div className="text-3xl font-bold mb-2">{t('technical.stats.team_value')}</div>
+                      <div className="text-white/80">{t('technical.stats.team')}</div>
                     </div>
                   </div>
                 </CardContent>
@@ -278,19 +278,16 @@ export default function AboutPage() {
       <section className="space-section bg-white">
         <div className="container-custom text-center">
           <h2 className="text-responsive-h3 font-bold text-brand-gray-800 mb-4">
-            准备开始合作？
+            {t('cta.title')}
           </h2>
           <p className="text-body-lg text-brand-gray-400 max-w-2xl mx-auto mb-8">
-            我们的专业团队已经准备好为您提供定制化的体育直播流技术解决方案
+            {t('cta.description')}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button variant="default" size="lg" asChild>
-              <Link href="/contact">
-                获取试用和报价
+              <Link href={`/${locale}/contact`}>
+                {t('cta.button')}
               </Link>
-            </Button>
-            <Button variant="secondary" size="lg" asChild>
-
             </Button>
           </div>
         </div>

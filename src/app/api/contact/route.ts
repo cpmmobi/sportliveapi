@@ -352,7 +352,7 @@ async function sendToFeishu(formData: ContactFormData, clientIP: string) {
     }
 
     // 构建紧凑的消息内容，优化排版
-    const messageContent = `🎯 高价值客户咨询 - SportStreamHD
+    const messageContent = `🎯 高价值客户咨询 - SportLiveAPI
 📋 基本信息
 🏢 公司名称: ${formData.companyName}
 👤 联系人: ${formData.contactName} (${formData.position})
@@ -402,7 +402,7 @@ ${formData.userSource ? formatUserSourceInfo(formData.userSource, clientIP) : '�
     if (isTelegram) contactIcon = '✈️'
 
     // 构建紧凑的消息内容，优化排版
-    const messageContent = `🎯 新客户咨询 - SportStreamHD
+    const messageContent = `🎯 新客户咨询 - SportLiveAPI
 📧 邮箱地址: ${simpleData.email}
 ${contactIcon} 联系方式: ${simpleData.contactMethod}
 ⚽ 感兴趣的体育项目: ${sportsText}
@@ -586,7 +586,7 @@ export async function POST(request: NextRequest) {
     return NextResponse.json(
       { 
         success: false,
-        error: '服务器暂时繁忙，请稍后重试或直接邮件联系：business@sportstreamhd.com' 
+        error: '服务器暂时繁忙，请稍后重试或直接邮件联系：business@sportliveapi.com' 
       },
       { status: 500 }
     )

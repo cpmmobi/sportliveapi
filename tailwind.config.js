@@ -25,12 +25,12 @@ module.exports = {
         primary: {
           DEFAULT: 'hsl(var(--primary))',
           foreground: 'hsl(var(--primary-foreground))',
-          50: '#f0f8ff',
-          100: '#e0f2fe',
-          500: '#0066CC',
-          600: '#0052a3',
-          700: '#003d7a',
-          900: '#003366',
+          50: '#fef2f2',
+          100: '#fee2e2',
+          500: '#DC2626',
+          600: '#B91C1C',
+          700: '#991B1B',
+          900: '#7F1D1D',
         },
         secondary: {
           DEFAULT: 'hsl(var(--secondary))',
@@ -60,12 +60,12 @@ module.exports = {
         },
         // SportStreamHD 品牌色彩
         brand: {
-          primary: '#0066CC',
-          secondary: '#003366',
-          accent: '#FF6600',
-          light: '#3399FF',
-          success: '#00CC66',
-          error: '#FF3333',
+          primary: '#DC2626',
+          secondary: '#991B1B',
+          accent: '#F59E0B',
+          light: '#F87171',
+          success: '#059669',
+          error: '#DC2626',
           gray: {
             50: '#F8F9FA',
             100: '#E5E5E5',
@@ -145,7 +145,7 @@ module.exports = {
       boxShadow: {
         'card': '0 2px 8px rgba(0,0,0,0.1)',
         'card-hover': '0 8px 24px rgba(0,0,0,0.15)',
-        'button': '0 4px 12px rgba(0,102,204,0.3)',
+        'button': '0 4px 12px rgba(220,38,38,0.3)',
       }
     },
   },
