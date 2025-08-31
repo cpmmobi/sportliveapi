@@ -583,10 +583,6 @@
     }
   },
   "services": {
-    "meta": {
-      "title": "專業體育串流媒體服務 - SportLiveAPI",
-      "description": "專業體育串流媒體API服務，提供RTMP推送、播放連結和資料介面，涵蓋12大運動類別。"
-    },
     "hero": {
       "title": "專業體育串流媒體服務",
       "description": "提供RTMP推送、播放連結、資料介面等靈活接入方式，涵蓋足球、籃球、賽車、冰球等12大運動類別。",
@@ -997,10 +993,6 @@
     }
   },
   "about": {
-    "meta": {
-      "title": "關於我們",
-      "description": "了解更多關於我們公司、團隊和背景的資訊。"
-    },
     "hero": {
       "title": "關於 SportLiveAPI",
       "description": "我們是一支專注於體育直播流技術服務的專業團隊，擁有10年行業經驗，為全球客戶提供穩定可靠的流媒體解決方案。"
@@ -1152,10 +1144,6 @@
     }
   },
   "faq": {
-    "meta": {
-      "title": "常見問題 - SportLiveAPI",
-      "description": "查找關於我們體育直播API服務的常見問題解答，包括技術規格、定價和支援資訊。"
-    },
     "title": "常見問題",
     "description": "查找關於我們體育直播API服務的常見問題解答",
     "categories": {

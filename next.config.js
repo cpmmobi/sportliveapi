@@ -8,11 +8,7 @@ const nextConfig = {
   },
   experimental: {
     optimizePackageImports: ['lucide-react']
-  },
-  // 禁用所有静态优化
-  staticPageGenerationTimeout: 0,
-  poweredByHeader: false,
-  compress: false
+  }
 }
 
 module.exports = withNextIntl(nextConfig)

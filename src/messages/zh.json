@@ -223,10 +223,6 @@
     }
   },
   "services": {
-    "meta": {
-      "title": "专业体育流媒体服务 - SportLiveAPI",
-      "description": "专业体育流媒体API服务，提供RTMP推送、播放链接和数据接口，涵盖12大运动类别。"
-    },
     "hero": {
       "title": "专业体育流媒体服务",
       "description": "提供RTMP推送、播放链接、数据接口等灵活接入方式，涵盖足球、篮球、赛车、冰球等12大运动类别。",
@@ -625,10 +621,6 @@
     }
   },
   "faq": {
-    "meta": {
-      "title": "常见问题 - SportLiveAPI",
-      "description": "查找关于我们体育直播API服务的常见问题解答，包括技术规格、定价和支持信息。"
-    },
     "title": "常见问题",
     "description": "查找关于我们体育直播API服务的常见问题解答",
     "categories": {
@@ -716,10 +708,6 @@
     }
   },
   "about": {
-    "meta": {
-      "title": "关于我们",
-      "description": "了解更多关于我们公司、团队和背景的信息。"
-    },
     "hero": {
       "title": "关于 SportLiveAPI",
       "description": "我们是一支专注于体育直播流技术服务的专业团队，拥有10年行业经验，为全球客户提供稳定可靠的流媒体解决方案。"

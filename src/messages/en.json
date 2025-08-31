@@ -348,10 +348,6 @@
     "learn_more": "Learn More"
   },
   "services": {
-    "meta": {
-      "title": "Professional Sports Streaming Services - SportLiveAPI",
-      "description": "Professional sports streaming API services with RTMP push, streaming links, and data APIs covering 12 major sports categories."
-    },
     "hero": {
       "title": "Professional Sports Streaming Services",
       "description": "Providing flexible integration methods including RTMP push, streaming links, and data APIs, covering 12 major sports categories including football, basketball, racing, and ice hockey.",
@@ -762,10 +758,6 @@
     }
   },
   "faq": {
-    "meta": {
-      "title": "Frequently Asked Questions - SportLiveAPI",
-      "description": "Find answers to common questions about our sports live API service, technical specifications, pricing, and support."
-    },
     "title": "Frequently Asked Questions",
     "description": "Find answers to common questions about our sports live API service",
     "categories": {
