@@ -14,26 +14,27 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <>
-      <head>
-        {/* Google Analytics - 外部脚本 */}
+    <html lang="zh-CN" className={cn(inter.variable)}>
+      <body className={cn(
+        'min-h-screen bg-background font-sans antialiased',
+        inter.className
+      )}>
+        {/* Analytics & Ads Scripts */}
         <Script
           strategy="afterInteractive"
           src="https://www.googletagmanager.com/gtag/js?id=G-7GFBPM5LLB"
         />
-        {/* Google Ads 转化跟踪 - 外部脚本 */}
         <Script
           strategy="afterInteractive"
           src="https://www.googletagmanager.com/gtag/js?id=AW-17429360235"
         />
-        {/* Google Analytics - 初始化脚本 */}
         <Script
           id="google-analytics"
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `
               window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
+              function gtag(){dataLayer.push(arguments);} 
               gtag('js', new Date());
               gtag('config', 'G-7GFBPM5LLB', {
                 page_title: document.title,
@@ -45,8 +46,9 @@ export default function RootLayout({
             `,
           }}
         />
-      </head>
-      {children}
-    </>
+
+        {children}
+      </body>
+    </html>
   )
 }
