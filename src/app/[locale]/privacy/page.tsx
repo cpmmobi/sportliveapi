@@ -1,8 +1,9 @@
 import React from 'react'
 import Link from 'next/link'
 import MainLayout from '@/components/layout/main-layout'
-import { useTranslations } from 'next-intl'
+// Removed unused import: useTranslations
 import { Metadata } from 'next'
+import { getTranslations } from 'next-intl/server'
 
 export function generateMetadata({ params }: { params: { locale: string } }): Metadata {
   const locale = params.locale
@@ -10,13 +11,13 @@ export function generateMetadata({ params }: { params: { locale: string } }): Me
   const titles = {
     'en': 'Privacy Policy - SportLiveAPI',
     'zh': '隐私政策 - SportLiveAPI',
-    'zh-TW': '隱私政策 - SportLiveAPI'
+    'zh-TW': '隐私政策 - SportLiveAPI'
   }
   
   const descriptions = {
     'en': 'SportLiveAPI privacy policy and data protection information',
     'zh': 'SportLiveAPI隐私政策和数据保护信息',
-    'zh-TW': 'SportLiveAPI隱私政策和數據保護信息'
+    'zh-TW': 'SportLiveAPI 隐私政策与资料保护资讯'
   }
   
   return {
@@ -25,8 +26,8 @@ export function generateMetadata({ params }: { params: { locale: string } }): Me
   }
 }
 
-export default function PrivacyPage() {
-  const t = useTranslations('privacy')
+export default async function PrivacyPage({ params }: { params: { locale: string } }) {
+  const t = await getTranslations({ locale: params.locale, namespace: 'privacy' })
   
   return (
     <MainLayout>
@@ -176,7 +177,7 @@ export default function PrivacyPage() {
                 <p className="text-body text-brand-gray-400">
                   <strong className="text-brand-gray-800">SportLiveAPI Team</strong><br />
                   {t('contact.email')}<br />
-                  {t('contact.website')}: <Link href="/contact" className="text-brand-primary hover:text-brand-secondary underline">Contact Us Page</Link>
+                  {t('contact.website')}: <Link href={`/${params.locale}/contact`} className="text-brand-primary hover:text-brand-secondary underline">Contact Us Page</Link>
                 </p>
               </div>
             </section>
