@@ -43,6 +43,9 @@ export interface UserSourceInfo {
   gclid?: string;           // Google Ads点击ID
   fbclid?: string;          // Facebook点击ID
   
+  // UI 语言（根据 URL 路径前缀推断，如 zh / en / zh-TW）
+  uiLocale?: string;
+  
   // 时间信息
   timestamp: number;        // 访问时间戳
 }
@@ -374,6 +377,8 @@ export function getUserSourceInfo(): UserSourceInfo {
         language: 'unknown',
         languages: []
       },
+      // SSR 场景默认 zh，实际表单在前端执行会覆盖
+      uiLocale: 'zh',
       timestamp: Date.now()
     };
   }
@@ -384,6 +389,15 @@ export function getUserSourceInfo(): UserSourceInfo {
   const searchInfo = extractSearchKeyword(document.referrer);
   const keywordFromParams = getKeywordFromParams();
   const deviceInfo = getDeviceInfo();
+  
+  // 推断当前 UI 语言（基于 URL 路径前缀）
+  let uiLocale: string = 'zh';
+  try {
+    const pathLocale = (window.location.pathname.split('/')[1] || '').trim();
+    if (['zh', 'en', 'zh-TW'].includes(pathLocale)) {
+      uiLocale = pathLocale;
+    }
+  } catch {}
   
   // 调试referrer信息
   console.log('🔍 调试用户来源信息:');
@@ -464,6 +478,7 @@ export function getUserSourceInfo(): UserSourceInfo {
     device: deviceInfo,
     gclid: gclid || undefined,
     fbclid: fbclid || undefined,
+    uiLocale,
     timestamp: Date.now()
   };
 }

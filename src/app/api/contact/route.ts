@@ -234,10 +234,21 @@ function formatUserSourceInfo(userSource: UserSourceInfo, clientIP: string): str
                      userSource.device.device === 'tablet' ? '💻' : '🖥️'
   parts.push(`${deviceEmoji} **设备:** ${userSource.device.device} - ${userSource.device.browser}/${userSource.device.os}`)
   
-  // 语言信息
+  // 浏览器语言信息
   if (userSource.device.language && userSource.device.language !== 'unknown') {
     const languageDisplay = formatLanguageInfo(userSource.device.language, userSource.device.languages)
     parts.push(`🌐 **语言:** ${languageDisplay}`)
+  }
+
+  // 当前站点语言（UI 语言）
+  if (userSource.uiLocale) {
+    const uiLocaleNameMap: Record<string, string> = {
+      'zh': '简体中文',
+      'en': '英语',
+      'zh-TW': '繁体中文'
+    }
+    const uiLocaleDisplay = uiLocaleNameMap[userSource.uiLocale] || userSource.uiLocale
+    parts.push(`🈯 **当前站点语言:** ${uiLocaleDisplay}`)
   }
   
   // 地理位置
