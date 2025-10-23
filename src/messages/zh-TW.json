@@ -457,7 +457,7 @@
       "label": "詳細需求說明（可選）"
     },
     "requirementsPlaceholder": "請描述您的具體需求、預期流量、技術棧等...",
-    "individualWarning": "溫馨提示：當前直播源方案主要服務於團隊及企業客戶，個人用戶使用成本可能略高。",
+    "individualWarning": "溫馨提示：專為主播群體設計的Telegram群組機器人，24h為您提供超清衛星源",
     "submit": "提交",
     "submitting": "提交中...",
     "success": "感謝您！",
@@ -523,7 +523,7 @@
          "thankYou": "感謝您的諮詢！",
          "followUp": "我們將在24小時內聯繫您，詳細討論您的需求。",
          "privacyNote": "我們尊重您的隱私，不會將您的資訊分享給第三方。",
-         "individualNote": "溫馨提示：當前直播源方案主要服務於團隊及企業客戶，個人用戶使用成本可能略高。"
+         "individualNote": "溫馨提示：專為主播群體設計的Telegram群組機器人，24h為您提供超清衛星源"
        },
        "sports": {
          "football": "⚽ 足球",
@@ -549,7 +549,7 @@
          "label": "主播規模",
          "team": "主播團體",
          "individual": "個體主播",
-         "individualWarning": "溫馨提示：當前直播源方案主要服務於團隊及企業客戶，個人用戶使用成本可能略高。"
+         "individualWarning": "溫馨提示：專為主播群體設計的Telegram群組機器人，24h為您提供超清衛星源"
        },
        "sportsInterests": {
          "label": "感興趣的體育項目"
@@ -574,7 +574,7 @@
           "useCaseRequired": "請選擇使用場景"
         },
         "contactMethodDescription": "Telegram格式：@username（如@alice_dev），QQ格式：數字號碼（如12345678）",
-        "individualWarning": "溫馨提示：當前直播源方案主要服務於團隊及企業客戶，個人用戶使用成本可能略高。",
+        "individualWarning": "溫馨提示：專為主播群體設計的Telegram群組機器人，24h為您提供超清衛星源",
         "platformInfoPlaceholder": "為了便於後續溝通，請輸入您的平台名稱",
         "requirementsPlaceholder": "請描述您的具體需求、預期流量、技術棧等...",
         "title": "獲取試用和報價",
@@ -654,7 +654,7 @@
       }
     },
     "solutions": {
-      "title": "三大服務類型",
+      "title": "多種技術對接形式",
       "description": "根據不同業務場景，提供靈活的技術接入方案",
       "rtmp": {
         "title": "RTMP推流服務",

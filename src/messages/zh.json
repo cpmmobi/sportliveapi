@@ -173,7 +173,7 @@
       "label": "详细需求说明（可选）"
     },
     "requirementsPlaceholder": "请描述您的具体需求、预期流量、技术栈等...",
-    "individualWarning": "温馨提示：当前直播源方案主要服务于团队及企业客户，个人用户使用成本可能略高。",
+    "individualWarning": "温馨提示：专为主播群体设计的Telegram群组机器人，24h为您提供超清卫星源",
     "submit": "提交咨询",
     "submitting": "提交中...",
     "success": "表单提交成功！",
@@ -218,7 +218,7 @@
         "thankYou": "感谢您的咨询！",
         "followUp": "我们将在24小时内联系您，详细了解您的需求。",
         "privacyNote": "我们尊重您的隐私，不会将您的信息分享给第三方。",
-        "individualNote": "温馨提示：当前直播源方案主要服务于团队及企业客户，个人用户使用成本可能略高。"
+        "individualNote": "温馨提示：专为主播群体设计的Telegram群组机器人，24h为您提供超清卫星源"
       }
     }
   },
@@ -283,7 +283,7 @@
       }
     },
     "solutions": {
-      "title": "三大服务类型",
+      "title": "多种技术对接形式",
       "description": "根据不同业务场景，提供灵活的技术接入方案",
       "rtmp": {
         "title": "RTMP推流服务",

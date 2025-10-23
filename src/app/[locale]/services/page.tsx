@@ -360,11 +360,6 @@ export default function ServicesPage() {
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>
-            <Button size="lg" variant="outline" asChild>
-              <Link href="/docs">
-                {t('cta.documentation')}
-              </Link>
-            </Button>
           </div>
         </div>
       </section>
