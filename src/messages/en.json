@@ -1075,7 +1075,7 @@
       }
     },
     "technicalServices": {
-      "title": "Dual Technical Integration Modes",
+      "title": "Triple Technical Integration Modes",
       "description": "Flexible technical integration solutions to meet different business scenario needs",
       "rtmp": {
         "title": "RTMP Streaming Push",
@@ -1091,6 +1091,17 @@
         "codeTitle": "API Query for Match and Streaming Link Correspondence",
         "codeComment": "Query streaming links corresponding to matches",
         "apiComment": "Query live links corresponding to matches"
+      },
+      "bot": {
+        "title": "Live Source Group Bot",
+        "description": "24/7 self-service satellite live source queries, ready to stream with OBS",
+        "codeTitle": "Bot Query Example",
+        "botComment": "Join group to get live sources",
+        "obsComment": "Direct OBS streaming links",
+        "replyCode": "Reply: 666",
+        "queryMatches": "Query match list",
+        "replyNumber": "Reply: Match number",
+        "querySources": "Query satellite sources"
       }
     }
   },

@@ -165,7 +165,7 @@
       }
     },
     "technicalServices": {
-      "title": "雙重技術接入模式",
+      "title": "三重技術接入模式",
       "description": "靈活的技術接入解決方案，滿足不同業務場景需求",
       "rtmp": {
         "title": "RTMP串流推送",
@@ -181,6 +181,17 @@
         "codeTitle": "API查詢比賽和直播連結對應",
         "codeComment": "查詢比賽對應的串流連結",
         "apiComment": "查詢比賽對應的直播連結"
+      },
+      "bot": {
+        "title": "直播源群組機器人",
+        "description": "24h自助查詢衛星直播源，OBS打開即播",
+        "codeTitle": "機器人查詢示例",
+        "botComment": "加入群組獲取直播源",
+        "obsComment": "OBS直接播放連結",
+        "replyCode": "回覆: 666",
+        "queryMatches": "查詢比賽列表",
+        "replyNumber": "回覆: 比賽序號",
+        "querySources": "查詢衛星源地址"
       }
     }
   },

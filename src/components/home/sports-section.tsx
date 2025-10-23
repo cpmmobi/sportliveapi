@@ -62,7 +62,7 @@ export default function SportsSection() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             <Card className="text-center group hover:border-brand-primary/20 transition-all duration-300">
               <CardContent className="p-8">
                 <div className="w-16 h-16 bg-gradient-to-br from-brand-primary to-brand-light rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-200">
@@ -107,6 +107,27 @@ export default function SportsSection() {
               </CardContent>
             </Card>
 
+            <Card className="text-center group hover:border-brand-primary/20 transition-all duration-300">
+              <CardContent className="p-8">
+                <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-200">
+                  <svg className="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                  </svg>
+                </div>
+                <h4 className="text-h4 font-semibold text-brand-gray-800 mb-4">
+                  {t('sports.technicalServices.bot.title')}
+                </h4>
+                <p className="text-body text-brand-gray-400 mb-6">
+                  {t('sports.technicalServices.bot.description')}
+                </p>
+                <div className="bg-brand-gray-50 rounded-lg p-4 font-mono text-small text-left">
+                  <div className="text-brand-primary">{t('sports.technicalServices.bot.replyCode')}</div>
+                  <div className="text-brand-gray-400 mt-1">{t('sports.technicalServices.bot.queryMatches')}</div>
+                  <div className="text-brand-primary mt-2">{t('sports.technicalServices.bot.replyNumber')}</div>
+                  <div className="text-brand-gray-400 mt-1">{t('sports.technicalServices.bot.querySources')}</div>
+                </div>
+              </CardContent>
+            </Card>
 
           </div>
         </div>

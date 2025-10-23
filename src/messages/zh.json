@@ -941,7 +941,7 @@
       }
     },
     "technicalServices": {
-      "title": "双重技术接入模式",
+      "title": "三重技术接入模式",
       "description": "灵活的技术接入方案，满足不同业务场景需求",
       "rtmp": {
         "title": "RTMP流媒体推送",
@@ -957,6 +957,17 @@
         "codeTitle": "API接口查询比赛和直播链接对应",
         "codeComment": "查询比赛对应的直播链接",
         "apiComment": "查询比赛对应的直播链接"
+      },
+      "bot": {
+        "title": "直播源群组机器人",
+        "description": "24h自助查询卫星直播源，OBS打开即播",
+        "codeTitle": "机器人查询示例",
+        "botComment": "加入群组获取直播源",
+        "obsComment": "OBS直接播放链接",
+        "replyCode": "回复: 666",
+        "queryMatches": "查询比赛列表",
+        "replyNumber": "回复: 比赛序号",
+        "querySources": "查询卫星源地址"
       }
     }
   },
