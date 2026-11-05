@@ -41,7 +41,7 @@ export type IptvSchedulePayload = {
 const cache = new Map<string, { at: number; payload: IptvSchedulePayload }>()
 const TTL_MS = 60_000
 
-export async function fetchIptvSchedule(date?: string): Promise<IptvSchedulePayload> {
+async function fetchIptvSchedule(date?: string): Promise<IptvSchedulePayload> {
   const key = date && /^\d{4}-\d{2}-\d{2}$/.test(date) ? date : 'default'
   const hit = cache.get(key)
   if (hit && Date.now() - hit.at < TTL_MS) return hit.payload
