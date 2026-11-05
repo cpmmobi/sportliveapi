@@ -1533,7 +1533,7 @@ export default function ProductPage({ params }: { params: { locale: string; slug
                   <div className="border-t border-brand-line px-6 py-5 text-sm leading-6 text-brand-muted">
                     <p>{tx(locale, item.a)}</p>
 
-                    {'showTrafficTable' in item && item.showTrafficTable && (
+                    {'showTrafficTable' in item && item.showTrafficTable === true ? (
                       <div className="mt-4">
                         <p className="text-xs font-bold uppercase tracking-wider text-brand-ink">
                           {tx(locale, streamsDeliveryModes.trafficTableTitle)}
@@ -1577,7 +1577,7 @@ export default function ProductPage({ params }: { params: { locale: string; slug
                           </table>
                         </div>
                       </div>
-                    )}
+                    ) : null}
                   </div>
                 </details>
               ))}
