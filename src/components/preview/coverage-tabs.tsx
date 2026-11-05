@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import { Mark } from '@/components/site/shell'
 import type { StreamsPreview } from '@/lib/streams-preview'
-import type { IptvSchedulePayload } from '@/app/api/preview/iptv-schedule/route'
+import type { IptvSchedulePayload } from '@/lib/iptv-schedule'
 import { StreamsPreviewBoard } from './streams-preview'
 import { ChannelsPreviewBoard, type ChannelGroup } from './channels-preview'
 

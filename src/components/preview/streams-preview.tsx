@@ -298,7 +298,7 @@ export function StreamsPreviewBoard({ locale, initial }: { locale: string; initi
       if (!lg) continue
       counts.set(lg, (counts.get(lg) || 0) + 1)
     }
-    return [...counts.entries()].sort((a, b) => b[1] - a[1]).slice(0, 8)
+    return Array.from(counts.entries()).sort((a, b) => b[1] - a[1]).slice(0, 8)
   }, [liveMatches, sport, locale])
 
   const filteredMatches = useMemo(() => {

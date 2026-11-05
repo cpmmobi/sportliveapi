@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { useEffect, useMemo, useState } from 'react'
-import type { IptvSchedulePayload } from '@/app/api/preview/iptv-schedule/route'
+import type { IptvSchedulePayload } from '@/lib/iptv-schedule'
 
 export type ChannelGroup = {
   tag: string

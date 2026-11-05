@@ -185,7 +185,7 @@ export async function getStreamsPreview(): Promise<StreamsPreview> {
     const groups = await Promise.all(SPORT_TYPES.map((type) => fetchType(auth, type)))
     const byId = new Map<string, PreviewMatch>()
     for (const match of groups.flat()) byId.set(match.id, match)
-    const matches = [...byId.values()].sort((a, b) => {
+    const matches = Array.from(byId.values()).sort((a, b) => {
       if (a.isPlayed !== b.isPlayed) return a.isPlayed ? -1 : 1
       return a.date - b.date
     })
