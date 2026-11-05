@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation'
 
-const SUPPORTED_LOCALES = ['en', 'zh', 'zh-TW'] as const
+const SUPPORTED_LOCALES = ['en', 'zh-TW', 'zh'] as const
 
 type SupportedLocale = (typeof SUPPORTED_LOCALES)[number]
 
@@ -9,19 +9,23 @@ export function isValidLocale(locale: string): locale is SupportedLocale {
   return SUPPORTED_LOCALES.includes(locale as SupportedLocale)
 }
 
-// 动态导入翻译文件
+// 动态导入翻译文件（未翻译语言暂回退到英文）
 export async function getMessages(locale: string) {
   if (!isValidLocale(locale)) {
     notFound()
   }
 
   try {
-    const messages = await import(`@/messages/${locale}.json`)
-    return messages.default
+    if (locale === 'zh') {
+      return (await import('@/messages/zh.json')).default
+    }
+    if (locale === 'zh-TW') {
+      return (await import('@/messages/zh-TW.json')).default
+    }
+    return (await import('@/messages/en.json')).default
   } catch (error) {
     console.error(`Failed to load messages for locale: ${locale}`, error)
-    // If loading fails, throw an error instead of falling back
-    throw error;
+    return (await import('@/messages/en.json')).default
   }
 }
 

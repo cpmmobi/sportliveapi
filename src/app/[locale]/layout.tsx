@@ -3,15 +3,11 @@ import { ReactNode } from 'react'
 import { NextIntlClientProvider } from 'next-intl'
 import { getMessages } from '@/lib/i18n'
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
-import { cn } from '@/lib/utils'
+import { BreadcrumbSchema } from '@/components/site/breadcrumb-schema'
+import { HtmlLang } from '@/components/site/html-lang'
+import { organizationGraph } from '@/lib/seo'
 
-const inter = Inter({ 
-  subsets: ['latin'],
-  variable: '--font-inter',
-})
-
-const SUPPORTED_LOCALES = ['en', 'zh', 'zh-TW'] as const
+const SUPPORTED_LOCALES = ['en', 'zh-TW', 'zh'] as const
 
 type SupportedLocale = (typeof SUPPORTED_LOCALES)[number]
 
@@ -33,18 +29,18 @@ export function generateMetadata({ params }: { params: { locale: string } }): Me
   
   const isZh = locale === 'zh' || locale === 'zh-TW'
   
-  const title = isZh ? 'SportLiveAPI - 专业体育视频直播流媒体服务商' : 'SportLiveAPI - Professional Sports Live Streaming API Service'
+  const title = isZh ? 'SportLiveAPI - 体育比赛直播线路' : 'SportLiveAPI - Live lines for sports matches'
   const description = isZh 
-    ? '为体育类产品开发者提供稳定、多元化的全球体育赛事直播流技术接入服务。支持RTMP推流、直播链接、API接口等多种服务形式，覆盖足球、篮球、赛车、冰球等12种体育项目。'
-    : 'Providing stable and diversified global sports live streaming API services for sports product developers. Supporting RTMP streaming, live links, API interfaces and other service forms, covering 12 sports including football, basketball, racing, and ice hockey.'
+    ? '赛事直播线路、全球体育频道、OBS直播流机器人。开赛前接比赛，换台看体育台，或把直播流发给主播。'
+    : 'Live Match Lines, Global Sports Channels, and OBS Streamer Bot. Connect a match before kickoff, tune in to a sports channel, or send the line to a host.'
   
   const keywords = isZh 
-    ? '体育直播流API, RTMP推流服务, 体育视频接口, B端体育直播解决方案'
-    : 'Sports Live Streaming API, RTMP Streaming Service, Sports Video Interface, B2B Sports Live Solution'
+    ? '体育直播流, 赛事直播线路, 直播链接, 推流, 全球体育频道, 体育直播API'
+    : 'sports live streaming API, live match lines, playback links, push streaming, global sports TV'
     
   const ogDescription = isZh
-    ? '10年专业服务经验，来自直播吧、onefootball、SportRadar的资深团队。12项体育全覆盖，89.5%全球联赛覆盖度。'
-    : '10 years of professional service experience, senior team from Zhibo8, Onefootball, SportRadar. 12 sports full coverage, 89.5% global league coverage.'
+    ? '赛事直播线路、全球体育频道、OBS直播流机器人。开赛前接比赛，换台看体育台，或把直播流发给主播。'
+    : 'Live Match Lines, Global Sports Channels, and OBS Streamer Bot. Connect a match before kickoff, tune a sports channel, or send the line to a host.'
     
   const ogLocale = locale === 'zh-TW' ? 'zh_TW' : locale === 'zh' ? 'zh_CN' : 'en_US'
   
@@ -61,27 +57,10 @@ export function generateMetadata({ params }: { params: { locale: string } }): Me
       telephone: false,
     },
     metadataBase: new URL('https://sportliveapi.com'),
-    alternates: {
-      canonical: `/${locale}`,
-      languages: {
-        'zh-CN': '/zh',
-        'en-US': '/en',
-        'zh-TW': '/zh-TW',
-      },
-    },
     openGraph: {
       title,
       description: ogDescription,
-      url: `https://sportliveapi.com/${locale}`,
       siteName: 'SportLiveAPI',
-      images: [
-        {
-          url: '/og-image.jpg',
-          width: 1200,
-          height: 630,
-          alt: isZh ? 'SportLiveAPI - 专业体育直播流服务商' : 'SportLiveAPI - Professional Sports Live Streaming Service',
-        },
-      ],
       locale: ogLocale,
       type: 'website',
     },
@@ -89,7 +68,6 @@ export function generateMetadata({ params }: { params: { locale: string } }): Me
       card: 'summary_large_image',
       title,
       description,
-      images: ['/og-image.jpg'],
     },
     robots: {
       index: true,
@@ -114,20 +92,15 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
   // 获取翻译消息
   const messages = await getMessages(params.locale)
 
-  // 设置html lang属性
-  const htmlLang = params.locale === 'zh-TW' ? 'zh-TW' : params.locale === 'zh' ? 'zh-CN' : 'en-US'
-  
+  const graph = organizationGraph(params.locale)
+
   return (
-    <html lang={htmlLang} className={cn(inter.variable)}>
-      <body className={cn(
-        "min-h-screen bg-background font-sans antialiased",
-        inter.className
-      )}>
-        <NextIntlClientProvider locale={params.locale} messages={messages}>
-          {children}
-        </NextIntlClientProvider>
-      </body>
-    </html>
+    <NextIntlClientProvider locale={params.locale} messages={messages}>
+      <HtmlLang locale={params.locale} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(graph).replace(/</g, '\\u003c') }} />
+      <BreadcrumbSchema />
+      {children}
+    </NextIntlClientProvider>
   )
 }
 

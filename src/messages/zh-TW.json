@@ -429,10 +429,11 @@
       "hockey": "🏒 冰球"
     },
     "useCase": {
-      "label": "使用場景",
-      "websiteApp": "網站/APP接入賽事直播",
-      "obsStreaming": "僅網路主播在OBS直播使用",
-      "bothScenarios": "以上兩種場景都有"
+      "label": "你要接入的產品",
+      "websiteApp": "賽事直播線路（播放連結）",
+      "obsStreaming": "OBS直播流機器人",
+      "bothScenarios": "賽事直播線路（RTMP 推流）",
+      "iptv": "全球體育頻道"
     },
     "streamerType": {
       "label": "主播規模",
@@ -457,17 +458,17 @@
       "label": "詳細需求說明（可選）"
     },
     "requirementsPlaceholder": "請描述您的具體需求、預期流量、技術棧等...",
-    "individualWarning": "溫馨提示：專為主播群體設計的Telegram群組機器人，24h為您提供超清衛星源",
+    "individualWarning": "OBS直播流機器人在開賽前把這場的直播流發到 Telegram，放進 OBS 就能解說。網站或 App 裡的觀眾要直接看，需要另外接賽事直播線路。",
     "submit": "提交",
     "submitting": "提交中...",
     "success": "感謝您！",
     "successMessage": "感謝您的諮詢，我們的專業團隊將在24小時內與您聯繫，為您提供客製化的解決方案和報價。",
     "nextSteps": {
-      "title": "接下來會發生什麼？",
-      "step1": "我們的技術顧問將聯繫您了解詳細需求",
-      "step2": "在24小時內透過您提供的聯繫方式與您聯繫",
-      "step3": "提供客製化的技術解決方案和報價",
-      "step4": "安排技術整合和測試環境"
+      "title": "接下來的步驟",
+      "step1": "先把報價和接入方式發給你",
+      "step2": "你認可後，開通專屬測試頁",
+      "step3": "在測試頁上看正在播出的線路，並選定直播連結或推流",
+      "step4": "付費後開通播放域名、推流或賽事匹配"
     },
     "contactForm": {
       "validation": {
@@ -857,7 +858,7 @@
         "duration": "1-2天"
       },
       "1": {
-        "title": "技術接口對接",
+        "title": "技術介面對接",
         "description": "提供完整API文檔和專業技術指導",
         "duration": "1-2天"
       },

@@ -1,8 +1,8 @@
 'use client'
 
-import React, { useEffect } from 'react'
-import Header from './header'
-import Footer from './footer'
+import React from 'react'
+import Header from '@/components/site/header'
+import Footer from '@/components/site/footer'
 import { useUTMTracking } from '@/lib/utm-persistence'
 
 interface MainLayoutProps {
@@ -10,15 +10,12 @@ interface MainLayoutProps {
 }
 
 export default function MainLayout({ children }: MainLayoutProps) {
-  // 初始化UTM参数追踪
   useUTMTracking()
-  
+
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="flex min-h-screen flex-col bg-brand-paper text-brand-ink">
       <Header />
-      <main className="flex-1 pt-24 lg:pt-28">
-        {children}
-      </main>
+      <main className="flex-1">{children}</main>
       <Footer />
     </div>
   )

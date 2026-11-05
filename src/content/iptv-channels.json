@@ -1,0 +1,651 @@
+{
+  "updatedFrom": "matchpass.tv/api/iptv/channels",
+  "groups": [
+    {
+      "code": "GB",
+      "regionZh": "英国",
+      "regionEn": "United Kingdom",
+      "regionTw": "英國",
+      "channels": [
+        {
+          "id": "bbc-one",
+          "name": "BBC One",
+          "country": "GB",
+          "logo": "/iptv-logos/bbc-one.png"
+        },
+        {
+          "id": "channel-5",
+          "name": "Channel 5",
+          "country": "GB",
+          "logo": "/iptv-logos/channel-5.png"
+        },
+        {
+          "id": "dazn-1",
+          "name": "DAZN 1",
+          "country": "GB",
+          "logo": "/iptv-logos/dazn-1.png"
+        },
+        {
+          "id": "eurosport-1",
+          "name": "Eurosport 1",
+          "country": "GB",
+          "logo": "/iptv-logos/eurosport-1.png"
+        },
+        {
+          "id": "eurosport-2",
+          "name": "Eurosport 2",
+          "country": "GB",
+          "logo": "/iptv-logos/eurosport-2.png"
+        },
+        {
+          "id": "itv1",
+          "name": "ITV1",
+          "country": "GB",
+          "logo": "/iptv-logos/itv1.png"
+        },
+        {
+          "id": "premier-sports-1",
+          "name": "Premier Sports 1",
+          "country": "GB",
+          "logo": "/iptv-logos/premier-sports-1.png"
+        },
+        {
+          "id": "premier-sports-2",
+          "name": "Premier Sports 2",
+          "country": "GB",
+          "logo": "/iptv-logos/premier-sports-2.png"
+        },
+        {
+          "id": "racing-tv",
+          "name": "Racing TV",
+          "country": "GB",
+          "logo": "/iptv-logos/racing-tv.png"
+        },
+        {
+          "id": "sky-sports-action",
+          "name": "Sky Sports Action",
+          "country": "GB",
+          "logo": "/iptv-logos/sky-sports-action.png"
+        },
+        {
+          "id": "sky-sports-cricket",
+          "name": "Sky Sports Cricket",
+          "country": "GB",
+          "logo": "/iptv-logos/sky-sports-cricket.png"
+        },
+        {
+          "id": "sky-sports-f1",
+          "name": "Sky Sports F1",
+          "country": "GB",
+          "logo": "/iptv-logos/sky-sports-f1.png"
+        },
+        {
+          "id": "sky-sports-football",
+          "name": "Sky Sports Football",
+          "country": "GB",
+          "logo": "/iptv-logos/sky-sports-football.png"
+        },
+        {
+          "id": "sky-sports-golf",
+          "name": "Sky Sports Golf",
+          "country": "GB",
+          "logo": "/iptv-logos/sky-sports-golf.png"
+        },
+        {
+          "id": "sky-sports-main-event",
+          "name": "Sky Sports Main Event",
+          "country": "GB",
+          "logo": "/iptv-logos/sky-sports-main-event.png"
+        },
+        {
+          "id": "sky-sports-mix",
+          "name": "Sky Sports Mix",
+          "country": "GB",
+          "logo": "/iptv-logos/sky-sports-mix.png"
+        },
+        {
+          "id": "sky-sports-news",
+          "name": "Sky Sports News",
+          "country": "GB",
+          "logo": "/iptv-logos/sky-sports-news.png"
+        },
+        {
+          "id": "sky-sports-premier-league",
+          "name": "Sky Sports Premier League",
+          "country": "GB",
+          "logo": "/iptv-logos/sky-sports-premier-league.png"
+        },
+        {
+          "id": "sky-sports-racing",
+          "name": "Sky Sports Racing",
+          "country": "GB",
+          "logo": "/iptv-logos/sky-sports-racing.png"
+        },
+        {
+          "id": "sky-sports-tennis",
+          "name": "Sky Sports Tennis",
+          "country": "GB",
+          "logo": "/iptv-logos/sky-sports-tennis.png"
+        },
+        {
+          "id": "sky-sports",
+          "name": "Sky Sports+",
+          "country": "GB",
+          "logo": "/iptv-logos/sky-sports.png"
+        },
+        {
+          "id": "tnt-sports-1",
+          "name": "TNT Sports 1",
+          "country": "GB",
+          "logo": "/iptv-logos/tnt-sports-1.png"
+        },
+        {
+          "id": "tnt-sports-2",
+          "name": "TNT Sports 2",
+          "country": "GB",
+          "logo": "/iptv-logos/tnt-sports-2.png"
+        },
+        {
+          "id": "tnt-sports-3",
+          "name": "TNT Sports 3",
+          "country": "GB",
+          "logo": "/iptv-logos/tnt-sports-3.png"
+        },
+        {
+          "id": "tnt-sports-4",
+          "name": "TNT Sports 4",
+          "country": "GB",
+          "logo": "/iptv-logos/tnt-sports-4.png"
+        }
+      ]
+    },
+    {
+      "code": "US",
+      "regionZh": "美国",
+      "regionEn": "United States",
+      "regionTw": "美國",
+      "channels": [
+        {
+          "id": "abc",
+          "name": "ABC",
+          "country": "US",
+          "logo": "/iptv-logos/abc.png"
+        },
+        {
+          "id": "acc-network",
+          "name": "ACC Network",
+          "country": "US",
+          "logo": "/iptv-logos/acc-network.png"
+        },
+        {
+          "id": "bein-sports",
+          "name": "BeIN Sports",
+          "country": "US",
+          "logo": "/iptv-logos/bein-sports.png"
+        },
+        {
+          "id": "bein-sports-2",
+          "name": "BeIN Sports 2",
+          "country": "US",
+          "logo": "/iptv-logos/bein-sports-2.png"
+        },
+        {
+          "id": "big-ten-network",
+          "name": "Big Ten Network",
+          "country": "US",
+          "logo": "/iptv-logos/big-ten-network.png"
+        },
+        {
+          "id": "cbs",
+          "name": "CBS",
+          "country": "US",
+          "logo": "/iptv-logos/cbs.png"
+        },
+        {
+          "id": "cbs-sports",
+          "name": "CBS Sports",
+          "country": "US",
+          "logo": "/iptv-logos/cbs-sports.png"
+        },
+        {
+          "id": "cbs-sports-golazo",
+          "name": "CBS Sports Golazo",
+          "country": "US",
+          "logo": "/iptv-logos/cbs-sports-golazo.png"
+        },
+        {
+          "id": "cnbc",
+          "name": "CNBC",
+          "country": "US",
+          "logo": "/iptv-logos/cnbc.png"
+        },
+        {
+          "id": "cw",
+          "name": "CW",
+          "country": "US",
+          "logo": "/iptv-logos/cw.png"
+        },
+        {
+          "id": "espn",
+          "name": "ESPN",
+          "country": "US",
+          "logo": "/iptv-logos/espn.png"
+        },
+        {
+          "id": "espn-2",
+          "name": "ESPN 2",
+          "country": "US",
+          "logo": "/iptv-logos/espn-2.png"
+        },
+        {
+          "id": "espn-deportes",
+          "name": "ESPN Deportes",
+          "country": "US",
+          "logo": "/iptv-logos/espn-deportes.png"
+        },
+        {
+          "id": "espnews",
+          "name": "ESPNews",
+          "country": "US",
+          "logo": "/iptv-logos/espnews.png"
+        },
+        {
+          "id": "espnu",
+          "name": "ESPNU",
+          "country": "US",
+          "logo": "/iptv-logos/espnu.png"
+        },
+        {
+          "id": "fight-network",
+          "name": "Fight Network",
+          "country": "US",
+          "logo": "/iptv-logos/fight-network.png"
+        },
+        {
+          "id": "fox",
+          "name": "FOX",
+          "country": "US",
+          "logo": "/iptv-logos/fox.png"
+        },
+        {
+          "id": "fox-deportes",
+          "name": "Fox Deportes",
+          "country": "US",
+          "logo": "/iptv-logos/fox-deportes.png"
+        },
+        {
+          "id": "fox-soccer-plus",
+          "name": "Fox Soccer Plus",
+          "country": "US",
+          "logo": "/iptv-logos/fox-soccer-plus.png"
+        },
+        {
+          "id": "fox-sports-1",
+          "name": "Fox Sports 1",
+          "country": "US",
+          "logo": "/iptv-logos/fox-sports-1.png"
+        },
+        {
+          "id": "fox-sports-2",
+          "name": "Fox Sports 2",
+          "country": "US",
+          "logo": "/iptv-logos/fox-sports-2.png"
+        },
+        {
+          "id": "fubo-sports",
+          "name": "Fubo Sports",
+          "country": "US",
+          "logo": "/iptv-logos/fubo-sports.png"
+        },
+        {
+          "id": "golf-channel",
+          "name": "Golf Channel",
+          "country": "US",
+          "logo": "/iptv-logos/golf-channel.png"
+        },
+        {
+          "id": "mlb-network",
+          "name": "MLB Network",
+          "country": "US",
+          "logo": "/iptv-logos/mlb-network.png"
+        },
+        {
+          "id": "nba-tv",
+          "name": "NBA TV",
+          "country": "US",
+          "logo": "/iptv-logos/nba-tv.png"
+        },
+        {
+          "id": "nbc",
+          "name": "NBC",
+          "country": "US",
+          "logo": "/iptv-logos/nbc.png"
+        },
+        {
+          "id": "wwe-channel",
+          "name": "Netflix WWE",
+          "country": "US",
+          "logo": "/iptv-logos/wwe-channel.png"
+        },
+        {
+          "id": "nfl-network",
+          "name": "NFL Network",
+          "country": "US",
+          "logo": "/iptv-logos/nfl-network.png"
+        },
+        {
+          "id": "nhl-network",
+          "name": "NHL Network",
+          "country": "US",
+          "logo": "/iptv-logos/nhl-network.png"
+        },
+        {
+          "id": "nickelodeon",
+          "name": "Nickelodeon",
+          "country": "US",
+          "logo": "/iptv-logos/nickelodeon.png"
+        },
+        {
+          "id": "sec-network",
+          "name": "SEC Network",
+          "country": "US",
+          "logo": "/iptv-logos/sec-network.png"
+        },
+        {
+          "id": "showtime",
+          "name": "Showtime",
+          "country": "US",
+          "logo": "/iptv-logos/showtime.png"
+        },
+        {
+          "id": "syfy",
+          "name": "SyFy",
+          "country": "US",
+          "logo": "/iptv-logos/syfy.png"
+        },
+        {
+          "id": "tbs",
+          "name": "TBS",
+          "country": "US",
+          "logo": "/iptv-logos/tbs.png"
+        },
+        {
+          "id": "telemundo",
+          "name": "Telemundo",
+          "country": "US",
+          "logo": "/iptv-logos/telemundo.png"
+        },
+        {
+          "id": "tennis-channel",
+          "name": "Tennis Channel",
+          "country": "US",
+          "logo": "/iptv-logos/tennis-channel.png"
+        },
+        {
+          "id": "tnt",
+          "name": "TNT",
+          "country": "US",
+          "logo": "/iptv-logos/tnt.png"
+        },
+        {
+          "id": "trutv",
+          "name": "truTV",
+          "country": "US",
+          "logo": "/iptv-logos/trutv.png"
+        },
+        {
+          "id": "universo",
+          "name": "Universo",
+          "country": "US",
+          "logo": "/iptv-logos/universo.png"
+        },
+        {
+          "id": "univision",
+          "name": "Univision",
+          "country": "US",
+          "logo": "/iptv-logos/univision.png"
+        },
+        {
+          "id": "usa-network",
+          "name": "USA Network",
+          "country": "US",
+          "logo": "/iptv-logos/usa-network.png"
+        },
+        {
+          "id": "willow-cricket",
+          "name": "Willow Cricket",
+          "country": "US",
+          "logo": "/iptv-logos/willow-cricket.png"
+        }
+      ]
+    },
+    {
+      "code": "CA",
+      "regionZh": "加拿大",
+      "regionEn": "Canada",
+      "regionTw": "加拿大",
+      "channels": [
+        {
+          "id": "cbc",
+          "name": "CBC",
+          "country": "CA",
+          "logo": "/iptv-logos/cbc.png"
+        },
+        {
+          "id": "rds",
+          "name": "RDS",
+          "country": "CA",
+          "logo": "/iptv-logos/rds.png"
+        },
+        {
+          "id": "sportsnet-360",
+          "name": "Sportsnet 360",
+          "country": "CA",
+          "logo": "/iptv-logos/sportsnet-360.png"
+        },
+        {
+          "id": "sportsnet-east",
+          "name": "Sportsnet East",
+          "country": "CA",
+          "logo": "/iptv-logos/sportsnet-east.png"
+        },
+        {
+          "id": "sportsnet-one",
+          "name": "Sportsnet One",
+          "country": "CA",
+          "logo": "/iptv-logos/sportsnet-one.png"
+        },
+        {
+          "id": "sportsnet-ontario",
+          "name": "Sportsnet Ontario",
+          "country": "CA",
+          "logo": "/iptv-logos/sportsnet-ontario.png"
+        },
+        {
+          "id": "sportsnet-pacific",
+          "name": "Sportsnet Pacific",
+          "country": "CA",
+          "logo": "/iptv-logos/sportsnet-pacific.png"
+        },
+        {
+          "id": "sportsnet-west",
+          "name": "Sportsnet West",
+          "country": "CA",
+          "logo": "/iptv-logos/sportsnet-west.png"
+        },
+        {
+          "id": "sportsnet-world",
+          "name": "Sportsnet World",
+          "country": "CA",
+          "logo": "/iptv-logos/sportsnet-world.png"
+        },
+        {
+          "id": "tsn-1",
+          "name": "TSN 1",
+          "country": "CA",
+          "logo": "/iptv-logos/tsn-1.png"
+        },
+        {
+          "id": "tsn-2",
+          "name": "TSN 2",
+          "country": "CA",
+          "logo": "/iptv-logos/tsn-2.png"
+        },
+        {
+          "id": "tsn-3",
+          "name": "TSN 3",
+          "country": "CA",
+          "logo": "/iptv-logos/tsn-3.png"
+        },
+        {
+          "id": "tsn-4",
+          "name": "TSN 4",
+          "country": "CA",
+          "logo": "/iptv-logos/tsn-4.png"
+        },
+        {
+          "id": "tsn-5",
+          "name": "TSN 5",
+          "country": "CA",
+          "logo": "/iptv-logos/tsn-5.png"
+        },
+        {
+          "id": "tva-sports",
+          "name": "TVA Sports",
+          "country": "CA",
+          "logo": "/iptv-logos/tva-sports.png"
+        }
+      ]
+    },
+    {
+      "code": "NZ",
+      "regionZh": "新西兰",
+      "regionEn": "New Zealand",
+      "regionTw": "紐西蘭",
+      "channels": [
+        {
+          "id": "nz-sky-sport-1",
+          "name": "NZ Sky Sport 1",
+          "country": "NZ",
+          "logo": "/iptv-logos/nz-sky-sport-1.png"
+        },
+        {
+          "id": "nz-sky-sport-2",
+          "name": "NZ Sky Sport 2",
+          "country": "NZ",
+          "logo": "/iptv-logos/nz-sky-sport-2.png"
+        },
+        {
+          "id": "nz-sky-sport-3",
+          "name": "NZ Sky Sport 3",
+          "country": "NZ",
+          "logo": "/iptv-logos/nz-sky-sport-3.png"
+        },
+        {
+          "id": "nz-sky-sport-4",
+          "name": "NZ Sky Sport 4",
+          "country": "NZ",
+          "logo": "/iptv-logos/nz-sky-sport-4.png"
+        },
+        {
+          "id": "nz-sky-sport-5",
+          "name": "NZ Sky Sport 5",
+          "country": "NZ",
+          "logo": "/iptv-logos/nz-sky-sport-5.png"
+        },
+        {
+          "id": "nz-sky-sport-6",
+          "name": "NZ Sky Sport 6",
+          "country": "NZ",
+          "logo": "/iptv-logos/nz-sky-sport-6.png"
+        },
+        {
+          "id": "nz-sky-sport-7",
+          "name": "NZ Sky Sport 7",
+          "country": "NZ",
+          "logo": "/iptv-logos/nz-sky-sport-7.png"
+        },
+        {
+          "id": "nz-sky-sport-8",
+          "name": "NZ Sky Sport 8",
+          "country": "NZ",
+          "logo": "/iptv-logos/nz-sky-sport-8.png"
+        },
+        {
+          "id": "nz-sky-sport-9",
+          "name": "NZ Sky Sport 9",
+          "country": "NZ",
+          "logo": "/iptv-logos/nz-sky-sport-9.png"
+        },
+        {
+          "id": "nz-sky-sport-premier-league",
+          "name": "NZ Sky Sport Premier League",
+          "country": "NZ",
+          "logo": "/iptv-logos/nz-sky-sport-premier-league.png"
+        },
+        {
+          "id": "nz-sky-sport-select",
+          "name": "NZ Sky Sport Select",
+          "country": "NZ",
+          "logo": "/iptv-logos/nz-sky-sport-select.png"
+        }
+      ]
+    },
+    {
+      "code": "AU",
+      "regionZh": "澳大利亚",
+      "regionEn": "Australia",
+      "regionTw": "澳洲",
+      "channels": [
+        {
+          "id": "fox-cricket",
+          "name": "Fox Cricket",
+          "country": "AU",
+          "logo": "/iptv-logos/fox-cricket.png"
+        }
+      ]
+    },
+    {
+      "code": "MY",
+      "regionZh": "马来西亚",
+      "regionEn": "Malaysia",
+      "regionTw": "馬來西亞",
+      "channels": [
+        {
+          "id": "astro-cricket",
+          "name": "Astro Cricket",
+          "country": "MY",
+          "logo": "/iptv-logos/astro-cricket.png"
+        }
+      ]
+    },
+    {
+      "code": "MX",
+      "regionZh": "MX",
+      "regionEn": "MX",
+      "regionTw": "MX",
+      "channels": [
+        {
+          "id": "tudn",
+          "name": "TUDN",
+          "country": "MX",
+          "logo": "/iptv-logos/tudn.png"
+        }
+      ]
+    },
+    {
+      "code": "ZA",
+      "regionZh": "ZA",
+      "regionEn": "ZA",
+      "regionTw": "ZA",
+      "channels": [
+        {
+          "id": "supersport-cricket",
+          "name": "SuperSport Cricket",
+          "country": "ZA",
+          "logo": "/iptv-logos/supersport-cricket.png"
+        }
+      ]
+    }
+  ]
+}

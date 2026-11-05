@@ -178,10 +178,11 @@
       "hockey": "🏒 Ice Hockey"
     },
     "useCase": {
-      "label": "Use Case",
-      "websiteApp": "Website/App Sports Streaming Integration",
-      "obsStreaming": "OBS Streaming (Streamer Only)",
-      "bothScenarios": "Both Scenarios Above"
+      "label": "Product you need",
+      "websiteApp": "Live Match Lines (playback links)",
+      "obsStreaming": "OBS Streamer Bot",
+      "bothScenarios": "Live Match Lines (RTMP push)",
+      "iptv": "Global Sports Channels"
     },
     "streamerType": {
       "label": "Streamer Type",
@@ -206,17 +207,17 @@
       "label": "Detailed Requirements (Optional)"
     },
     "requirementsPlaceholder": "Please describe your specific needs, expected traffic, tech stack, etc...",
-    "individualWarning": "Note: Our current streaming solution primarily serves teams and enterprises. Individual users may face higher costs.",
+    "individualWarning": "OBS Streamer Bot sends the match to Telegram before kickoff. Drop it into OBS and start the call. Viewers inside a site or app still need Live Match Lines.",
     "submit": "Submit Inquiry",
     "submitting": "Submitting...",
     "success": "Form submitted successfully!",
     "successMessage": "Thank you for your inquiry! We will contact you within 24 hours.",
     "nextSteps": {
-      "title": "Next Steps",
-      "step1": "Our technical team will review your requirements",
-      "step2": "Contact you within 24 hours via your provided contact method",
-      "step3": "Provide customized technical solutions and quotes",
-      "step4": "Arrange technical integration and testing environment"
+      "title": "Next steps",
+      "step1": "We send the quote and the integration path",
+      "step2": "After you accept, we open a private test page",
+      "step3": "You watch the lines that are on air and choose playback links or push",
+      "step4": "After payment we open the playback domain, push, or match mapping"
     },
     "contactForm": {
       "validation": {

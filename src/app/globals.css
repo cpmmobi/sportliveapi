@@ -4,14 +4,14 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 0 0% 3.9%;
+    --background: 340 14% 95%;
+    --foreground: 0 0% 8%;
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 3.9%;
+    --card-foreground: 0 0% 8%;
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 3.9%;
-    --primary: 0 73% 41%;
-    --primary-foreground: 0 0% 98%;
+    --popover-foreground: 0 0% 8%;
+    --primary: 331 100% 49%;
+    --primary-foreground: 0 0% 100%;
     --secondary: 0 0% 96.1%;
     --secondary-foreground: 0 0% 9%;
     --muted: 0 0% 96.1%;
@@ -20,10 +20,10 @@
     --accent-foreground: 0 0% 9%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 89.8%;
-    --input: 0 0% 89.8%;
-    --ring: 0 73% 41%;
-    --radius: 0.5rem;
+    --border: 0 0% 90.6%;
+    --input: 0 0% 90.6%;
+    --ring: 331 100% 49%;
+    --radius: 0.375rem;
   }
 
   .dark {
@@ -85,16 +85,7 @@
   
   /* 按钮样式 */
   .btn-primary {
-    @apply inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-brand-primary via-brand-secondary to-brand-light px-8 py-4 text-white font-semibold shadow-2xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 hover:scale-105 focus:outline-none focus:ring-4 focus:ring-brand-primary/30 active:scale-95 relative overflow-hidden;
-  }
-  
-  .btn-primary::before {
-    @apply absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 transition-opacity duration-300;
-    content: '';
-  }
-  
-  .btn-primary:hover::before {
-    @apply opacity-100;
+    @apply inline-flex items-center justify-center rounded-md bg-brand-primary px-5 py-3 text-white font-semibold transition-colors duration-200 hover:bg-brand-dark focus:outline-none focus:ring-2 focus:ring-brand-primary/40;
   }
   
   .btn-secondary {
@@ -190,14 +181,14 @@
   
   /* 背景图案 */
   .bg-dots {
-    background-image: radial-gradient(circle, #DC2626 1px, transparent 1px);
+    background-image: radial-gradient(circle, #FC0078 1px, transparent 1px);
     background-size: 20px 20px;
     opacity: 0.1;
   }
   
   .bg-grid {
-    background-image: linear-gradient(rgba(220, 38, 38, 0.1) 1px, transparent 1px),
-                      linear-gradient(90deg, rgba(220, 38, 38, 0.1) 1px, transparent 1px);
+    background-image: linear-gradient(rgba(252, 0, 120, 0.08) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(252, 0, 120, 0.08) 1px, transparent 1px);
     background-size: 50px 50px;
   }
 }

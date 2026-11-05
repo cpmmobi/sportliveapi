@@ -145,10 +145,11 @@
       "hockey": "🏒 冰球"
     },
     "useCase": {
-      "label": "使用场景",
-      "websiteApp": "网站/APP体育直播集成",
-      "obsStreaming": "OBS推流（仅主播使用）",
-      "bothScenarios": "以上两种场景都有"
+      "label": "你要接入的产品",
+      "websiteApp": "赛事直播线路（播放链接）",
+      "obsStreaming": "OBS直播流机器人",
+      "bothScenarios": "赛事直播线路（RTMP 推流）",
+      "iptv": "全球体育频道"
     },
     "streamerType": {
       "label": "主播类型",
@@ -173,17 +174,17 @@
       "label": "详细需求说明（可选）"
     },
     "requirementsPlaceholder": "请描述您的具体需求、预期流量、技术栈等...",
-    "individualWarning": "温馨提示：专为主播群体设计的Telegram群组机器人，24h为您提供超清卫星源",
+    "individualWarning": "OBS直播流机器人在开赛前把这场的直播流发到 Telegram，放进 OBS 就能解说。网站或 App 里的观众要直接看，需要另外接赛事直播线路。",
     "submit": "提交咨询",
     "submitting": "提交中...",
     "success": "表单提交成功！",
     "successMessage": "感谢您的咨询！我们将在24小时内联系您。",
     "nextSteps": {
       "title": "接下来的步骤",
-      "step1": "我们的技术团队将审核您的需求",
-      "step2": "在24小时内通过您提供的联系方式与您联系",
-      "step3": "为您提供定制化的技术方案和报价",
-      "step4": "安排技术对接和测试环境"
+      "step1": "先把报价和接入方式发给你",
+      "step2": "你认可后，开通专属测试页",
+      "step3": "在测试页上看正在播出的线路，并选定直播链接或推流",
+      "step4": "付费后开通播放域名、推流或赛事匹配"
     },
     "contactForm": {
       "integrationTypes": {

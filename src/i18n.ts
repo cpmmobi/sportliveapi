@@ -7,17 +7,16 @@ export default getRequestConfig(async ({ locale }) => {
   // 直接导入消息文件，避免动态导入
   let messages
   try {
-    if (currentLocale === 'en') {
-      messages = (await import('@/messages/en.json')).default
+    if (currentLocale === 'zh') {
+      messages = (await import('@/messages/zh.json')).default
     } else if (currentLocale === 'zh-TW') {
       messages = (await import('@/messages/zh-TW.json')).default
     } else {
-      messages = (await import('@/messages/zh.json')).default
+      messages = (await import('@/messages/en.json')).default
     }
   } catch (error) {
     console.error(`Failed to load messages for locale: ${currentLocale}`, error)
-    // 回退到中文
-    messages = (await import('@/messages/zh.json')).default
+    messages = (await import('@/messages/en.json')).default
   }
   
   return {
