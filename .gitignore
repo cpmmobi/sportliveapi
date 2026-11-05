@@ -52,8 +52,8 @@ pids
 *.pid
 *.seed
 
-# Coverage directory used by tools like istanbul
-coverage/
+# Coverage directory used by tools like istanbul (repo root only; do not ignore src pages)
+/coverage/
 .nyc_output/
 
 # Grunt intermediate storage
