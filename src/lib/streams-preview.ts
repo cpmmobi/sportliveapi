@@ -1,8 +1,8 @@
 const STREAMS_URL = 'https://api.sla.homes/lives/streams'
 const MATCH_TTL_MS = 25_000
 const MAX_PAGES = 6
-// 当前密钥已开通的运动类型。未开通的 type 会返回 HTML，不在这里请求。
-const SPORT_TYPES = [1, 3, 12, 13, 14, 16, 17, 18, 19, 33, 35, 36, 38]
+// 与接口文档一致。未开通的 type 会返回非 JSON，单类失败不影响其他球类。
+const SPORT_TYPES = [1, 3, 12, 13, 14, 16, 17, 18, 19, 33, 35, 36, 38, 91, 92, 94, 151]
 
 export type PreviewLine = {
   name: string
@@ -160,17 +160,21 @@ async function fetchJson(url: string): Promise<RawResponse | null> {
 
 async function fetchType(auth: string, type: number): Promise<PreviewMatch[]> {
   const matches: PreviewMatch[] = []
-  for (let page = 1; page <= MAX_PAGES; page += 1) {
-    const payload = await fetchJson(
-      `${STREAMS_URL}?auth=${encodeURIComponent(auth)}&type=${type}&isPlayed=1&page=${page}`
-    )
-    if (!payload || payload.errCode !== 0 || !Array.isArray(payload.data)) break
-    const liveMatches = payload.data
-      .map(mapMatch)
-      .filter((match): match is PreviewMatch => Boolean(match && match.isPlayed && match.screenshot))
-    matches.push(...liveMatches)
-    const pageSize = payload.pageSize || 500
-    if (payload.data.length < pageSize && !payload.hasMore) break
+  try {
+    for (let page = 1; page <= MAX_PAGES; page += 1) {
+      const payload = await fetchJson(
+        `${STREAMS_URL}?auth=${encodeURIComponent(auth)}&type=${type}&isPlayed=1&page=${page}`
+      )
+      if (!payload || payload.errCode !== 0 || !Array.isArray(payload.data)) break
+      const liveMatches = payload.data
+        .map(mapMatch)
+        .filter((match): match is PreviewMatch => Boolean(match && match.isPlayed && match.screenshot))
+      matches.push(...liveMatches)
+      const pageSize = payload.pageSize || 500
+      if (payload.data.length < pageSize && !payload.hasMore) break
+    }
+  } catch {
+    return matches
   }
   return matches
 }
