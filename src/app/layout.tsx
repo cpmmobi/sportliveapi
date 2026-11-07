@@ -1,6 +1,7 @@
 import { headers } from 'next/headers'
 import { Inter } from 'next/font/google'
 import Script from 'next/script'
+import { Analytics } from '@vercel/analytics/next'
 import { htmlLang } from '@/lib/seo'
 import { cn } from '@/lib/utils'
 import './globals.css'
@@ -39,6 +40,7 @@ export default function RootLayout({
           }}
         />
         {children}
+        <Analytics />
       </body>
     </html>
   )

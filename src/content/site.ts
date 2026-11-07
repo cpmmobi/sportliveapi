@@ -1751,6 +1751,115 @@ export const customersPage = {
   situation: zh('核心能力 01', 'Capability 01', '核心能力 01'),
   choice: zh('核心能力 02', 'Capability 02', '核心能力 02'),
   outcome: zh('核心能力 03', 'Capability 03', '核心能力 03'),
+  fitEyebrow: zh('FOR WHOM · 适合谁用', 'FOR WHOM · WHO IT IS FOR', 'FOR WHOM · 適合誰用'),
+  fitTitle: zh('把话说在前面，选得明白才用得放心', 'Up front about who this is for, so you can choose with confidence', '把話說在前面，選得明白才用得放心'),
+  fitLede: zh(
+    '我们不希望任何人为不需要的服务付费。对照下面的场景，一分钟就能判断我们是不是你要找的直播服务。',
+    'We do not want anyone paying for a service they do not need. Check the scenarios below and you will know in a minute whether we are the right live streaming provider.',
+    '我們不希望任何人為不需要的服務付費。對照下面的場景，一分鐘就能判斷我們是不是你要找的直播服務。'
+  ),
+  fitHeading: zh('非常适合', 'Strong fit', '非常適合'),
+  fitSubheading: zh('需要稳定直播源的正式产品，放心把画面交给我们', 'Production products that need dependable live feeds', '需要穩定直播源的正式產品，放心把畫面交給我們'),
+  fitBadge: zh('RECOMMENDED', 'RECOMMENDED', 'RECOMMENDED'),
+  fitCards: [
+    {
+      title: zh('即时比分网站与体育 App', 'Live-score sites and sports apps', '即時比分網站與體育 App'),
+      body: zh(
+        '已经有赛程和比分列表，想把单场比赛直接播进页面或直播间，把看比分的访客留在站内。',
+        'You already have fixtures and scores, and want to play individual matches inside the page or live room so visitors stay on your product.',
+        '已經有賽程和比分列表，想把單場比賽直接播進頁面或直播間，把看比分的訪客留在站內。'
+      ),
+    },
+    {
+      title: zh('赛事直播与互动社区平台', 'Match streaming and fan community platforms', '賽事直播與互動社群平台'),
+      body: zh(
+        '观众冲着比赛直播进来，边看球边聊天互动。开赛前要准时进流，热门场次还要有备用线路兜底。',
+        'Viewers come in for the live game and chat while watching. Feeds need to arrive before kickoff, with backup lines on major fixtures.',
+        '觀眾衝著比賽直播進來，邊看球邊聊天互動。開賽前要準時進流，熱門場次還要有備用線路兜底。'
+      ),
+    },
+    {
+      title: zh('海外电视盒子与 24 小时体育台', 'Overseas TV boxes and 24/7 sports channels', '海外電視盒子與 24 小時體育台'),
+      body: zh(
+        '做海外华人或本地市场的 OTT 盒子、IPTV 应用，需要百余个全天播出的欧美体育台与节目单。',
+        'OTT boxes and IPTV apps serving overseas markets that need 100+ 24/7 US and European sports networks with a program guide.',
+        '做海外華人或本地市場的 OTT 盒子、IPTV 應用，需要百餘個全天播出的歐美體育台與節目單。'
+      ),
+    },
+    {
+      title: zh('足球与篮球主播解说工作室', 'Football and basketball commentary studios', '足球與籃球主播解說工作室'),
+      body: zh(
+        '团队没有研发对接接口，但主播每天都要开播。在群里发数字拿到卫星源或赛场原声，放进 OBS 就能配音解说。',
+        'No engineering team to integrate APIs, but hosts go live every day. Pull satellite or clean stadium audio in chat and drop it into OBS.',
+        '團隊沒有研發對接介面，但主播每天都要開播。在群裡發數字拿到衛星源或賽場原聲，放進 OBS 就能配音解說。'
+      ),
+    },
+    {
+      title: zh('从盗播源或不稳定线路迁出的团队', 'Teams moving off scraped or unstable streams', '從盜播源或不穩定線路遷出的團隊'),
+      body: zh(
+        '产品已经跑起来了，被开赛断流、画质糊、临时失效折磨过，需要一套能长期挂在线上的直播源。',
+        'Your product is already live, and you are tired of kickoff drops, blurry feeds, and dead links. You need feeds that can stay in production.',
+        '產品已經跑起來了，被開賽斷流、畫質糊、臨時失效折磨過，需要一套能長期掛在線上的直播源。'
+      ),
+    },
+  ],
+  waitHeading: zh('建议暂缓对接', 'Better to wait', '建議暫緩對接'),
+  waitSubheading: zh('以下场景暂时不必专门对接，等产品明确后再评估', 'No need to integrate for these cases yet — revisit once the product is ready', '以下場景暫時不必專門對接，等產品明確後再評估'),
+  waitCards: [
+    {
+      title: zh('纯业余兴趣项目', 'Pure hobby or side projects', '純業餘興趣項目'),
+      body: zh(
+        '拿 GitHub 开源项目试跑、出于个人兴趣验证一个想法，没有商业化计划，预算很小或几乎没有项目预算。商用直播线路的成本与这类场景不匹配，等有正式运营计划再联系即可。',
+        'Testing an open-source GitHub repo or exploring a personal idea with no commercial plan and little to no budget. Commercial live feeds will not make sense until there is a real operating plan.',
+        '拿 GitHub 開源項目試跑、出於個人興趣驗證一個想法，沒有商業化計畫，預算很小或幾乎沒有項目預算。商用直播線路的成本與這類場景不匹配，等有正式營運計畫再聯繫即可。'
+      ),
+    },
+    {
+      title: zh('只想拿链接自己看球', 'Just looking for a link to watch the game yourself', '只想拿連結自己看球'),
+      body: zh(
+        '没有网站、App、电视盒子或直播间，只想找一条公开地址自己看比赛，不在我们的服务范围内。',
+        'No website, app, TV box, or commentary room — only looking for a link to watch a match personally. We do not serve personal viewing.',
+        '沒有網站、App、電視盒子或直播間，只想找一條公開地址自己看比賽，不在我們的服務範圍內。'
+      ),
+    },
+    {
+      title: zh('单场或几天的临时活动', 'A one-off match or a few days of events', '單場或幾天的臨時活動'),
+      body: zh(
+        '只播一场决赛或几天线下活动，没有持续运营的播放产品。域名白名单、CDN 或推流配置做完活动就结束了，双方都不划算。',
+        'Only one final or a short offline event, with no ongoing product. Domain allowlisting and CDN or push setup are not worth it for a single game.',
+        '只播一場決賽或幾天線下活動，沒有持續營運的播放產品。域名白名單、CDN 或推流設定做完活動就結束了，雙方都不划算。'
+      ),
+    },
+    {
+      title: zh('只需要赛程、比分或历史统计数据', 'Only fixtures, scores, or historical stats', '只需要賽程、比分或歷史統計資料'),
+      body: zh(
+        '我们只做比赛直播画面与体育频道，不卖赛果库、赔率或球员技术统计。纯数据需求直接找体育数据商更合适。',
+        'We only provide live match video and sports channels — not results databases, odds, or player stats. A sports data vendor is the right fit.',
+        '我們只做比賽直播畫面與體育頻道，不賣賽果庫、賠率或球員技術統計。純資料需求直接找體育資料商更合適。'
+      ),
+    },
+  ],
+  fitNoteLead: zh(
+    '如果你的产品还在准备上线，还没攒起多少观众，只要',
+    'If your product is still preparing to launch and does not have a large audience yet, as long as ',
+    '如果你的產品還在準備上線，還沒攢起多少觀眾，只要'
+  ),
+  fitNoteStrong: zh(
+    '这场比赛是要播给观众看的，并且有明确的上线计划，我们一样欢迎先来沟通报价与测试。',
+    'the matches are meant for real viewers and there is a clear launch plan, you are very welcome to talk to us for a quote and trial.',
+    '這場比賽是要播給觀眾看的，並且有明確的上線計畫，我們一樣歡迎先來溝通報價與測試。'
+  ),
+  fitNoteTail: zh(
+    '很多长期合作的平台，也是从第一个版本开始接起来的。',
+    'Many of our long-term customers started from their very first release.',
+    '很多長期合作的平台，也是從第一個版本開始接起來的。'
+  ),
+  fitReady: zh('产品要对外、要长期播？', 'Building for real viewers and long-term operation?', '產品要對外、要長期播？'),
+  fitReadyAction: zh('获取报价，直接对接 →', 'Get a quote and connect →', '取得報價，直接對接 →'),
+  fitPersonal: zh('纯个人兴趣、或者自己看？', 'Pure personal interest, or watching for yourself?', '純個人興趣、或者自己看？'),
+  fitPersonalAction: zh('暂缓对接，成型再来', 'Hold off until the product is ready', '暫緩對接，成型再來'),
+  fitEarly: zh('刚起步、但准备正式上线？', 'Early stage, but preparing a real launch?', '剛起步、但準備正式上線？'),
+  fitEarlyAction: zh('欢迎先聊报价与测试 →', 'Talk to us for a quote & trial →', '歡迎先聊報價與測試 →'),
 }
 
 export const contactPage = {
