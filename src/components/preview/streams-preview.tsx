@@ -61,6 +61,8 @@ const COPY = {
     liveBadge: '直播中',
     linesUnit: '条线路',
     capturedAt: '更新于 ',
+    showMore: '继续显示',
+    showing: '已显示',
   },
   en: {
     allLive: 'All Live',
@@ -97,6 +99,8 @@ const COPY = {
     liveBadge: 'LIVE',
     linesUnit: 'lines',
     capturedAt: 'Updated ',
+    showMore: 'Show more',
+    showing: 'Showing',
   },
   'zh-TW': {
     allLive: '全部直播中',
@@ -133,6 +137,8 @@ const COPY = {
     liveBadge: '直播中',
     linesUnit: '條線路',
     capturedAt: '更新於 ',
+    showMore: '繼續顯示',
+    showing: '已顯示',
   },
 } as const
 
@@ -170,6 +176,8 @@ function tabLabel(locale: string, tab: (typeof ALL_SPORT_TABS)[number]) {
 function shortDate(dateStr: string) {
   return dateStr.replace(/^\d{4}\//, '')
 }
+
+const PAGE_SIZE = 20
 
 function shortPublish(pub: string) {
   const parts = pub.trim().split(/\s+/)
@@ -316,6 +324,18 @@ export function StreamsPreviewBoard({ locale, initial }: { locale: string; initi
       .sort((a, b) => a.date - b.date)
   }, [liveMatches, sport, multiOnly, leagueFilter, query, locale])
 
+  const [visibleCount, setVisibleCount] = useState(PAGE_SIZE)
+  useEffect(() => {
+    setVisibleCount(PAGE_SIZE)
+  }, [sport, multiOnly, leagueFilter, query])
+  const visibleMatches = filteredMatches.slice(0, visibleCount)
+  const hiddenCount = filteredMatches.length - visibleMatches.length
+
+  function selectSport(next: string) {
+    setSport(next)
+    setLeagueFilter('all')
+  }
+
   return (
     <div>
       {/* 1. Real-time live stats bar */}
@@ -349,10 +369,7 @@ export function StreamsPreviewBoard({ locale, initial }: { locale: string; initi
       <div className="mt-6 flex flex-wrap gap-1.5 border-b border-brand-line pb-3">
         <button
           type="button"
-          onClick={() => {
-            setSport('all')
-            setLeagueFilter('all')
-          }}
+          onClick={() => selectSport('all')}
           className={`inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-bold transition-colors sm:text-sm ${
             sport === 'all'
               ? 'bg-brand-primary text-white shadow-[2px_2px_0_0_#141414]'
@@ -377,10 +394,7 @@ export function StreamsPreviewBoard({ locale, initial }: { locale: string; initi
             <button
               key={tab.key}
               type="button"
-              onClick={() => {
-                setSport(tab.key)
-                setLeagueFilter('all')
-              }}
+              onClick={() => selectSport(tab.key)}
               className={`inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-bold transition-colors sm:text-sm ${
                 active
                   ? 'bg-brand-primary text-white shadow-[2px_2px_0_0_#141414]'
@@ -487,10 +501,7 @@ export function StreamsPreviewBoard({ locale, initial }: { locale: string; initi
                   {sport !== 'all' && stats.liveMatches > 0 && (
                     <button
                       type="button"
-                      onClick={() => {
-                        setSport('all')
-                        setLeagueFilter('all')
-                      }}
+                      onClick={() => selectSport('all')}
                       className="mt-3 inline-flex items-center bg-brand-primary px-4 py-1.5 text-xs font-bold text-white hover:bg-brand-dark"
                     >
                       {t.emptySwitchAll}
@@ -499,7 +510,7 @@ export function StreamsPreviewBoard({ locale, initial }: { locale: string; initi
                 </td>
               </tr>
             ) : (
-              filteredMatches.flatMap((match, matchIdx) => {
+              visibleMatches.flatMap((match, matchIdx) => {
                 const items = liveLinesFor(match)
                 const span = items.length
                 const sportLabel = pick(locale, match.sport, match.sportEn)
@@ -607,6 +618,8 @@ export function StreamsPreviewBoard({ locale, initial }: { locale: string; initi
                           <img
                             src={item.screenshot}
                             alt={title || t.shot}
+                            loading="lazy"
+                            decoding="async"
                             className="h-full w-full object-cover transition-transform group-hover:scale-105"
                           />
                           <span className="absolute inset-0 flex items-center justify-center bg-black/45 text-[10px] font-bold text-white opacity-0 transition-opacity group-hover:opacity-100">
@@ -646,6 +659,20 @@ export function StreamsPreviewBoard({ locale, initial }: { locale: string; initi
             )}
           </tbody>
         </table>
+        {hiddenCount > 0 && (
+          <div className="flex items-center justify-between gap-3 border-t border-brand-line bg-brand-paper px-4 py-3">
+            <p className="text-xs text-brand-muted">
+              {t.showing} {visibleMatches.length} / {filteredMatches.length}
+            </p>
+            <button
+              type="button"
+              onClick={() => setVisibleCount((count) => count + PAGE_SIZE)}
+              className="bg-brand-ink px-4 py-2 text-xs font-bold text-white hover:bg-brand-primary"
+            >
+              {t.showMore}
+            </button>
+          </div>
+        )}
       </div>
 
       {/* 5. Lightbox modal with conversion hook */}

@@ -74,9 +74,11 @@ export function CoverageTabs({
 }) {
   const t = copyFor(locale)
   const [tab, setTab] = useState<'streams' | 'channels'>(initialTab)
+  const [opened, setOpened] = useState({ streams: initialTab === 'streams', channels: initialTab === 'channels' })
 
   function switchTab(next: 'streams' | 'channels') {
     setTab(next)
+    setOpened((current) => (current[next] ? current : { ...current, [next]: true }))
     if (typeof window !== 'undefined') {
       const url = new URL(window.location.href)
       if (next === 'channels') {
@@ -95,8 +97,10 @@ export function CoverageTabs({
     const params = new URLSearchParams(window.location.search)
     if (hash === 'channels' || params.get('tab') === 'channels') {
       setTab('channels')
+      setOpened((current) => ({ ...current, channels: true }))
     } else if (hash === 'streams' || params.get('tab') === 'streams') {
       setTab('streams')
+      setOpened((current) => ({ ...current, streams: true }))
     }
   }, [])
 
@@ -156,9 +160,7 @@ export function CoverageTabs({
           </button>
         </div>
 
-        {/* Active Module Content */}
-        {tab === 'streams' ? (
-          <div className="mt-8">
+        <div className={tab === 'streams' ? 'mt-8' : 'hidden'} hidden={tab !== 'streams'}>
             <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
               <div>
                 <p className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-brand-primary">
@@ -176,12 +178,13 @@ export function CoverageTabs({
               </Link>
             </div>
 
-            <div className="mt-6">
-              <StreamsPreviewBoard locale={locale} initial={streamsPreview} />
-            </div>
+            {opened.streams && (
+              <div className="mt-6">
+                <StreamsPreviewBoard locale={locale} initial={streamsPreview} />
+              </div>
+            )}
           </div>
-        ) : (
-          <div className="mt-8">
+        <div className={tab === 'channels' ? 'mt-8' : 'hidden'} hidden={tab !== 'channels'}>
             <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
               <div>
                 <p className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-brand-primary">
@@ -199,15 +202,16 @@ export function CoverageTabs({
               </Link>
             </div>
 
-            <div className="mt-6">
-              <ChannelsPreviewBoard
-                locale={locale}
-                groups={channelGroups}
-                initialSchedule={initialSchedule}
-              />
-            </div>
+            {opened.channels && (
+              <div className="mt-6">
+                <ChannelsPreviewBoard
+                  locale={locale}
+                  groups={channelGroups}
+                  initialSchedule={initialSchedule}
+                />
+              </div>
+            )}
           </div>
-        )}
       </div>
     </section>
   )
