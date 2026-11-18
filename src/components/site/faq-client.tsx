@@ -97,9 +97,9 @@ const GENERAL_FAQS: GeneralFaqItem[] = [
       tw: '為什麼官網沒有直接標明固定價格？費用具體怎麼核算？',
     },
     a: {
-      zh: '因为不同客户的业务体量与所选配置差异很大：费用取决于你接入的产品类型（单场线路、100+ 全球体育频道、或 OBS 机器人）、需要开通的运动项目范围（如只开足篮、只开板球、或全球类）、分发模式（我方承担 CDN 流量的播放链接 vs 推流到你自有云）、是否需要多语种定制流，以及主播同时开播人数。提交需求后，我们会在 2–4 小时内为你出具透明、匹配的报价单。',
-      en: 'Pricing depends on your exact setup: which product you choose, the sports categories you need (e.g. football & basketball only vs. all 23+ sports), delivery mode (SLA-hosted CDN playback links vs. RTMP push to your cloud), optional custom language feeds, or concurrent streamer seats. Submit your scenario and we will reply within 2–4 hours with a transparent quote.',
-      tw: '因為不同客戶的業務體量與所選配置差異很大：費用取決於你接入的產品類型、需要開通的運動項目範圍、分發模式（我方承擔 CDN 流量的播放連結 vs 推流到你自有雲）、是否需要多語種定制流，以及主播同時開播人數。提交需求後，我們會在 2–4 小時內為你出具匹配的報價單。',
+      zh: '因为不同客户的业务体量与所选配置差异很大：费用取决于你接入的产品类型（单场线路、100+ 全球体育频道、或 OBS 机器人）、需要开通的运动项目范围（如只开足篮、只开板球、或全球类）、分发模式（我方承担 CDN 流量的播放链接 vs 推流到你自有云）、是否需要多语种定制流，以及主播同时开播人数。提交需求后，我们会在新加坡时间（UTC+8）工作时段 10:30–20:30 内，第一时间出具匹配的报价。',
+      en: 'Pricing depends on your exact setup: which product you choose, the sports categories you need (e.g. football & basketball only vs. all 23+ sports), delivery mode (SLA-hosted CDN playback links vs. RTMP push to your cloud), optional custom language feeds, or concurrent streamer seats. Submit your scenario and we will reply at the first opportunity during business hours, 10:30–20:30 Singapore time (UTC+8), with a clear quote.',
+      tw: '因為不同客戶的業務體量與所選配置差異很大：費用取決於你接入的產品類型、需要開通的運動項目範圍、分發模式（我方承擔 CDN 流量的播放連結 vs 推流到你自有雲）、是否需要多語種定制流，以及主播同時開播人數。提交需求後，我們會在新加坡時間（UTC+8）工作時段 10:30–20:30 內，第一時間出具匹配的報價。',
     },
   },
   {
@@ -112,9 +112,9 @@ const GENERAL_FAQS: GeneralFaqItem[] = [
       tw: '合作前怎麼測試效果？從留資到正式上線需要多久？',
     },
     a: {
-      zh: '分为两步：1）免申请自助预览：你现在就可以在官网「直播预览」实时查看在播场次与 100+ 频道节目单，并在「接口调试」用内置演示 Key 实时调取接口 JSON 数据；2）报价与专属测试：在留资页提交你的需求与真实联系方式，顾问在 2–4 小时内拉群沟通报价；双方确认方案后，即可配置目标国家防盗链白名单与 CDN 节点（或拉群开通 OBS 机器人），最快当天上线。',
-      en: 'Two steps: (1) Instant Self-Serve Preview — inspect live fixtures and the 100+ channel EPG on our Live Preview page, or call real endpoints with the built-in demo key in the API Playground right now; (2) Quote & Onboarding — leave your contact details to receive a quote within 2–4 hours. Once confirmed, we configure your geo-allowlists and CDN routing (or activate your group bot) so you can go live the same day.',
-      tw: '分為兩步：1）免申請自助預覽：你現在就可以在官網「直播預覽」即時查看在播場次與 100+ 頻道節目單，並在「介面調試」用內建演示 Key 即時調取介面 JSON 資料；2）報價與專屬測試：在留資頁提交需求與真實聯繫方式，顧問在 2–4 小時內拉群溝通報價；確認方案後最快當天上線。',
+      zh: '分为两步：1）免申请自助预览：你现在就可以在官网「直播预览」实时查看在播场次与 100+ 频道节目单，并在「接口调试」用内置演示 Key 实时调取接口 JSON 数据；2）报价与专属测试：在留资页提交你的需求与真实联系方式，顾问会在新加坡时间（UTC+8）工作时段 10:30–20:30 内第一时间联系并报价；双方确认方案后，即可配置目标国家防盗链白名单与 CDN 节点（或拉群开通 OBS 机器人），最快当天上线。',
+      en: 'Two steps: (1) Instant Self-Serve Preview — inspect live fixtures and the 100+ channel EPG on our Live Preview page, or call real endpoints with the built-in demo key in the API Playground right now; (2) Quote & Onboarding — leave your contact details and we will send a quote at the first opportunity during business hours, 10:30–20:30 Singapore time (UTC+8). Once confirmed, we configure your geo-allowlists and CDN routing (or activate your group bot) so you can go live the same day.',
+      tw: '分為兩步：1）免申請自助預覽：你現在就可以在官網「直播預覽」即時查看在播場次與 100+ 頻道節目單，並在「介面調試」用內建演示 Key 即時調取介面 JSON 資料；2）報價與專屬測試：在留資頁提交需求與真實聯繫方式，顧問會在新加坡時間（UTC+8）工作時段 10:30–20:30 內第一時間聯繫並報價；確認方案後最快當天上線。',
     },
     links: [
       {

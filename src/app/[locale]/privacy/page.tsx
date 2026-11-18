@@ -99,9 +99,9 @@ export default function PrivacyPage({ params }: { params: { locale: string } }) 
       bullets: [
         l(
           locale,
-          '由商务与技术顾问在 2–4 小时内通过 Telegram、WhatsApp 或邮件与你建联，拉立 1 对 1 专属对接群并提供报价单。',
-          'Reaching out via Telegram, WhatsApp, or email within 2–4 hours to open your dedicated 1-on-1 support channel and provide a quote.',
-          '由商務與技術顧問在 2–4 小時內透過 Telegram、WhatsApp 或郵件與你建聯，拉立 1 對 1 專屬對接群並提供報價單。'
+          '由商务顾问在新加坡时间（UTC+8）工作时段 10:30–20:30 内，第一时间通过 Telegram、WhatsApp 或邮件与你联系并提供报价。',
+          'Our account manager contacts you at the first opportunity during business hours, 10:30–20:30 Singapore time (UTC+8), via Telegram, WhatsApp, or email, and sends a quote.',
+          '由商務顧問在新加坡時間（UTC+8）工作時段 10:30–20:30 內，第一時間透過 Telegram、WhatsApp 或郵件與你聯繫並提供報價。'
         ),
         l(
           locale,

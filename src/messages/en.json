@@ -211,7 +211,7 @@
     "submit": "Submit Inquiry",
     "submitting": "Submitting...",
     "success": "Form submitted successfully!",
-    "successMessage": "Thank you for your inquiry! We will contact you within 24 hours.",
+    "successMessage": "Thank you for your inquiry. We will contact you at the first opportunity during business hours, 10:30–20:30 Singapore time (UTC+8).",
     "nextSteps": {
       "title": "Next steps",
       "step1": "We send the quote and the integration path",
@@ -271,7 +271,7 @@
          "submitSuccess": "Form submitted successfully!",
          "submitError": "Submission failed, please try again",
          "thankYou": "Thank you for your inquiry!",
-         "followUp": "We will contact you within 24 hours to discuss your needs in detail.",
+         "followUp": "We will contact you at the first opportunity during business hours, 10:30–20:30 Singapore time (UTC+8).",
          "privacyNote": "We respect your privacy and will not share your information with third parties.",
          "individualNote": "Note: Our current streaming solution is primarily designed for teams and enterprise clients. Individual users may find the cost slightly higher."
        },
@@ -333,7 +333,7 @@
         "submit": "Submit",
         "submitting": "Submitting...",
         "success": "Thank you!",
-        "successMessage": "Thank you for your inquiry! Our professional team will contact you within 24 hours to provide you with customized solutions and quotes.",
+        "successMessage": "Thank you for your inquiry. We will contact you at the first opportunity during business hours, 10:30–20:30 Singapore time (UTC+8), with a quote.",
         "nextSteps": {
           "title": "What happens next?",
           "step1": "Our technical consultant will contact you to understand detailed requirements",

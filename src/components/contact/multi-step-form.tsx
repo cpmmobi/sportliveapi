@@ -201,7 +201,7 @@ export default function MultiStepForm() {
             提交成功！
           </h2>
           <p className="text-body text-brand-gray-400 mb-8">
-            感谢您的咨询，我们的专业团队将在24小时内与您联系，为您提供定制化的解决方案。
+            感谢您的咨询。我们将在新加坡时间（UTC+8）工作时段 10:30–20:30 内，第一时间与您联系。
           </p>
           <div className="bg-brand-gray-50 rounded-lg p-6">
             <h3 className="font-semibold text-brand-gray-800 mb-2">接下来会发生什么？</h3>

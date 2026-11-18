@@ -474,7 +474,7 @@ export default function SimpleContactForm({
           <Check className="h-6 w-6" />
         </div>
         <p className="mt-5 font-mono text-xs font-bold uppercase tracking-wider text-brand-primary">
-          REQUEST RECEIVED · 2–4H SLA
+          REQUEST RECEIVED · BUSINESS HOURS SGT
         </p>
         <h2 className="mt-1 text-2xl font-bold text-brand-ink sm:text-3xl">
           {l(locale, '需求已收到，我们将通过 Telegram / WhatsApp 与你建联', 'Request Received — We Will Message You Shortly', '需求已收到，我們將透過 Telegram / WhatsApp 與你建聯')}
@@ -482,9 +482,9 @@ export default function SimpleContactForm({
         <p className="mt-3 text-sm leading-6 text-brand-muted">
           {l(
             locale,
-            '我们的商务与技术顾问将在 2–4 小时内通过你留下的 Telegram / WhatsApp 或邮箱联系你，拉专属对接群并提供报价与测试权限。',
-            'Our commercial and engineering team will reach out via your Telegram / WhatsApp or email within 2–4 hours with your tailored quote and trial credentials.',
-            '我們的商務與技術顧問將在 2–4 小時內透過你留下的 Telegram / WhatsApp 或信箱聯繫你，拉專屬對接群並提供報價與測試權限。'
+            '我们会在新加坡时间（UTC+8）工作时段 10:30–20:30 内，第一时间通过你留下的 Telegram、WhatsApp 或邮箱联系你，并提供报价与测试安排。',
+            'We will contact you at the first opportunity during business hours, 10:30–20:30 Singapore time (UTC+8), via the Telegram, WhatsApp, or email you left, with a quote and test arrangement.',
+            '我們會在新加坡時間（UTC+8）工作時段 10:30–20:30 內，第一時間透過你留下的 Telegram、WhatsApp 或信箱聯繫你，並提供報價與測試安排。'
           )}
         </p>
         <div className="mt-6 border border-brand-line bg-brand-paper p-5">

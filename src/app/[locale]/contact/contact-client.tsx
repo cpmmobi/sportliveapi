@@ -41,15 +41,15 @@ export default function ContactClientPage() {
           num: '02',
           title: l(
             locale,
-            '2–4 小时内拉群与确认报价',
-            '1-on-1 group & pricing in 2–4h',
-            '2–4 小時內拉群與確認報價'
+            '工作时段内第一时间联系并报价',
+            'First reply in Singapore business hours',
+            '工作時段內第一時間聯繫並報價'
           ),
           desc: l(
             locale,
-            '专人与你建联，按主播同时开播规模提供对应套餐报价。',
-            'We reach out within 2–4 hours with pricing matched to your streamer concurrency.',
-            '專人與你建聯，按主播同時開播規模提供對應套餐報價。'
+            '新加坡时间（UTC+8）10:30–20:30 内第一时间建联，按主播同时开播规模报价。',
+            'We reply at the first opportunity from 10:30–20:30 Singapore time (UTC+8), with pricing matched to your streamer concurrency.',
+            '新加坡時間（UTC+8）10:30–20:30 內第一時間建聯，按主播同時開播規模報價。'
           ),
         },
         {
@@ -88,15 +88,15 @@ export default function ContactClientPage() {
           num: '02',
           title: l(
             locale,
-            '2–4 小时内拉群与报价',
-            '1-on-1 channel & quote in 2–4h',
-            '2–4 小時內拉群與報價'
+            '工作时段内第一时间联系并报价',
+            'First reply in Singapore business hours',
+            '工作時段內第一時間聯繫並報價'
           ),
           desc: l(
             locale,
-            '专人建联，确认接入方式并提供对应套餐报价。',
-            'We reach out within 2–4 hours to confirm delivery mode and pricing.',
-            '專人建聯，確認接入方式並提供對應套餐報價。'
+            '新加坡时间（UTC+8）10:30–20:30 内第一时间建联，确认接入方式并报价。',
+            'We reply at the first opportunity from 10:30–20:30 Singapore time (UTC+8) to confirm delivery and pricing.',
+            '新加坡時間（UTC+8）10:30–20:30 內第一時間建聯，確認接入方式並報價。'
           ),
         },
         {

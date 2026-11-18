@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server'
 import crypto from 'crypto'
 import dns from 'dns'
 import { UserSourceInfo, formatIPAddress } from '@/lib/user-source-tracker'
+import { sendLeadConfirmation } from '@/lib/lead-confirmation-mail'
 
 const DISPOSABLE_OR_FAKE_DOMAINS = new Set([
   'gmasl.com',
@@ -610,7 +611,7 @@ ${simpleData.userSource ? formatUserSourceInfo(simpleData.userSource, clientIP) 
       minute: '2-digit',
       second: '2-digit'
     })}
-🚀 请及时跟进客户需求，建议在4小时内与客户取得联系！
+🚀 请在新加坡时间（UTC+8）工作时段 10:30–20:30 内第一时间联系客户。
 💡 提醒：可直接回复邮箱或通过联系方式快速沟通`
 
     message = {
@@ -798,19 +799,25 @@ export async function POST(request: NextRequest) {
       })
     }
 
-    // 发送到飞书
-    const feishuResult = await sendToFeishu(formData, clientIP)
+    const [feishuResult, mailResult] = await Promise.all([
+      sendToFeishu(formData, clientIP),
+      sendLeadConfirmation({
+        to: formData.email,
+        locale: formData.userSource?.uiLocale,
+        contactMethod: 'contactMethod' in formData ? formData.contactMethod : formData.phone,
+      }),
+    ])
 
-    // 记录推送结果
     console.log('📤 推送结果:', {
-      feishu: feishuResult.success ? '✅ 成功' : '❌ 失败'
+      feishu: feishuResult.success ? '✅ 成功' : '❌ 失败',
+      mail: mailResult.sent ? '✅ 确认信已发' : `❌ ${mailResult.error || '未发送'}`,
     })
 
     // 飞书推送成功，返回成功给用户
     if (feishuResult.success) {
       return NextResponse.json({ 
         success: true, 
-        message: '咨询提交成功！我们的专业团队将在4小时内与您联系，为您提供定制化的解决方案和报价。'
+        message: '咨询提交成功！我们将在新加坡时间（UTC+8）工作时段 10:30–20:30 内，第一时间与您联系并提供报价。'
       })
     } else {
       // 即使飞书发送失败，也返回成功给用户，避免影响用户体验
@@ -820,7 +827,7 @@ export async function POST(request: NextRequest) {
       })
       return NextResponse.json({ 
         success: true, 
-        message: '咨询提交成功！我们的专业团队将在4小时内与您联系，为您提供定制化的解决方案和报价。'
+        message: '咨询提交成功！我们将在新加坡时间（UTC+8）工作时段 10:30–20:30 内，第一时间与您联系并提供报价。'
       })
     }
   } catch (error) {
