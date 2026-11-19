@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8" />
+  <title>报价单 · liveyu0507</title>
+  <style>
+    :root { --ink:#141414; --paper:#F3EEEF; --tint:#FFF1F7; --pink:#FC0078; --muted:#5E5E5E; --line:#E7E7E7; }
+    * { box-sizing: border-box; }
+    body { margin:0; background:var(--paper); color:var(--ink); font-family:Inter,"PingFang SC","Noto Sans SC",sans-serif; }
+    .page { width:210mm; min-height:297mm; margin:24px auto; background:#fff; border:2px solid var(--ink); box-shadow:8px 8px 0 0 var(--ink); }
+    .bar { height:8px; background:var(--pink); }
+    .pad { padding:28px 32px 36px; }
+    .eyebrow { display:inline-block; margin:0 0 12px; padding:4px 10px; background:var(--paper); border:2px solid var(--ink); box-shadow:2px 2px 0 0 var(--ink); font-size:11px; font-weight:700; letter-spacing:.14em; }
+    .eyebrow span { display:inline-block; transform:skewX(-10deg); }
+    h1 { margin:0; font-size:32px; letter-spacing:-.03em; }
+    .sub { margin:6px 0 0; color:var(--muted); font-size:13px; }
+    .meta { display:grid; grid-template-columns:1fr 1fr; margin-top:22px; border:2px solid var(--ink); }
+    .meta div { padding:10px 12px; border-right:1px solid var(--line); border-bottom:1px solid var(--line); }
+    .meta div:nth-child(2n) { border-right:0; }
+    .meta small { display:block; color:var(--muted); font-size:11px; }
+    .meta strong { font-size:14px; }
+    h2 { margin:26px 0 10px; font-size:15px; }
+    h2 em { margin-right:8px; color:var(--pink); font-style:normal; font-family:ui-monospace,monospace; }
+    table { width:100%; border-collapse:collapse; border:2px solid var(--ink); }
+    th { background:var(--ink); color:#fff; text-align:left; font-size:12px; padding:8px 12px; }
+    td { padding:9px 12px; border-top:1px solid var(--line); font-size:13px; }
+    .num { text-align:right; font-variant-numeric:tabular-nums; font-weight:700; }
+    .note { margin-top:10px; padding:12px 14px; background:var(--tint); border-left:4px solid var(--pink); font-size:12px; line-height:1.6; }
+    .ladder { display:grid; grid-template-columns:repeat(4,1fr); border:2px solid var(--ink); }
+    .ladder div { padding:12px; border-right:1px solid var(--line); }
+    .ladder div:last-child { border-right:0; }
+    .ladder.on { background:var(--ink); color:#fff; }
+    .ladder small { display:block; font-size:11px; }
+    .ladder.on small { color:#ffd0e4; }
+    .ladder b { display:block; margin-top:4px; font-size:18px; }
+    .sports { display:grid; grid-template-columns:repeat(4,1fr); border:2px solid var(--ink); border-top:0; }
+    .sports div { padding:8px 10px; border-top:1px solid var(--line); border-right:1px solid var(--line); font-size:12px; }
+    .sports div:nth-child(4n) { border-right:0; }
+    .sports b { float:right; }
+    .total { margin-top:22px; display:grid; grid-template-columns:1.4fr .8fr; border:2px solid var(--ink); box-shadow:5px 5px 0 0 var(--pink); }
+    .total .copy { padding:16px 18px; font-size:13px; line-height:1.7; }
+    .total .sum { background:var(--ink); color:#fff; padding:16px 18px; text-align:right; }
+    .total .sum small { display:block; color:#ffd0e4; letter-spacing:.08em; font-size:11px; }
+    .total .sum b { display:block; margin-top:6px; font-size:28px; }
+    .sign { margin-top:18px; font-size:13px; }
+    @media print { body { background:#fff; } .page { margin:0; box-shadow:none; border:0; width:auto; } }
+  </style>
+</head>
+<body>
+  <article class="page">
+    <div class="bar"></div>
+    <div class="pad">
+      <p class="eyebrow"><span>SPORTLIVE API · QUOTATION</span></p>
+      <h1>报价单</h1>
+      <p class="sub">按您留下的需求：全球体育频道，覆盖中国大陆、东南亚、港澳台 / 日韩。产品预计 2–4 周内上线。</p>
+
+      <div class="meta">
+        <div><small>报价编号</small><strong>SLA-20261112-HS</strong></div>
+        <div><small>日期 / 有效期</small><strong>2026-11-19 · 14 天</strong></div>
+        <div><small>客户</small><strong>liveyu0507@gmail.com</strong></div>
+        <div><small>联系方式</small><strong>Telegram @HS567UP</strong></div>
+      </div>
+
+      <h2><em>01</em>本次报价</h2>
+      <table>
+        <thead><tr><th>项目</th><th>说明</th><th class="num">月费 (USD)</th></tr></thead>
+        <tbody>
+          <tr><td>全球体育频道</td><td>100+ 体育频道，标准价</td><td class="num">1,600</td></tr>
+        </tbody>
+      </table>
+      <p class="note">季付再 9 折，半年付再 8 折。价格确认后可开 1 天测试，付款后开通权限。</p>
+
+      <div class="total">
+        <div class="copy">
+          本次只含全球体育频道，按月付。<br />
+          对接 Elon · elon@sportliveapi.com · Telegram @sla_elon
+        </div>
+        <div class="sum">
+          <small>MONTHLY TOTAL</small>
+          <b>$1,600</b>
+        </div>
+      </div>
+      <p class="sign">SportLiveAPI<br />support@sportliveapi.com</p>
+    </div>
+  </article>
+</body>
+</html>

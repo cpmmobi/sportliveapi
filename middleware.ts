@@ -13,6 +13,13 @@ const intlMiddleware = createMiddleware({
 
 export default function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl
+  if (pathname === '/private' || pathname.startsWith('/private/')) {
+    const response = NextResponse.next()
+    response.headers.set('X-Robots-Tag', 'noindex, nofollow, noarchive')
+    response.headers.set('Cache-Control', 'private, no-store')
+    return response
+  }
+
   const segment = pathname.split('/')[1] || ''
 
   if (RETIRED_LOCALES.has(segment)) {

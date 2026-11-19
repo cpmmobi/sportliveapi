@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8" />
+  <title>SportLiveAPI 报价单</title>
+  <style>
+    :root {
+      --ink: #141414;
+      --paper: #F3EEEF;
+      --tint: #FFF1F7;
+      --pink: #FC0078;
+      --muted: #5E5E5E;
+      --line: #E7E7E7;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: Inter, "PingFang SC", "Noto Sans SC", sans-serif;
+    }
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      margin: 24px auto;
+      background: #fff;
+      border: 2px solid var(--ink);
+      box-shadow: 8px 8px 0 0 var(--ink);
+    }
+    .bar { height: 8px; background: var(--pink); }
+    .pad { padding: 28px 32px 36px; }
+    .eyebrow {
+      display: inline-block;
+      margin: 0 0 12px;
+      padding: 4px 10px;
+      background: var(--paper);
+      border: 2px solid var(--ink);
+      box-shadow: 2px 2px 0 0 var(--ink);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+    }
+    .eyebrow span { display: inline-block; transform: skewX(-10deg); }
+    h1 { margin: 0; font-size: 32px; letter-spacing: -0.03em; }
+    .sub { margin: 6px 0 0; color: var(--muted); font-size: 13px; }
+    .meta {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      margin-top: 22px;
+      border: 2px solid var(--ink);
+    }
+    .meta div { padding: 10px 12px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .meta div:nth-child(2n) { border-right: 0; }
+    .meta small { display: block; color: var(--muted); font-size: 11px; letter-spacing: 0.06em; }
+    .meta strong { font-size: 14px; }
+    h2 {
+      margin: 26px 0 10px;
+      font-size: 15px;
+    }
+    h2 em {
+      margin-right: 8px;
+      color: var(--pink);
+      font-style: normal;
+      font-family: "JetBrains Mono", ui-monospace, monospace;
+    }
+    table { width: 100%; border-collapse: collapse; border: 2px solid var(--ink); }
+    th {
+      background: var(--ink);
+      color: #fff;
+      text-align: left;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 8px 12px;
+    }
+    td { padding: 9px 12px; border-top: 1px solid var(--line); font-size: 13px; }
+    tr:nth-child(even) td { background: #fafafa; }
+    .num { text-align: right; font-variant-numeric: tabular-nums; font-weight: 700; }
+    .note {
+      margin-top: 10px;
+      padding: 12px 14px;
+      background: var(--tint);
+      border-left: 4px solid var(--pink);
+      font-size: 12px;
+      line-height: 1.6;
+      color: var(--ink);
+    }
+    .total {
+      margin-top: 22px;
+      display: grid;
+      grid-template-columns: 1.4fr 0.8fr;
+      border: 2px solid var(--ink);
+      box-shadow: 5px 5px 0 0 var(--pink);
+    }
+    .total .copy { padding: 16px 18px; font-size: 13px; line-height: 1.7; }
+    .total .sum {
+      background: var(--ink);
+      color: #fff;
+      padding: 16px 18px;
+      text-align: right;
+    }
+    .total .sum small { display: block; color: #ffd0e4; letter-spacing: 0.08em; font-size: 11px; }
+    .total .sum b { display: block; margin-top: 6px; font-size: 28px; color: #fff; }
+    .ladder { display: grid; grid-template-columns: repeat(4, 1fr); border: 2px solid var(--ink); margin-top: 10px; }
+    .ladder div { padding: 12px; border-right: 1px solid var(--line); }
+    .ladder div:last-child { border-right: 0; }
+    .ladder.on { background: var(--ink); color: #fff; }
+    .ladder small { display: block; font-size: 11px; letter-spacing: 0.04em; }
+    .ladder.on small { color: #ffd0e4; }
+    .ladder b { display: block; margin-top: 4px; font-size: 18px; }
+    .gap {
+      margin-top: 10px;
+      padding: 12px 14px;
+      border: 2px solid var(--ink);
+      background: var(--tint);
+      font-size: 13px;
+      line-height: 1.6;
+    }
+    .sports { display: grid; grid-template-columns: repeat(4, 1fr); border: 2px solid var(--ink); border-top: 0; }
+    .sports div { padding: 8px 10px; border-top: 1px solid var(--line); border-right: 1px solid var(--line); font-size: 12px; }
+    .sports div:nth-child(4n) { border-right: 0; }
+    .sports b { float: right; }
+    .foot { margin-top: 22px; font-size: 12px; color: var(--muted); line-height: 1.7; }
+    .sign { margin-top: 18px; font-size: 13px; }
+    @media print {
+      body { background: #fff; }
+      .page { margin: 0; box-shadow: none; border: 0; width: auto; }
+    }
+  </style>
+</head>
+<body>
+  <article class="page">
+    <div class="bar"></div>
+    <div class="pad">
+      <p class="eyebrow"><span>SPORTLIVE API · QUOTATION</span></p>
+      <h1>报价单</h1>
+      <p class="sub">赛事直播线路、全球体育频道与 OBS 直播流机器人。以下为示例，发出前替换客户与数量。</p>
+
+      <div class="meta">
+        <div><small>报价编号</small><strong>SLA-2026-001</strong></div>
+        <div><small>日期 / 有效期</small><strong>2026-11-18 · 14 天</strong></div>
+        <div><small>客户</small><strong>示例客户 · example@client.com</strong></div>
+        <div><small>对接</small><strong>Elon · elon@sportliveapi.com · Telegram @sla_elon</strong></div>
+      </div>
+
+      <h2><em>01</em>赛事直播线路</h2>
+      <table>
+        <thead>
+          <tr><th>球类</th><th>说明</th><th class="num">月费 (USD)</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>足球</td><td>Soccer</td><td class="num">1,500</td></tr>
+          <tr><td>篮球</td><td>Basketball</td><td class="num">1,000</td></tr>
+          <tr><td>合计</td><td>满 2,500 美元，9 折</td><td class="num">2,250</td></tr>
+        </tbody>
+      </table>
+
+      <h2><em>01+</em>再加球类，折扣会更高</h2>
+      <p class="sub">折扣只看赛事线路的原价，频道和 OBS 不计入。已经选中的球类也会跟着降价。</p>
+      <div class="ladder">
+        <div><small>未满 2,500</small><b>原价</b></div>
+        <div class="on"><small>您在这一档 · 满 2,500</small><b>9 折</b></div>
+        <div><small>满 5,000</small><b>8 折</b></div>
+        <div><small>满 7,500</small><b>7 折</b></div>
+      </div>
+      <p class="gap">再增加 <b>2,500 美元</b> 的赛事线路，全部线路从 9 折变成 8 折。例如加上电竞 1,500、棒球 800、板球 800，线路原价变为 5,600，月费按 8 折是 4,480，而不是在现价上简单累加。</p>
+      <table>
+        <thead>
+          <tr><th colspan="4">未选球类 · 月费均为美元，可直接加购</th></tr>
+        </thead>
+      </table>
+      <div class="sports">
+        <div>电竞 <b>1,500</b></div>
+        <div>棒球 <b>800</b></div>
+        <div>板球 <b>800</b></div>
+        <div>网球 <b>800</b></div>
+        <div>美英澳式橄榄球 <b>800</b></div>
+        <div>斯诺克 <b>500</b></div>
+        <div>冰球 <b>500</b></div>
+        <div>羽毛球 <b>500</b></div>
+        <div>乒乓球 <b>500</b></div>
+        <div>排球 <b>500</b></div>
+        <div>美式橄榄球 <b>500</b></div>
+        <div>英式橄榄球 <b>500</b></div>
+        <div>澳式橄榄球 <b>500</b></div>
+        <div>格斗 <b>500</b></div>
+        <div>赛车 <b>500</b></div>
+        <div>摔跤 <b>500</b></div>
+      </div>
+      <p class="note">付费周期另计，和上面的满额折扣可以叠在一起：按季付款，合计再 ×0.9；按半年付款，合计再 ×0.8。推流由客户承担流量。播放链接使用我方线路，上线前按云定价预充流量包。价格确认后可开 1 天测试，付款后开通接口文档与权限。</p>
+
+      <h2><em>02</em>全球体育频道</h2>
+      <table>
+        <thead>
+          <tr><th>项目</th><th>说明</th><th class="num">月费 (USD)</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>100+ 体育频道</td><td>标准价 1,600。已采购足球与篮球赛事线路的客户增购 5 折</td><td class="num">800</td></tr>
+        </tbody>
+      </table>
+
+      <h2><em>03</em>OBS 直播流机器人</h2>
+      <table>
+        <thead>
+          <tr><th>项目</th><th>说明</th><th class="num">月费 (USD)</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>赠送席位 × 3</td><td>采购足球赛事直播线路附赠，对接 Telegram @SLA_Tech</td><td class="num">0</td></tr>
+          <tr><td>增购席位 × 2</td><td>超出赠送名额后 100 美元 / 月 / 人。未购足球线路时 3 人起购</td><td class="num">200</td></tr>
+        </tbody>
+      </table>
+
+      <div class="total">
+        <div class="copy">
+          本次按月付，还没有使用季付或半年付的额外折扣。<br />
+          足球线路已含 3 个 OBS 席位。频道 800 美元是足篮客户的增购价，标准价 1,600 美元。<br />
+          不含赛程、历史比分与额外定制。
+        </div>
+        <div class="sum">
+          <small>MONTHLY TOTAL</small>
+          <b>$3,250</b>
+        </div>
+      </div>
+
+      <p class="sign">SportLiveAPI<br />support@sportliveapi.com</p>
+      <p class="foot">示例报价，仅用于看版式。正式发出时删掉未购买的产品。未购足球线路则没有 3 个赠送席位，OBS 按 3 人起、100 美元/人计。频道五折只给已购足球和篮球线路的客户。</p>
+    </div>
+  </article>
+</body>
+</html>

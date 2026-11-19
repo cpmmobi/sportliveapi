@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8" />
+  <title>报价单试算</title>
+  <style>
+    :root { --ink:#141414; --paper:#F3EEEF; --tint:#FFF1F7; --pink:#FC0078; --muted:#5E5E5E; --line:#E7E7E7; }
+    * { box-sizing: border-box; }
+    body { margin:0; background:var(--paper); color:var(--ink); font-family:Inter,"PingFang SC","Noto Sans SC",sans-serif; }
+    .app { display:grid; grid-template-columns:340px 1fr; min-height:100vh; }
+    form { padding:20px; border-right:2px solid var(--ink); background:#fff; }
+    form h1 { margin:0 0 4px; font-size:20px; }
+    form p { margin:0 0 16px; color:var(--muted); font-size:12px; line-height:1.5; }
+    label { display:block; margin:12px 0 6px; font-size:12px; font-weight:700; }
+    input[type="text"], input[type="number"], select { width:100%; border:2px solid var(--ink); padding:8px; font:inherit; }
+    .checks { display:flex; flex-direction:column; gap:6px; font-size:13px; }
+    .sports { display:flex; flex-wrap:wrap; gap:6px; }
+    .sports label { margin:0; font-weight:600; font-size:12px; border:1px solid var(--line); padding:4px 8px; }
+    button { margin-top:14px; border:2px solid var(--ink); background:var(--ink); color:#fff; padding:8px 10px; font:inherit; font-size:12px; cursor:pointer; }
+    .preview { padding:24px; }
+    .page { width:210mm; margin:0 auto; background:#fff; border:2px solid var(--ink); box-shadow:8px 8px 0 0 var(--ink); }
+    .bar { height:8px; background:var(--pink); }
+    .pad { padding:28px 32px 36px; }
+    .eyebrow { display:inline-block; margin:0 0 12px; padding:4px 10px; background:var(--paper); border:2px solid var(--ink); box-shadow:2px 2px 0 0 var(--ink); font-size:11px; font-weight:700; letter-spacing:.14em; }
+    .eyebrow span { display:inline-block; transform:skewX(-10deg); }
+    .page h2.title { margin:0; font-size:32px; letter-spacing:-.03em; }
+    .sub { margin:6px 0 0; color:var(--muted); font-size:13px; }
+    .meta { display:grid; grid-template-columns:1fr 1fr 1fr; margin-top:22px; border:2px solid var(--ink); }
+    .meta div { padding:10px 12px; border-right:1px solid var(--line); }
+    .meta div:nth-child(3n) { border-right:0; }
+    .meta small { display:block; color:var(--muted); font-size:11px; }
+    .meta strong { font-size:14px; }
+    h3 { margin:26px 0 10px; font-size:15px; }
+    h3 em { margin-right:8px; color:var(--pink); font-style:normal; font-family:ui-monospace,monospace; }
+    table { width:100%; border-collapse:collapse; border:2px solid var(--ink); }
+    th { background:var(--ink); color:#fff; text-align:left; font-size:12px; padding:8px 12px; }
+    td { padding:9px 12px; border-top:1px solid var(--line); font-size:13px; }
+    .num { text-align:right; font-variant-numeric:tabular-nums; font-weight:700; }
+    .tick { width:28px; text-align:center; color:var(--pink); font-weight:700; }
+    tr.picked td { background:var(--tint); }
+    .note { margin-top:10px; padding:12px 14px; background:var(--tint); border-left:4px solid var(--pink); font-size:12px; line-height:1.6; }
+    .quiet { margin:16px 0 0; color:var(--muted); font-size:12px; line-height:1.7; }
+    .total { margin-top:22px; display:grid; grid-template-columns:1.4fr .8fr; border:2px solid var(--ink); box-shadow:5px 5px 0 0 var(--pink); }
+    .total .copy { padding:16px 18px; font-size:13px; line-height:1.7; }
+    .total .sum { background:var(--ink); color:#fff; padding:16px 18px; text-align:right; }
+    .total .sum small { display:block; color:#ffd0e4; letter-spacing:.08em; font-size:11px; }
+    .total .sum b { display:block; margin-top:6px; font-size:28px; }
+    .sign { margin-top:18px; font-size:13px; }
+    @media print { form { display:none; } .app { display:block; } .preview { padding:0; } .page { box-shadow:none; border:0; } }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <form id="form">
+      <h1>填写线索</h1>
+      <p>改任何一项，右边的报价单会立刻重算。只选频道或只选 OBS 时，不出现另外两块产品的价格。</p>
+      <label>报价单语言</label>
+      <select id="locale">
+        <option value="zh">简体中文</option>
+        <option value="zh-TW">繁体中文</option>
+        <option value="en">English</option>
+      </select>
+      <p id="mailPreviewNote" style="margin:6px 0 0;color:#5E5E5E;font-size:12px;line-height:1.5;"></p>
+      <label>销售邮箱</label>
+      <select id="sales"></select>
+      <p id="sendStatus">用所选销售邮箱发送说明信，并将报价单作为 PDF 附件发出。</p>
+      <label>客户邮箱</label>
+      <input id="email" type="text" value="liveyu0507@gmail.com" />
+      <label>联系方式</label>
+      <input id="contact" type="text" value="Telegram @HS567UP" />
+      <label>意向产品</label>
+      <div class="checks">
+        <label><input type="checkbox" name="product" value="streams" /> 赛事直播线路</label>
+        <label><input type="checkbox" name="product" value="iptv" checked /> 全球体育频道</label>
+        <label><input type="checkbox" name="product" value="obs" /> OBS 直播流机器人</label>
+      </div>
+      <div id="sportBox">
+        <label>球类</label>
+        <div class="sports" id="sports"></div>
+      </div>
+      <div id="channelBox">
+        <label><input id="legacy" type="checkbox" /> 已是足球 + 篮球线路客户，频道按 800 美元</label>
+      </div>
+      <div id="obsBox">
+        <label>OBS 人数</label>
+        <input id="seats" type="number" min="1" value="5" />
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;">
+        <button type="button" id="send">发送报价单</button>
+        <button type="button" id="downloadPdf" style="background:#fff;color:var(--ink);">下载 PDF</button>
+        <button type="button" id="sample" style="background:#fff;color:var(--ink);">填入这条频道线索</button>
+        <a id="logout" href="/private/quote?logout=1" hidden style="margin-top:14px;align-self:center;color:#141414;font-size:12px;font-weight:700;">退出登录</a>
+      </div>
+    </form>
+    <div class="preview"><div id="sheet"></div></div>
+  </div>
+  <script>
+    const SPORT_NAME = {
+      football: ['足球', '足球', 'Football'],
+      basketball: ['篮球', '籃球', 'Basketball'],
+      esports: ['电竞', '電競', 'Esports'],
+      baseball: ['棒球', '棒球', 'Baseball'],
+      cricket: ['板球', '板球', 'Cricket'],
+      tennis: ['网球', '網球', 'Tennis'],
+      'combo-football': ['美英澳式橄榄球', '美英澳式橄欖球', 'US / UK / AU Football'],
+      snooker: ['斯诺克', '斯諾克', 'Snooker'],
+      hockey: ['冰球', '冰球', 'Ice Hockey'],
+      badminton: ['羽毛球', '羽毛球', 'Badminton'],
+      tabletennis: ['乒乓球', '桌球', 'Table Tennis'],
+      volleyball: ['排球', '排球', 'Volleyball'],
+      american: ['美式橄榄球', '美式橄欖球', 'American Football'],
+      rugby: ['英式橄榄球', '英式橄欖球', 'Rugby'],
+      afl: ['澳式橄榄球', '澳式橄欖球', 'Australian Football'],
+      combat: ['格斗', '格鬥', 'Combat Sports'],
+      f1: ['赛车', '賽車', 'Motorsport'],
+      wrestling: ['摔跤', '摔跤', 'Wrestling']
+    }
+    const COPY = {
+      zh: {
+        blank: '未填写', title: '报价单', customer: '客户', contact: '联系方式', manager: '账户经理',
+        lines: '赛事直播线路', sport: '球类', monthly: '月费 (USD)', selected: '已选合计',
+        channels: '全球体育频道', item: '项目', detail: '说明', channelName: '100+ 体育频道',
+        obs: 'OBS 直播流机器人', included: '赠送席位', includedNote: '足球赛事线路附赠',
+        extra: '增购席位', extraNote: '超出赠送名额，100 美元 / 人', seats: '主播席位', seatNote: '100 美元 / 人，3 人起',
+        empty: '请至少选择一项产品。', per: ' / 月',
+        totalCopy: '产品按月计价。季付、半年付的折算写在下面。<br />support@sportliveapi.com',
+        totalLabel: '月付合计', pay: '付款节奏', plan: '节奏', due: '应付 (USD)', equiv: '折算月费',
+        month: '月付', monthNote: '按月支付', quarter: '季付', quarterNote: '一次付 3 个月', half: '半年付', halfNote: '一次付 6 个月',
+        payNote: '季付、半年付按上面的月费再计。价格确认后可开 1 天测试，付款后开通权限。',
+        tiers: '月费满 2,500 美元按 9 折，满 5,000 美元按 8 折，满 7,500 美元按 7 折。',
+        off: { 0.9: '9 折', 0.8: '8 折', 0.7: '7 折' }
+      },
+      'zh-TW': {
+        blank: '未填寫', title: '報價單', customer: '客戶', contact: '聯繫方式', manager: '帳戶經理',
+        lines: '賽事直播線路', sport: '球類', monthly: '月費 (USD)', selected: '已選合計',
+        channels: '全球體育頻道', item: '項目', detail: '說明', channelName: '100+ 體育頻道',
+        obs: 'OBS 直播流機器人', included: '贈送席位', includedNote: '足球賽事線路附贈',
+        extra: '增購席位', extraNote: '超出贈送名額，100 美元 / 人', seats: '主播席位', seatNote: '100 美元 / 人，3 人起',
+        empty: '請至少選擇一項產品。', per: ' / 月',
+        totalCopy: '產品按月計價。季付、半年付的折算寫在下面。<br />support@sportliveapi.com',
+        totalLabel: '月付合計', pay: '付款節奏', plan: '節奏', due: '應付 (USD)', equiv: '折算月費',
+        month: '月付', monthNote: '按月支付', quarter: '季付', quarterNote: '一次付 3 個月', half: '半年付', halfNote: '一次付 6 個月',
+        payNote: '季付、半年付按上面的月費再計。價格確認後可開 1 天測試，付款後開通權限。',
+        tiers: '月費滿 2,500 美元按 9 折，滿 5,000 美元按 8 折，滿 7,500 美元按 7 折。',
+        off: { 0.9: '9 折', 0.8: '8 折', 0.7: '7 折' }
+      },
+      en: {
+        blank: 'Not provided', title: 'Quotation', customer: 'Customer', contact: 'Contact', manager: 'Account Manager',
+        lines: 'Live Match Lines', sport: 'Sport', monthly: 'Monthly (USD)', selected: 'Selected total',
+        channels: 'Global Sports Channels', item: 'Item', detail: 'Details', channelName: '100+ sports channels',
+        obs: 'OBS Streaming Bot', included: 'Included seats', includedNote: 'Included with football match lines',
+        extra: 'Extra seats', extraNote: 'Beyond the included seats, $100 per person', seats: 'Seats', seatNote: '$100 per person, minimum 3',
+        empty: 'Select at least one product.', per: ' / mo',
+        totalCopy: 'Prices are monthly. Quarterly and half-year amounts are below.<br />support@sportliveapi.com',
+        totalLabel: 'Monthly total', pay: 'Payment', plan: 'Plan', due: 'Due (USD)', equiv: 'Per month',
+        month: 'Monthly', monthNote: 'Pay each month', quarter: 'Quarterly', quarterNote: 'Pay every 3 months', half: 'Half-year', halfNote: 'Pay every 6 months',
+        payNote: 'Quarterly and half-year payments use the monthly amount above. A 1-day test opens after the price is agreed, and access opens after payment.',
+        tiers: '10% off from $2,500 a month, 20% off from $5,000, and 30% off from $7,500.',
+        off: { 0.9: '10% off', 0.8: '20% off', 0.7: '30% off' }
+      }
+    }
+    const SPORTS = [
+      ['football', 1500],
+      ['basketball', 1000],
+      ['esports', 1500],
+      ['baseball', 800],
+      ['cricket', 800],
+      ['tennis', 800],
+      ['combo-football', 800],
+      ['snooker', 500],
+      ['hockey', 500],
+      ['badminton', 500],
+      ['tabletennis', 500],
+      ['volleyball', 500],
+      ['american', 500],
+      ['rugby', 500],
+      ['afl', 500],
+      ['combat', 500],
+      ['f1', 500],
+      ['wrestling', 500]
+    ]
+    const ON_REQUEST = new Set(['american', 'rugby', 'afl'])
+    const money = (n) => n.toLocaleString('en-US')
+    const sportsEl = document.getElementById('sports')
+    SPORTS.forEach(([id]) => {
+      const label = document.createElement('label')
+      label.innerHTML = `<input type="checkbox" name="sport" value="${id}" /> ${SPORT_NAME[id][0]}`
+      sportsEl.appendChild(label)
+    })
+
+    function selected(name) {
+      return [...document.querySelectorAll(`input[name="${name}"]:checked`)].map((el) => el.value)
+    }
+
+    function tier(sum) {
+      if (sum >= 7500) return [0.7, 7500]
+      if (sum >= 5000) return [0.8, 5000]
+      if (sum >= 2500) return [0.9, 2500]
+      return [1, 0]
+    }
+
+    function channelNote(lang, legacy, bundle) {
+      if (!legacy) {
+        if (lang === 'en') return 'Standard price, $1,600.'
+        if (lang === 'zh-TW') return '標準價 1,600 美元。'
+        return '标准价 1,600 美元。'
+      }
+      if (lang === 'en') {
+        const why = bundle
+          ? 'This quote includes football and basketball match lines'
+          : 'Already a football and basketball line customer'
+        return `List price $1,600. ${why}, so channels use the add-on price.`
+      }
+      if (lang === 'zh-TW') {
+        const why = bundle ? '本單已選足球和籃球賽事線路' : '已是足球和籃球賽事線路客戶'
+        return `原價 1,600 美元。${why}，頻道按增購價。`
+      }
+      const why = bundle ? '本单已选足球和篮球赛事线路' : '已是足球和篮球赛事线路客户'
+      return `原价 1,600 美元。${why}，频道按增购价。`
+    }
+
+    function offerLine(lang, catalog, rate, monthly) {
+      const off = COPY[lang].off[rate]
+      if (lang === 'en') {
+        return rate < 1
+          ? `This quote lists at $${money(catalog)}. ${off}, so the monthly fee is $${money(monthly)}.`
+          : `This quote lists at $${money(catalog)}. Below $2,500, so the list price applies.`
+      }
+      if (lang === 'zh-TW') {
+        return rate < 1
+          ? `本次原價 ${money(catalog)} 美元，按 ${off}，月費 ${money(monthly)} 美元。`
+          : `本次原價 ${money(catalog)} 美元，未滿 2,500 美元，按原價。`
+      }
+      return rate < 1
+        ? `本次原价 ${money(catalog)} 美元，按 ${off}，月费 ${money(monthly)} 美元。`
+        : `本次原价 ${money(catalog)} 美元，未满 2,500 美元，按原价。`
+    }
+
+    function render() {
+      const products = selected('product')
+      const streams = products.includes('streams')
+      const iptv = products.includes('iptv')
+      const obs = products.includes('obs')
+      const picked = selected('sport')
+      const lines = SPORTS.filter(([id]) => picked.includes(id))
+      const listSum = lines.reduce((sum, item) => sum + item[1], 0)
+      const bundle = streams && picked.includes('football') && picked.includes('basketball')
+      const legacyInput = document.getElementById('legacy')
+      if (bundle) {
+        legacyInput.checked = true
+        legacyInput.disabled = true
+        legacyInput.dataset.locked = '1'
+      } else if (legacyInput.dataset.locked === '1') {
+        legacyInput.checked = false
+        legacyInput.disabled = false
+        delete legacyInput.dataset.locked
+      } else {
+        legacyInput.disabled = false
+      }
+      const legacy = legacyInput.checked
+      const channelFee = legacy ? 800 : 1600
+      const gift = streams && picked.includes('football') ? 3 : 0
+      let seats = Math.max(1, Number(document.getElementById('seats').value) || 1)
+      if (obs && !gift) seats = Math.max(3, seats)
+      const paidSeats = obs ? Math.max(0, seats - gift) : 0
+      const obsFee = paidSeats * 100
+      const catalog = (streams ? listSum : 0) + (iptv ? channelFee : 0) + (obs ? obsFee : 0)
+      const [rate] = tier(streams ? catalog : 0)
+      const monthly = Math.round(catalog * rate)
+      const quarterMonthly = Math.round(monthly * 0.9)
+      const halfMonthly = Math.round(monthly * 0.8)
+      const lang = document.getElementById('locale').value
+      const L = COPY[lang]
+      const nameOf = (id) => SPORT_NAME[id][lang === 'en' ? 2 : lang === 'zh-TW' ? 1 : 0]
+      const email = document.getElementById('email').value || L.blank
+      const contact = document.getElementById('contact').value || L.blank
+
+      document.getElementById('sportBox').hidden = !streams
+      document.getElementById('channelBox').hidden = !iptv
+      document.getElementById('obsBox').hidden = !obs
+
+      const blocks = []
+      if (streams) {
+        const rows = SPORTS.filter(([id]) => !ON_REQUEST.has(id) || picked.includes(id)).map(([id, price]) => {
+          const on = picked.includes(id)
+          return `<tr class="${on ? 'picked' : ''}"><td class="tick">${on ? '✓' : ''}</td><td>${nameOf(id)}</td><td class="num">${money(price)}</td></tr>`
+        }).join('')
+        const totalRow = listSum > 0 ? `<tr><td></td><td>${L.selected}</td><td class="num">${money(listSum)}</td></tr>` : ''
+        blocks.push(`
+          <h3><em>01</em>${L.lines}</h3>
+          <table><thead><tr><th></th><th>${L.sport}</th><th class="num">${L.monthly}</th></tr></thead>
+          <tbody>${rows}${totalRow}</tbody></table>`)
+      }
+      if (iptv) {
+        blocks.push(`
+          <h3><em>02</em>${L.channels}</h3>
+          <table><thead><tr><th>${L.item}</th><th>${L.detail}</th><th class="num">${L.monthly}</th></tr></thead>
+          <tbody><tr><td>${L.channelName}</td><td>${channelNote(lang, legacy, bundle)}</td><td class="num">${money(channelFee)}</td></tr></tbody></table>`)
+      }
+      if (obs) {
+        const rows = []
+        if (gift) rows.push(`<tr><td>${L.included} × ${gift}</td><td>${L.includedNote}</td><td class="num">0</td></tr>`)
+        rows.push(`<tr><td>${gift ? L.extra : L.seats} × ${paidSeats}</td><td>${gift ? L.extraNote : L.seatNote}</td><td class="num">${money(obsFee)}</td></tr>`)
+        blocks.push(`
+          <h3><em>03</em>${L.obs}</h3>
+          <table><thead><tr><th>${L.item}</th><th>${L.detail}</th><th class="num">${L.monthly}</th></tr></thead><tbody>${rows.join('')}</tbody></table>`)
+      }
+      if (!blocks.length) blocks.push(`<p class="note">${L.empty}</p>`)
+      const offer = streams ? `<p class="quiet">${L.tiers}${offerLine(lang, catalog, rate, monthly)}</p>` : ''
+
+      document.getElementById('mailPreviewNote').textContent =
+        lang === 'en'
+          ? '将发送英文邮件 · 附件 SportLiveAPI-Quotation.pdf · 文档 sportliveapi.com/en/docs'
+          : lang === 'zh-TW'
+            ? '将发送繁体邮件 · 附件 SportLiveAPI-報價單.pdf · 文档 sportliveapi.com/zh-TW/docs'
+            : '将发送简体邮件 · 附件 SportLiveAPI-报价单.pdf · 文档 sportliveapi.com/zh/docs'
+
+      document.getElementById('sheet').innerHTML = `
+        <article class="page" lang="${lang}"><div class="bar"></div><div class="pad">
+          <p class="eyebrow"><span>SPORTLIVE API · QUOTATION</span></p>
+          <h2 class="title">${L.title}</h2>
+          <div class="meta">
+            <div><small>${L.customer}</small><strong>${email}</strong></div>
+            <div><small>${L.contact}</small><strong>${contact}</strong></div>
+            <div><small>${L.manager}</small><strong>Elon · @sla_elon</strong></div>
+          </div>
+          ${blocks.join('')}
+          ${offer}
+          <div class="total">
+            <div class="copy">${L.totalCopy}</div>
+            <div class="sum"><small>${L.totalLabel}</small><b>$${money(monthly)}</b></div>
+          </div>
+          <h3>${L.pay}</h3>
+          <table><thead><tr><th>${L.plan}</th><th>${L.detail}</th><th class="num">${L.due}</th><th class="num">${L.equiv}</th></tr></thead>
+          <tbody>
+            <tr><td>${L.month}</td><td>${L.monthNote}</td><td class="num">${money(monthly)}</td><td class="num">${money(monthly)}${L.per}</td></tr>
+            <tr><td>${L.quarter}</td><td>${L.quarterNote}</td><td class="num">${money(quarterMonthly * 3)}</td><td class="num">${money(quarterMonthly)}${L.per}</td></tr>
+            <tr><td>${L.half}</td><td>${L.halfNote}</td><td class="num">${money(halfMonthly * 6)}</td><td class="num">${money(halfMonthly)}${L.per}</td></tr>
+          </tbody></table>
+          <p class="note">${L.payNote}</p>
+          <p class="sign">SportLiveAPI</p>
+        </div></article>`
+    }
+
+    document.getElementById('form').addEventListener('input', render)
+    document.getElementById('form').addEventListener('change', render)
+    document.getElementById('sample').addEventListener('click', () => {
+      document.getElementById('email').value = 'liveyu0507@gmail.com'
+      document.getElementById('contact').value = 'Telegram @HS567UP'
+      document.querySelectorAll('input[name="product"]').forEach((el) => { el.checked = el.value === 'iptv' })
+      document.querySelectorAll('input[name="sport"]').forEach((el) => { el.checked = false })
+      document.getElementById('legacy').checked = false
+      render()
+    })
+
+    const siteOrigin = location.port === '8765' ? 'http://127.0.0.1:3000' : ''
+    const quoteApi = `${siteOrigin}/api/quote`
+    const sendStatus = document.getElementById('sendStatus')
+    let pdfLibsPromise = null
+
+    function loadScript(src) {
+      return new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = src
+        script.onload = () => resolve()
+        script.onerror = () => reject(new Error(`加载失败: ${src}`))
+        document.head.appendChild(script)
+      })
+    }
+
+    function ensurePdfLibs() {
+      if (window.html2canvas && window.jspdf && window.jspdf.jsPDF) return Promise.resolve()
+      if (!pdfLibsPromise) {
+        pdfLibsPromise = Promise.all([
+          loadScript(`${siteOrigin}/vendor/html2canvas.min.js`),
+          loadScript(`${siteOrigin}/vendor/jspdf.umd.min.js`),
+        ]).catch((err) => {
+          pdfLibsPromise = null
+          throw err
+        })
+      }
+      return pdfLibsPromise
+    }
+
+    function pdfFilename(lang) {
+      if (lang === 'en') return 'SportLiveAPI-Quotation.pdf'
+      if (lang === 'zh-TW') return 'SportLiveAPI-報價單.pdf'
+      return 'SportLiveAPI-报价单.pdf'
+    }
+
+    async function buildQuotePdf() {
+      await ensurePdfLibs()
+      const source = document.querySelector('#sheet .page')
+      if (!source) throw new Error('missing_sheet')
+      const host = document.createElement('div')
+      host.style.cssText = 'position:fixed;left:-10000px;top:0;width:794px;background:#ffffff;z-index:-1;'
+      const clone = source.cloneNode(true)
+      clone.style.width = '794px'
+      clone.style.margin = '0'
+      clone.style.border = '0'
+      clone.style.boxShadow = 'none'
+      host.appendChild(clone)
+      document.body.appendChild(host)
+      try {
+        const canvas = await window.html2canvas(clone, {
+          scale: 2,
+          backgroundColor: '#ffffff',
+          useCORS: true,
+          logging: false,
+        })
+        const pdfWidth = 210
+        const contentHeight = Math.ceil((canvas.height / canvas.width) * pdfWidth)
+        const pdfHeight = Math.max(297, contentHeight)
+        const { jsPDF } = window.jspdf
+        const pdf = new jsPDF({
+          orientation: 'portrait',
+          unit: 'mm',
+          format: [pdfWidth, pdfHeight],
+          compress: true,
+        })
+        pdf.addImage(canvas.toDataURL('image/png'), 'PNG', 0, 0, pdfWidth, contentHeight, undefined, 'FAST')
+        const uri = pdf.output('datauristring')
+        const marker = 'base64,'
+        const pdfBase64 = uri.includes(marker) ? uri.slice(uri.indexOf(marker) + marker.length) : uri
+        return { pdf, pdfBase64 }
+      } finally {
+        host.remove()
+      }
+    }
+
+    async function loadSales() {
+      const select = document.getElementById('sales')
+      try {
+        const response = await fetch(quoteApi)
+        const data = await response.json()
+        select.innerHTML = ''
+        for (const email of data.sales || []) {
+          const option = document.createElement('option')
+          option.value = email
+          option.textContent = email
+          select.appendChild(option)
+        }
+        if (!select.options.length) sendStatus.textContent = '还没有配置销售邮箱。请在 quotes/sales.json 里添加。'
+      } catch {
+        sendStatus.textContent = '读不到销售邮箱。请确认网站服务在运行。'
+      }
+    }
+
+    document.getElementById('downloadPdf').addEventListener('click', async () => {
+      if (!selected('product').length) {
+        sendStatus.textContent = '请先至少选择一项产品'
+        return
+      }
+      const button = document.getElementById('downloadPdf')
+      const lang = document.getElementById('locale').value
+      button.disabled = true
+      sendStatus.textContent = '正在生成 PDF...'
+      try {
+        const { pdf } = await buildQuotePdf()
+        const filename = pdfFilename(lang)
+        pdf.save(filename)
+        sendStatus.textContent = `已下载 ${filename}`
+      } catch {
+        sendStatus.textContent = 'PDF 生成失败，请确认本地网站服务正在运行'
+      } finally {
+        button.disabled = false
+      }
+    })
+
+    document.getElementById('send').addEventListener('click', async () => {
+      const from = document.getElementById('sales').value
+      const to = document.getElementById('email').value.trim()
+      const button = document.getElementById('send')
+      if (!from) {
+        sendStatus.textContent = '请先选择销售邮箱'
+        return
+      }
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(to)) {
+        sendStatus.textContent = '请先填写客户邮箱'
+        return
+      }
+      if (!selected('product').length) {
+        sendStatus.textContent = '请先至少选择一项产品'
+        return
+      }
+      button.disabled = true
+      sendStatus.textContent = '正在生成 PDF 并发送邮件...'
+      const lang = document.getElementById('locale').value
+      try {
+        const { pdfBase64 } = await buildQuotePdf()
+        const response = await fetch(quoteApi, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ from, to, locale: lang, pdfBase64 }),
+        })
+        const data = await response.json()
+        sendStatus.textContent = data.sent
+          ? `已用 ${from} 发给 ${to}（附件 ${data.filename} · 文档 ${data.docsUrl}）`
+          : data.error === 'missing_smtp'
+            ? 'Elon 邮箱的发信账号还没配好'
+            : data.error === 'sender_mismatch'
+              ? '所选销售邮箱和发信账号不一致'
+              : data.error === 'invalid_pdf'
+                ? 'PDF 附件生成异常，请重试'
+                : '发送失败'
+      } catch {
+        sendStatus.textContent = '发送失败'
+      } finally {
+        button.disabled = false
+      }
+    })
+
+    if (location.pathname.startsWith('/private')) document.getElementById('logout').hidden = false
+    loadSales()
+    render()
+  </script>
+</body>
+</html>

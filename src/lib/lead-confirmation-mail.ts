@@ -281,9 +281,10 @@ export async function sendLeadConfirmation(input: {
 
   try {
     await transporter.sendMail({
-      from: process.env.SMTP_FROM || `SportLiveAPI Support <${user}>`,
+      from: `SportLiveAPI Support <${user}>`,
       to: input.to,
       replyTo: process.env.SMTP_REPLY_TO || ELON_EMAIL,
+      envelope: { from: user, to: input.to },
       subject: copy.subject,
       text: copy.text,
       html: copy.html,
