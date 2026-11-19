@@ -1490,7 +1490,7 @@ export const home = {
     'Over 23 sports and 100+ European and US sports networks. Connect single matches to your site or app, carry full channels on TV boxes, or pull live links in the group for OBS.',
     '覆蓋 23+ 運動與百餘個歐美主流體育台。按單場接入你的網站與 App、整台接入電視盒子，或進群取流放進 OBS 開播。'
   ),
-  heroKicker: zh('2018 年至今 · 赛事线路持续交付', 'Match lines, continuously since 2018', '2018 年至今 · 賽事線路持續交付'),
+  heroKicker: zh('2018年至今 · 体育直播持续交付', 'Sports live streaming, continuously since 2018', '2018年至今 · 體育直播持續交付'),
   heroBoardTitle: zh('3大体育直播场景产品', '3 products for sports streaming scenarios', '3大體育直播場景產品'),
   heroBoardNote: zh('开发文档与接口调试在站内直接开放。留资料获取报价，认可后开通专属测试页。', 'Docs and live API debugging are open on the site. Leave your contact for a quote, then we open your private test page.', '開發文件與介面調試在站內直接開放。留資料取得報價，認可後開通專屬測試頁。'),
   heroPaths: [

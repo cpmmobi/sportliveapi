@@ -1,8 +1,12 @@
 import { NextRequest, NextResponse } from 'next/server'
+import { waitUntil } from '@vercel/functions'
 import crypto from 'crypto'
 import dns from 'dns'
 import { UserSourceInfo, formatIPAddress } from '@/lib/user-source-tracker'
+import { isPublicWebsiteUrl } from '@/lib/public-website-url'
 import { sendLeadConfirmation } from '@/lib/lead-confirmation-mail'
+import { gradeLead } from '@/lib/lead-grade'
+import { buildLeadIcebreaker } from '@/lib/lead-icebreaker'
 
 const DISPOSABLE_OR_FAKE_DOMAINS = new Set([
   'gmasl.com',
@@ -51,7 +55,7 @@ async function verifyRealEmail(email: string): Promise<{ valid: boolean; reasonZ
   try {
     const mxRecords = await Promise.race([
       dns.promises.resolveMx(domain),
-      new Promise<dns.MxRecord[]>((_, reject) => setTimeout(() => reject(new Error('dns_timeout')), 3500)),
+      new Promise<dns.MxRecord[]>((_, reject) => setTimeout(() => reject(new Error('dns_timeout')), 1200)),
     ])
     if (!Array.isArray(mxRecords) || mxRecords.length === 0) {
       return {
@@ -115,7 +119,7 @@ async function verifyTelegramAccountExists(rawHandle: string): Promise<{
 
   try {
     const controller = new AbortController()
-    const timer = setTimeout(() => controller.abort(), 5000)
+    const timer = setTimeout(() => controller.abort(), 1800)
     const res = await fetch(`https://t.me/${encodeURIComponent(handle)}`, {
       method: 'GET',
       headers: {
@@ -479,8 +483,11 @@ async function sendToFeishu(formData: ContactFormData, clientIP: string) {
   }
   
   const sportsText = (formData.sportsInterests || [])
-    .map(sport => sportsMap[sport] || sport)
-    .join(', ')
+    .map((sport) => {
+      if (sport.startsWith('other:')) return `定制：${sport.slice(6)}`
+      return sportsMap[sport] || sport
+    })
+    .join(', ') || '按频道，不按单场球类'
 
   // 服务类型映射（支持单个或多个组合）
   const serviceTypeMap: Record<string, string> = {
@@ -577,15 +584,33 @@ ${formData.userSource ? formatUserSourceInfo(formData.userSource, clientIP) : '�
 
     const regionMap: Record<string, string> = {
       SEA: '东南亚',
-      EA: '港澳台/日韩',
       CN: '中国大陆',
+      HMT: '港澳台（繁中）',
+      JP_KR: '日韩',
+      RU: '俄罗斯',
       EU_UK: '欧洲/英国',
       NA: '北美(US/CA)',
       LATAM: '拉美',
       SA_ME: '南亚/中东',
       AU_NZ: '澳新/非洲',
-      GLOBAL: '全球多地区',
     }
+    const useCaseParts = simpleData.useCase.split(',').map((item) => item.trim()).filter(Boolean)
+    const onlyObsLead = useCaseParts.length === 1 && useCaseParts[0] === 'obs_streaming'
+    const platformLabel = onlyObsLead ? '工作室名称' : '网站网址'
+    const leadGrade = gradeLead({
+      useCase: simpleData.useCase,
+      projectStage: simpleData.projectStage,
+      sportsInterests: simpleData.sportsInterests,
+    })
+    const icebreaker = buildLeadIcebreaker({
+      grade: leadGrade.grade,
+      useCase: simpleData.useCase,
+      projectStage: simpleData.projectStage,
+      sportsInterests: simpleData.sportsInterests,
+      platform: simpleData.platformInfo,
+      targetCountries: simpleData.targetCountries,
+      locale: simpleData.userSource?.uiLocale,
+    })
     const formattedCountries = simpleData.targetCountries
       ? simpleData.targetCountries
           .split(',')
@@ -594,11 +619,12 @@ ${formData.userSource ? formatUserSourceInfo(formData.userSource, clientIP) : '�
       : ''
 
     // 构建紧凑的消息内容，优化排版
-    const messageContent = `🎯 新客户咨询 - SportLiveAPI
+    const messageContent = `${leadGrade.headline}
+🎯 新客户咨询 - SportLiveAPI
 📧 邮箱地址: ${simpleData.email}
 ${contactIcon} 联系方式: ${simpleData.contactMethod}
-🎯 意向产品: ${serviceText}${stageText ? `\n🚀 项目阶段: ${stageText}` : ''}${formattedCountries ? `\n🌍 目标国家/地区 (CDN/防盗链): ${formattedCountries}` : ''}
-⚽ 关注的体育项目: ${sportsText}${simpleData.streamerType ? `\n🎙️ 主播最大同时播流人数: ${({ '1': '1 人同时播', '2-5': '2–5 人同时播', '6-15': '6–15 人同时播', '15+': '15 人以上同时播' } as Record<string, string>)[simpleData.streamerType] || simpleData.streamerType}` : ''}${simpleData.platformInfo ? `\n🌐 网站/App域名: ${simpleData.platformInfo}` : ''}
+🎯 意向产品: ${serviceText}${stageText ? `\n🚀 项目阶段: ${stageText}` : ''}${formattedCountries ? `\n🌍 目标观众主要所在地: ${formattedCountries}` : ''}
+⚽ 关注的体育项目: ${sportsText}${simpleData.streamerType ? `\n🎙️ 主播最大同时播流人数: ${({ '1': '1 人同时播', '2-5': '2–5 人同时播', '6-15': '6–15 人同时播', '15+': '15 人以上同时播' } as Record<string, string>)[simpleData.streamerType] || simpleData.streamerType}` : ''}${simpleData.platformInfo ? `\n🌐 ${platformLabel}: ${simpleData.platformInfo}` : ''}
 📝 补充需求说明: ${simpleData.requirements || '暂无详细说明'}
 📊 用户来源分析
 ${simpleData.userSource ? formatUserSourceInfo(simpleData.userSource, clientIP) : '📍 位置: ' + getLocationFromIP(clientIP)}
@@ -611,8 +637,9 @@ ${simpleData.userSource ? formatUserSourceInfo(simpleData.userSource, clientIP) 
       minute: '2-digit',
       second: '2-digit'
     })}
-🚀 请在新加坡时间（UTC+8）工作时段 10:30–20:30 内第一时间联系客户。
-💡 提醒：可直接回复邮箱或通过联系方式快速沟通`
+${leadGrade.nextStep}
+🗣 主动沟通
+方向：${icebreaker.direction}${icebreaker.copyText ? `\n可复制发给客户：\n${icebreaker.copyText}` : ''}`
 
     message = {
       msg_type: 'text',
@@ -709,12 +736,19 @@ export async function POST(request: NextRequest) {
       const simpleData = formData as SimpleContactFormData
       
       // 验证必填字段（仅在选择赛事直播线路或全球体育频道时校验项目阶段与目标国家）
-      const needsPlatformFields = simpleData.useCase?.includes('website_app') || simpleData.useCase?.includes('iptv')
+      const useCases = (simpleData.useCase || '').split(',').map((item) => item.trim()).filter(Boolean)
+      const needsPlatformFields = useCases.includes('website_app') || useCases.includes('iptv')
+      const needsSports = useCases.includes('website_app')
+      const onlyObs = useCases.length === 1 && useCases[0] === 'obs_streaming'
+      const sports = simpleData.sportsInterests || []
+      const platform = simpleData.platformInfo?.trim() || ''
+      const isEnLocale = simpleData.userSource?.uiLocale && simpleData.userSource.uiLocale !== 'zh' && simpleData.userSource.uiLocale !== 'zh-TW'
       if (
         !simpleData.email ||
         !simpleData.contactMethod ||
-        !simpleData.sportsInterests?.length ||
         !simpleData.useCase ||
+        !platform ||
+        (needsSports && sports.length === 0) ||
         (needsPlatformFields && !simpleData.projectStage) ||
         (needsPlatformFields && !simpleData.targetCountries?.trim())
       ) {
@@ -727,9 +761,27 @@ export async function POST(request: NextRequest) {
         )
       }
 
-      // 邮箱真实性与 DNS MX 校验
-      const isEnLocale = simpleData.userSource?.uiLocale && simpleData.userSource.uiLocale !== 'zh' && simpleData.userSource.uiLocale !== 'zh-TW'
-      const emailCheck = await verifyRealEmail(simpleData.email)
+      if (!onlyObs && !isPublicWebsiteUrl(platform)) {
+        return NextResponse.json(
+          {
+            success: false,
+            error: isEnLocale
+              ? 'Enter a website address we can open. localhost and private addresses cannot be used to review the product.'
+              : '请填写可以打开的网站地址。localhost 和内网地址无法用来了解产品',
+          },
+          { status: 400 }
+        )
+      }
+
+      // 邮箱 MX 和 Telegram 页面查询互相独立，同时进行，避免提交时两段等待叠在一起
+      const rawContact = simpleData.contactMethod.trim()
+      const isTg = rawContact.startsWith('Telegram:')
+      const isWa = rawContact.startsWith('WhatsApp:')
+      const isEmailOnly = rawContact.startsWith('Email Only')
+      const [emailCheck, tgCheck] = await Promise.all([
+        verifyRealEmail(simpleData.email),
+        isTg ? verifyTelegramAccountExists(rawContact) : Promise.resolve(null),
+      ])
       if (!emailCheck.valid) {
         return NextResponse.json(
           {
@@ -741,12 +793,13 @@ export async function POST(request: NextRequest) {
       }
 
       // 联系方式真实性校验（Telegram / WhatsApp / 以上都没有仅邮件联系）
-      const rawContact = simpleData.contactMethod.trim()
-      const isTg = rawContact.startsWith('Telegram:')
-      const isWa = rawContact.startsWith('WhatsApp:')
-      const isEmailOnly = rawContact.startsWith('Email Only')
       if (isTg) {
-        const tgCheck = await verifyTelegramAccountExists(rawContact)
+        if (!tgCheck) {
+          return NextResponse.json(
+            { success: false, error: isEnLocale ? 'Invalid contact method' : '错误的联系方式' },
+            { status: 400 }
+          )
+        }
         if (!tgCheck.valid) {
           return NextResponse.json(
             {
@@ -791,45 +844,46 @@ export async function POST(request: NextRequest) {
         )
       }
 
+      const leadGrade = gradeLead({
+        useCase: simpleData.useCase,
+        projectStage: simpleData.projectStage,
+        sportsInterests: simpleData.sportsInterests,
+      })
       console.log('📝 收到新的客户咨询:', {
         email: simpleData.email,
         contactMethod: simpleData.contactMethod,
         sportsCount: simpleData.sportsInterests.length,
-        serviceType: simpleData.useCase
+        serviceType: simpleData.useCase,
+        grade: leadGrade.grade,
+        reason: leadGrade.reason,
       })
     }
 
-    const [feishuResult, mailResult] = await Promise.all([
+    // 校验通过后立刻返回。飞书和确认信失败也不会改页面结果，放到响应之后再发，避免客户干等。
+    const delivery = Promise.all([
       sendToFeishu(formData, clientIP),
       sendLeadConfirmation({
         to: formData.email,
         locale: formData.userSource?.uiLocale,
         contactMethod: 'contactMethod' in formData ? formData.contactMethod : formData.phone,
       }),
-    ])
-
-    console.log('📤 推送结果:', {
-      feishu: feishuResult.success ? '✅ 成功' : '❌ 失败',
-      mail: mailResult.sent ? '✅ 确认信已发' : `❌ ${mailResult.error || '未发送'}`,
+    ]).then(([feishuResult, mailResult]) => {
+      console.log('📤 推送结果:', {
+        feishu: feishuResult.success ? '✅ 成功' : '❌ 失败',
+        mail: mailResult.sent ? '✅ 确认信已发' : `❌ ${mailResult.error || '未发送'}`,
+      })
+      if (!feishuResult.success) {
+        console.error('⚠️ 飞书消息发送失败:', { feishu: feishuResult.error })
+      }
+    }).catch((error) => {
+      console.error('后台投递失败:', error)
     })
+    waitUntil(delivery)
 
-    // 飞书推送成功，返回成功给用户
-    if (feishuResult.success) {
-      return NextResponse.json({ 
-        success: true, 
-        message: '咨询提交成功！我们将在新加坡时间（UTC+8）工作时段 10:30–20:30 内，第一时间与您联系并提供报价。'
-      })
-    } else {
-      // 即使飞书发送失败，也返回成功给用户，避免影响用户体验
-      // 但在服务端记录错误日志
-      console.error('⚠️ 飞书消息发送失败，但仍返回成功给用户:', {
-        feishu: feishuResult.error
-      })
-      return NextResponse.json({ 
-        success: true, 
-        message: '咨询提交成功！我们将在新加坡时间（UTC+8）工作时段 10:30–20:30 内，第一时间与您联系并提供报价。'
-      })
-    }
+    return NextResponse.json({
+      success: true,
+      message: '咨询提交成功！我们将在新加坡时间（UTC+8）工作时段 10:30–20:30 内，第一时间与您联系并提供报价。'
+    })
   } catch (error) {
     console.error('💥 处理表单提交时出错:', error)
     return NextResponse.json(

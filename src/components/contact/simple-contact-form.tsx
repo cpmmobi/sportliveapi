@@ -5,6 +5,7 @@ import { usePathname } from 'next/navigation'
 import { Check } from 'lucide-react'
 import { trackFormSubmit, trackServiceInterest, trackContactPreference } from '@/lib/analytics'
 import { getUserSourceInfo } from '@/lib/user-source-tracker'
+import { isPublicWebsiteUrl } from '@/lib/public-website-url'
 
 function l(locale: string, zh: string, en: string, tw?: string) {
   if (locale === 'zh') return zh
@@ -115,6 +116,9 @@ export default function SimpleContactForm({
   const [handleInput, setHandleInput] = useState('')
   const [email, setEmail] = useState('')
   const [sportsInterests, setSportsInterests] = useState<string[]>([])
+  const [customSports, setCustomSports] = useState<string[]>([])
+  const [customSportInput, setCustomSportInput] = useState('')
+  const [showOtherSport, setShowOtherSport] = useState(false)
   const [streamerConcurrency, setStreamerConcurrency] = useState<string>('')
   const [platformInfo, setPlatformInfo] = useState('')
   const [requirements, setRequirements] = useState('')
@@ -214,18 +218,18 @@ export default function SimpleContactForm({
 
   const regionPills = [
     { value: 'SEA', label: l(locale, '东南亚 (VN/TH/ID/MY/PH)', 'Southeast Asia (VN/TH/ID/MY)', '東南亞 (VN/TH/ID/MY/PH)') },
-    { value: 'EA', label: l(locale, '港澳台 / 日韩', 'HK / TW / JP / KR', '港澳台 / 日韓') },
     { value: 'CN', label: l(locale, '中国大陆', 'Mainland China', '中國大陸') },
+    { value: 'HMT', label: l(locale, '港澳台（繁中）', 'Hong Kong / Macau / Taiwan', '港澳台（繁中）') },
+    { value: 'JP_KR', label: l(locale, '日韩', 'Japan / Korea', '日韓') },
+    { value: 'RU', label: l(locale, '俄罗斯', 'Russia', '俄羅斯') },
     { value: 'EU_UK', label: l(locale, '欧洲 / 英国', 'Europe & UK', '歐洲 / 英國') },
     { value: 'NA', label: l(locale, '北美 (US / CA)', 'North America (US / CA)', '北美 (US / CA)') },
     { value: 'LATAM', label: l(locale, '拉美 (BR / MX / AR)', 'Latin America (BR / MX / AR)', '拉美 (BR / MX / AR)') },
     { value: 'SA_ME', label: l(locale, '南亚 / 中东 (IN / AE / SA)', 'South Asia & MENA (IN / AE)', '南亞 / 中東 (IN / AE / SA)') },
     { value: 'AU_NZ', label: l(locale, '澳新 / 非洲', 'ANZ & Africa', '澳新 / 非洲') },
-    { value: 'GLOBAL', label: l(locale, '全球多地区分发', 'Global Multi-Region', '全球多地區分發') },
   ]
 
   const sportsList = [
-    { value: 'all', label: l(locale, '🏆 全部球类', '🏆 All Sports', '🏆 全部球類') },
     { value: 'football', label: l(locale, '⚽ 足球', '⚽ Football / Soccer', '⚽ 足球') },
     { value: 'basketball', label: l(locale, '🏀 篮球', '🏀 Basketball', '🏀 籃球') },
     { value: 'cricket', label: l(locale, '🏏 板球', '🏏 Cricket', '🏏 板球') },
@@ -264,9 +268,6 @@ export default function SimpleContactForm({
       const exists = prev.includes(val)
       const next = exists ? prev.filter((item) => item !== val) : [...prev, val]
       onProductsChange?.(next)
-      if (next.length === 1 && next[0] === 'obs_streaming') {
-        setSportsInterests(['football', 'basketball'])
-      }
       return next
     })
   }
@@ -280,17 +281,21 @@ export default function SimpleContactForm({
 
   const toggleSport = (val: string) => {
     setErrorMsg(null)
-    if (val === 'all') {
-      setSportsInterests((prev) => (prev.includes('all') ? [] : ['all']))
+    setSportsInterests((prev) =>
+      prev.includes(val) ? prev.filter((item) => item !== val) : [...prev, val]
+    )
+  }
+
+  const addCustomSport = () => {
+    const name = customSportInput.trim()
+    if (!name) return
+    if (customSports.some((item) => item.toLowerCase() === name.toLowerCase())) {
+      setCustomSportInput('')
       return
     }
-    setSportsInterests((prev) => {
-      const withoutAll = prev.filter((item) => item !== 'all')
-      if (withoutAll.includes(val)) {
-        return withoutAll.filter((item) => item !== val)
-      }
-      return [...withoutAll, val]
-    })
+    setErrorMsg(null)
+    setCustomSports((prev) => [...prev, name])
+    setCustomSportInput('')
   }
 
   const hasMatchLines = selectedProducts.includes('website_app')
@@ -335,17 +340,43 @@ export default function SimpleContactForm({
       setErrorMsg(
         l(
           locale,
-          '请选择或填写目标国家/地区（配置防盗链区域白名单与 CDN 加速节点必填）',
-          'Please select or enter your target countries/regions (required for geo-allowlisting and CDN routing)',
-          '請選擇或填寫目標國家/地區（配置防盜鏈區域白名單與 CDN 加速節點必填）'
+          '请选择观众主要所在地',
+          'Please select where your viewers are',
+          '請選擇觀眾主要所在地'
         )
       )
       return
     }
 
-    if (hasMatchLines && sportsInterests.length === 0) {
+    if (hasMatchLines && sportsInterests.length + customSports.length === 0) {
       setErrorMsg(
-        l(locale, '请选择你关注的运动项目（或点击“全部球类”）', 'Please select at least one sport (or click All Sports)', '請選擇你關注的運動項目（或點擊「全部球類」）')
+        l(locale, '请选择需要接入的球类', 'Please choose the sports you need', '請選擇需要接入的球類')
+      )
+      return
+    }
+
+    const trimmedPlatform = platformInfo.trim()
+    if (!trimmedPlatform) {
+      setErrorMsg(
+        onlyObsSelected
+          ? l(locale, '请填写工作室名称', 'Enter your studio name', '請填寫工作室名稱')
+          : l(
+              locale,
+              '请填写你的网站地址，方便我们了解产品形态',
+              'Enter your website address so we can understand your product.',
+              '請填寫你的網站地址，方便我們了解產品形態'
+            )
+      )
+      return
+    }
+    if (!onlyObsSelected && !isPublicWebsiteUrl(trimmedPlatform)) {
+      setErrorMsg(
+        l(
+          locale,
+          '请填写可以打开的网站地址。localhost 和内网地址无法用来了解产品',
+          'Enter a website address we can open. localhost and private addresses cannot be used to review the product.',
+          '請填寫可以打開的網站地址。localhost 和內網地址無法用來了解產品'
+        )
       )
       return
     }
@@ -418,13 +449,14 @@ export default function SimpleContactForm({
     try {
       const userSource = getUserSourceInfo()
       const useCaseStr = selectedProducts.join(',')
-      const finalSports = onlyIptvSelected
-        ? ['all']
-        : onlyObsSelected
+      const finalSports = hasMatchLines
+        ? [
+            ...sportsInterests,
+            ...customSports.map((name) => `other:${name}`),
+          ]
+        : hasObsSelected
           ? ['football', 'basketball']
-          : sportsInterests.length > 0
-            ? sportsInterests
-            : ['all']
+          : []
 
       trackServiceInterest(useCaseStr, finalSports.length)
       trackContactPreference(formattedContact)
@@ -507,7 +539,7 @@ export default function SimpleContactForm({
                   • {l(locale, '拉 1 对 1 专属群，沟通接入方式（播放链接或 RTMP 推流）与套餐报价', 'Open a dedicated 1-on-1 group to confirm delivery mode and pricing tiers', '拉 1 對 1 專屬群，溝通接入方式（播放連結或 RTMP 推流）與套餐報價')}
                 </li>
                 <li>
-                  • {l(locale, '按你填写的目标国家配置防盗链白名单与 CDN 加速节点，发放正式或测试 Key', 'Configure geo-allowlists and CDN routing for your target regions and issue your API key', '按你填寫的目標國家配置防盜鏈白名單與 CDN 加速節點，發放正式或測試 Key')}
+                  • {l(locale, '按你填写的观众所在地配置防盗链白名单与 CDN 加速节点，发放正式或测试 Key', 'Configure geo-allowlists and CDN routing for your viewers and issue your API key', '按你填寫的觀眾所在地配置防盜鏈白名單與 CDN 加速節點，發放正式或測試 Key')}
                 </li>
               </>
             )}
@@ -665,15 +697,15 @@ export default function SimpleContactForm({
           <div className="border border-brand-line bg-brand-paper/40 p-4">
             <div className="flex flex-wrap items-baseline justify-between gap-2">
               <label className="text-sm font-bold text-brand-ink">
-                3. {l(locale, '目标国家 / 地区（可多选）', 'Target Countries / Regions (Multiple)', '目標國家 / 地區（可多選）')}{' '}
+                3. {l(locale, '目标观众主要所在地（可多选）', 'Where most viewers are (multiple)', '目標觀眾主要所在地（可多選）')}{' '}
                 <span className="text-brand-primary">*</span>
               </label>
               <span className="text-[11px] text-brand-muted">
                 {l(
                   locale,
-                  '用于配置防盗链白名单与 CDN 加速',
-                  'For geo-allowlisting & CDN routing',
-                  '用於配置防盜鏈白名單與 CDN 加速'
+                  '用于判断线路和频道怎么配',
+                  'Used to recommend lines or channels',
+                  '用於判斷線路和頻道怎麼配'
                 )}
               </span>
             </div>
@@ -713,6 +745,26 @@ export default function SimpleContactForm({
               )}
               className="mt-2 w-full border border-brand-line bg-white px-3 py-2 text-xs text-brand-ink placeholder:text-brand-muted focus:border-brand-primary focus:outline-none"
             />
+          </div>
+        )}
+
+        {hasMatchLines && !hasIptv && targetCountries.length > 0 && !customCountryInput.trim() && targetCountries.every((code) => ['EU_UK', 'NA', 'LATAM'].includes(code)) && (
+          <div className="border-2 border-brand-ink bg-brand-tint p-4">
+            <p className="text-sm leading-6 text-brand-ink">
+              {l(
+                locale,
+                '你的观众主要在欧洲、北美或拉美。如果只需要英超、NBA 这类欧美顶级联赛，全球体育频道（100+ 频道）可能已经够用。需要其他联赛，或按单场接到自己的赛程里，继续选择赛事直播线路即可。',
+                'Your viewers are mainly in Europe, North America, or Latin America. If you only need top European and US competitions such as the Premier League and the NBA, Global Sports Channels may already be enough. Keep Live Match Lines if you need other competitions, or a line for each fixture on your own schedule.',
+                '你的觀眾主要在歐洲、北美或拉美。如果只需要英超、NBA 這類歐美頂級聯賽，全球體育頻道（100+ 頻道）可能已經夠用。需要其他聯賽，或按單場接到自己的賽程裡，繼續選擇賽事直播線路即可。'
+              )}
+            </p>
+            <button
+              type="button"
+              onClick={() => toggleProduct('iptv')}
+              className="mt-3 bg-brand-ink px-3 py-2 text-xs font-bold text-white"
+            >
+              {l(locale, '加入全球体育频道', 'Add Global Sports Channels', '加入全球體育頻道')}
+            </button>
           </div>
         )}
 
@@ -795,12 +847,12 @@ export default function SimpleContactForm({
               {l(locale, '工作邮箱', 'Work Email', '工作信箱')}{' '}
               <span className="text-brand-primary">*</span>
             </label>
-            <div className="mt-2 hidden h-[34px] items-center text-[11px] text-brand-muted sm:flex">
+            <div className="mt-1 text-[11px] leading-4 text-brand-muted">
               {l(
                 locale,
-                '用于发送接口文档与正式报价单',
-                'For the API guide & official quote',
-                '用於發送介面文件與正式報價單'
+                '用于发送对接销售的联系方式以及后续报价信息',
+                'Used to send the salesperson’s contact details and later quotes',
+                '用於發送對接銷售的聯繫方式以及後續報價資訊'
               )}
             </div>
             <input
@@ -817,8 +869,83 @@ export default function SimpleContactForm({
           </div>
         </div>
 
-        {/* STEP 5: Sports selector OR IPTV default schedule notice */}
-        {onlyIptvSelected ? (
+        {hasMatchLines && (
+          <div>
+            <label className="block text-sm font-bold text-brand-ink">
+              6. {l(locale, '需要接入的球类', 'Sports to connect', '需要接入的球類')}
+              <span className="ml-1 text-brand-primary">*</span>
+            </label>
+
+            <div className="mt-2 flex flex-wrap gap-1.5">
+              {sportsList.map((sport) => {
+                const active = sportsInterests.includes(sport.value)
+                return (
+                  <button
+                    key={sport.value}
+                    type="button"
+                    onClick={() => toggleSport(sport.value)}
+                    className={`border px-2.5 py-1.5 text-xs font-semibold transition-colors ${
+                      active
+                        ? 'border-brand-primary bg-brand-primary text-white'
+                        : 'border-brand-line bg-white text-brand-ink hover:border-brand-primary'
+                    }`}
+                  >
+                    {sport.label}
+                  </button>
+                )
+              })}
+              <button
+                type="button"
+                onClick={() => {
+                  setErrorMsg(null)
+                  setShowOtherSport((open) => !open)
+                }}
+                className={`border px-2.5 py-1.5 text-xs font-semibold transition-colors ${
+                  showOtherSport || customSports.length > 0
+                    ? 'border-brand-primary bg-brand-primary text-white'
+                    : 'border-brand-line bg-white text-brand-ink hover:border-brand-primary'
+                }`}
+              >
+                {l(locale, '其他', 'Other', '其他')}
+              </button>
+            </div>
+            {(showOtherSport || customSports.length > 0) && (
+              <div className="mt-3">
+                {customSports.length > 0 && (
+                  <div className="mb-2 flex flex-wrap gap-1.5">
+                    {customSports.map((name) => (
+                      <button
+                        key={name}
+                        type="button"
+                        onClick={() => setCustomSports((prev) => prev.filter((item) => item !== name))}
+                        className="border border-brand-primary bg-brand-primary px-2.5 py-1.5 text-xs font-semibold text-white"
+                      >
+                        {name} ×
+                      </button>
+                    ))}
+                  </div>
+                )}
+                {showOtherSport && (
+                  <input
+                    type="text"
+                    value={customSportInput}
+                    onChange={(e) => setCustomSportInput(e.target.value)}
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter') {
+                        e.preventDefault()
+                        addCustomSport()
+                      }
+                    }}
+                    placeholder={l(locale, '填写球类名称，按回车确认', 'Type a sport, then press Enter', '填寫球類名稱，按回車確認')}
+                    className="w-full border border-brand-line bg-white px-3 py-2 text-xs text-brand-ink placeholder:text-brand-muted focus:border-brand-primary focus:outline-none"
+                  />
+                )}
+              </div>
+            )}
+          </div>
+        )}
+
+        {onlyIptvSelected && (
           <div className="border border-brand-line bg-brand-paper/60 p-4">
             <div className="flex flex-wrap items-center justify-between gap-2">
               <span className="text-xs font-bold text-brand-ink">
@@ -844,59 +971,54 @@ export default function SimpleContactForm({
               ))}
             </div>
           </div>
-        ) : (
-          <div>
-            <label className="block text-sm font-bold text-brand-ink">
-              {requiresPlatformFields ? '6.' : '4.'}{' '}
-              {l(locale, '关注的运动项目（可多选）', 'Sports Coverage Needed', '關注的運動項目（可多選）')}
-              {hasMatchLines && <span className="ml-1 text-brand-primary">*</span>}
-            </label>
-
-            <div className="mt-2 flex flex-wrap gap-1.5">
-              {sportsList.map((sport) => {
-                const active = sportsInterests.includes(sport.value)
-                const disabledForObs =
-                  onlyObsSelected && sport.value !== 'football' && sport.value !== 'basketball'
-                return (
-                  <button
-                    key={sport.value}
-                    type="button"
-                    disabled={disabledForObs}
-                    onClick={() => toggleSport(sport.value)}
-                    className={`border px-2.5 py-1.5 text-xs font-semibold transition-colors ${
-                      active
-                        ? 'border-brand-primary bg-brand-primary text-white'
-                        : disabledForObs
-                          ? 'cursor-not-allowed border-brand-line bg-brand-paper text-brand-muted/50 opacity-50'
-                          : 'border-brand-line bg-white text-brand-ink hover:border-brand-primary'
-                    }`}
-                  >
-                    {sport.label}
-                  </button>
-                )
-              })}
-            </div>
-          </div>
         )}
 
-        {/* STEP 6: Optional Website/App URL & Notes */}
-        <div className="grid gap-4 sm:grid-cols-2">
-          {requiresTargetCountry && (
-            <div>
-              <label className="block text-xs font-bold text-brand-ink">
-                {l(locale, '你的网站 / App 名称或域名（选填）', 'Your Website / App Domain (Optional)', '你的網站 / App 名稱或域名（選填）')}
-              </label>
-              <input
-                type="text"
-                value={platformInfo}
-                onChange={(e) => setPlatformInfo(e.target.value)}
-                placeholder={l(locale, '如 https://yoursite.com（用于配置 Referer 白名单）', 'e.g. https://yoursite.com (for Referer allowlist)', '如 https://yoursite.com（用於配置 Referer 白名單）')}
-                className="mt-1.5 w-full border border-brand-line bg-white px-3 py-2 text-xs text-brand-ink placeholder:text-brand-muted focus:border-brand-primary focus:outline-none"
-              />
-            </div>
-          )}
+        <div>
+          <label className="block text-xs font-bold text-brand-ink">
+            {l(
+              locale,
+              onlyObsSelected ? '工作室名称' : '你的网站地址',
+              onlyObsSelected ? 'Studio name' : 'Your website address',
+              onlyObsSelected ? '工作室名稱' : '你的網站地址'
+            )}
+            <span className="ml-1 text-brand-primary">*</span>
+          </label>
+          <p className="mt-1 text-[11px] leading-4 text-brand-muted">
+            {l(
+              locale,
+              onlyObsSelected
+                ? '仅用于开通服务时在内部区分客户'
+                : projectStage === 'in_development' || projectStage === 'evaluating'
+                  ? '用来了解你的产品形态，判断适合哪项服务，方便后面沟通。还没有自己的网站时，填写你想做成类似的产品网址。'
+                  : '用来了解你的产品形态，判断适合哪项服务，方便后面沟通。',
+              onlyObsSelected
+                ? 'Used only internally to tell customers apart when the service is activated'
+                : projectStage === 'in_development' || projectStage === 'evaluating'
+                  ? 'So we can see what you are building, match the right service, and talk more efficiently. If you do not have a site yet, enter the URL of a product you want it to resemble.'
+                  : 'So we can see your product, match the right service, and talk more efficiently.',
+              onlyObsSelected
+                ? '僅用於開通服務時在內部區分客戶'
+                : projectStage === 'in_development' || projectStage === 'evaluating'
+                  ? '用來了解你的產品形態，判斷適合哪項服務，方便後面溝通。還沒有自己的網站時，填寫你想做成類似的產品網址。'
+                  : '用來了解你的產品形態，判斷適合哪項服務，方便後面溝通。'
+            )}
+          </p>
+          <input
+            type="text"
+            value={platformInfo}
+            onChange={(e) => setPlatformInfo(e.target.value)}
+            placeholder={l(
+              locale,
+              onlyObsSelected ? '例如：星耀体育工作室' : 'https://yoursite.com',
+              onlyObsSelected ? 'e.g. Northstar Studio' : 'https://yoursite.com',
+              onlyObsSelected ? '例如：星耀體育工作室' : 'https://yoursite.com'
+            )}
+            className="mt-1.5 w-full border border-brand-line bg-white px-3 py-2 text-xs text-brand-ink placeholder:text-brand-muted focus:border-brand-primary focus:outline-none"
+          />
+        </div>
 
-          <div className={requiresTargetCountry ? '' : 'sm:col-span-2'}>
+        <div className="grid gap-4 sm:grid-cols-2">
+          <div className="sm:col-span-2">
             <label className="block text-xs font-bold text-brand-ink">
               {l(locale, '补充说明（选填）', 'Additional Notes (Optional)', '補充說明（選填）')}
             </label>
@@ -906,9 +1028,9 @@ export default function SimpleContactForm({
               onChange={(e) => setRequirements(e.target.value)}
               placeholder={l(
                 locale,
-                '如：预计并发规模、倾向播放链接还是推流等',
-                'e.g. expected concurrency, preferred delivery mode',
-                '如：預計併發規模、傾向播放連結還是推流等'
+                '您还有什么特别需要说明的，请填写',
+                'If there is anything else you want to explain, please write it here',
+                '您還有什麼特別需要說明的，請填寫'
               )}
               className="mt-1.5 w-full border border-brand-line bg-white px-3 py-2 text-xs text-brand-ink placeholder:text-brand-muted focus:border-brand-primary focus:outline-none"
             />
