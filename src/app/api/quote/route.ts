@@ -5,6 +5,11 @@ import { listSalesEmails, sendQuoteMail } from '@/lib/quote-mail'
 
 const PREVIEW_ORIGINS = new Set(['http://127.0.0.1:8765', 'http://localhost:8765'])
 
+function quoteAccessAllowed(request: NextRequest) {
+  if (process.env.NODE_ENV === 'development') return true
+  return quoteRequestAllowed(request)
+}
+
 function deny(request: NextRequest) {
   return withCors(
     request,
@@ -28,12 +33,12 @@ export function OPTIONS(request: NextRequest) {
 }
 
 export function GET(request: NextRequest) {
-  if (!quoteRequestAllowed(request)) return deny(request)
+  if (!quoteAccessAllowed(request)) return deny(request)
   return withCors(request, NextResponse.json({ sales: listSalesEmails() }))
 }
 
 export async function POST(request: NextRequest) {
-  if (!quoteRequestAllowed(request)) return deny(request)
+  if (!quoteAccessAllowed(request)) return deny(request)
   const sales = listSalesEmails()
   let body: { from?: string; to?: string; locale?: unknown; pdfBase64?: string }
   try {

@@ -440,6 +440,10 @@
           option.textContent = email
           select.appendChild(option)
         }
+        if (!response.ok) {
+          sendStatus.textContent = '读不到销售邮箱。请改用已登录的报价后台，或确认本地网站服务在运行。'
+          return
+        }
         if (!select.options.length) sendStatus.textContent = '还没有配置销售邮箱。请在 quotes/sales.json 里添加。'
       } catch {
         sendStatus.textContent = '读不到销售邮箱。请确认网站服务在运行。'
