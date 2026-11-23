@@ -1,7 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 import nodemailer from 'nodemailer'
-import { quoteLetter, type QuoteLocale } from '@/lib/quote-letter'
+import { detailsLetter, quoteLetter, type QuoteLocale } from '@/lib/quote-letter'
 
 const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 const MAX_PDF_BYTES = 10 * 1024 * 1024
@@ -28,24 +28,11 @@ function decodePdfBuffer(pdfBase64: string): Buffer | null {
   return buffer
 }
 
-export async function sendQuoteMail(input: {
-  from: string
-  to: string
-  locale: QuoteLocale
-  pdfBase64: string
-}) {
+function quoteTransport() {
   const host = process.env.QUOTE_SMTP_HOST
   const user = process.env.QUOTE_SMTP_USER
   const pass = process.env.QUOTE_SMTP_PASS
-  if (!host || !user || !pass) return { sent: false as const, error: 'missing_smtp' as const }
-  if (input.from.toLowerCase() !== user.toLowerCase()) {
-    return { sent: false as const, error: 'sender_mismatch' as const }
-  }
-
-  const pdfBuffer = decodePdfBuffer(input.pdfBase64)
-  if (!pdfBuffer) return { sent: false as const, error: 'invalid_pdf' as const }
-
-  const copy = quoteLetter(input.locale)
+  if (!host || !user || !pass) return null
   const port = Number(process.env.QUOTE_SMTP_PORT || 465)
   const transporter = nodemailer.createTransport({
     host,
@@ -58,13 +45,56 @@ export async function sendQuoteMail(input: {
   })
   const localName = user.split('@')[0] || 'SportLiveAPI'
   const display = localName.toLowerCase() === 'elon' ? 'Elon' : localName
+  return { user, transporter, from: `${display} <${user}>` }
+}
 
+export async function sendDetailsMail(input: { from: string; to: string; locale: QuoteLocale }) {
+  const mail = quoteTransport()
+  if (!mail) return { sent: false as const, error: 'missing_smtp' as const }
+  if (input.from.toLowerCase() !== mail.user.toLowerCase()) {
+    return { sent: false as const, error: 'sender_mismatch' as const }
+  }
+  const copy = detailsLetter(input.locale)
   try {
-    await transporter.sendMail({
-      from: `${display} <${user}>`,
+    await mail.transporter.sendMail({
+      from: mail.from,
       to: input.to,
-      replyTo: user,
-      envelope: { from: user, to: input.to },
+      replyTo: mail.user,
+      envelope: { from: mail.user, to: input.to },
+      subject: copy.subject,
+      text: copy.text,
+      html: copy.html,
+    })
+    return { sent: true as const, subject: copy.subject }
+  } catch (error) {
+    const message = error instanceof Error ? error.message : 'send_failed'
+    console.error('补充资料邮件发送失败:', message)
+    return { sent: false as const, error: 'send_failed' as const }
+  }
+}
+
+export async function sendQuoteMail(input: {
+  from: string
+  to: string
+  locale: QuoteLocale
+  pdfBase64: string
+}) {
+  const mail = quoteTransport()
+  if (!mail) return { sent: false as const, error: 'missing_smtp' as const }
+  if (input.from.toLowerCase() !== mail.user.toLowerCase()) {
+    return { sent: false as const, error: 'sender_mismatch' as const }
+  }
+
+  const pdfBuffer = decodePdfBuffer(input.pdfBase64)
+  if (!pdfBuffer) return { sent: false as const, error: 'invalid_pdf' as const }
+
+  const copy = quoteLetter(input.locale)
+  try {
+    await mail.transporter.sendMail({
+      from: mail.from,
+      to: input.to,
+      replyTo: mail.user,
+      envelope: { from: mail.user, to: input.to },
       subject: copy.subject,
       text: copy.text,
       html: copy.html,

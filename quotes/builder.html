@@ -87,6 +87,7 @@
       </div>
       <div style="display:flex;flex-wrap:wrap;gap:8px;">
         <button type="button" id="send">发送报价单</button>
+        <button type="button" id="askDetails" style="background:#fff;color:var(--ink);">请客户补充资料</button>
         <button type="button" id="downloadPdf" style="background:#fff;color:var(--ink);">下载 PDF</button>
         <button type="button" id="sample" style="background:#fff;color:var(--ink);">填入这条频道线索</button>
         <a id="logout" href="/private/quote?logout=1" hidden style="margin-top:14px;align-self:center;color:#141414;font-size:12px;font-weight:700;">退出登录</a>
@@ -162,10 +163,10 @@
     const SPORTS = [
       ['football', 1500],
       ['basketball', 1000],
-      ['esports', 1500],
+      ['esports', 800],
       ['baseball', 800],
       ['cricket', 800],
-      ['tennis', 800],
+      ['tennis', 500],
       ['combo-football', 800],
       ['snooker', 500],
       ['hockey', 500],
@@ -466,6 +467,42 @@
         sendStatus.textContent = `已下载 ${filename}`
       } catch {
         sendStatus.textContent = 'PDF 生成失败，请确认本地网站服务正在运行'
+      } finally {
+        button.disabled = false
+      }
+    })
+
+    document.getElementById('askDetails').addEventListener('click', async () => {
+      const from = document.getElementById('sales').value
+      const to = document.getElementById('email').value.trim()
+      const button = document.getElementById('askDetails')
+      if (!from) {
+        sendStatus.textContent = '请先选择销售邮箱'
+        return
+      }
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(to)) {
+        sendStatus.textContent = '请先填写客户邮箱'
+        return
+      }
+      button.disabled = true
+      sendStatus.textContent = '正在发送补充资料邮件...'
+      const lang = document.getElementById('locale').value
+      try {
+        const response = await fetch(quoteApi, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ from, to, locale: lang, kind: 'details' }),
+        })
+        const data = await response.json()
+        sendStatus.textContent = data.sent
+          ? `已用 ${from} 向 ${to} 发送补充信息邮件`
+          : data.error === 'missing_smtp'
+            ? 'Elon 邮箱的发信账号还没配好'
+            : data.error === 'sender_mismatch'
+              ? '所选销售邮箱和发信账号不一致'
+              : '发送失败'
+      } catch {
+        sendStatus.textContent = '发送失败'
       } finally {
         button.disabled = false
       }

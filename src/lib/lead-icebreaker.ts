@@ -99,7 +99,7 @@ function buildDirection(input: {
   if (input.grade === 'B') {
     parts.push('不发报价单。先报起步价，只问两件事：网址是不是他自己的，范围怎么收窄。')
   } else if (input.onlyObs) {
-    parts.push('确认要拉进 Telegram 群还是 Lark 群。足篮和同时播人数他已经填了，不要再问一遍。')
+    parts.push('破冰只问一件事：主播是自己解说再播到自己的直播间，还是要观众在网站或 App 里看比赛。足篮和人数不要再问。先不要报价，也先不要问进哪个群。')
   } else if (input.hasLines && input.hasIptv) {
     parts.push('先问这次先接线路还是先接频道。不要两套一起报价。')
   } else if (input.hasLines) {
@@ -130,7 +130,7 @@ function buildACopy(input: {
   const sportsText = formatSports(input.sports, input.locale)
   if (input.locale === 'en') {
     if (input.onlyObs) {
-      return `Hi, this is Elon from SportLiveAPI. I saw you want the OBS bot for ${input.site || 'your studio'}. Should I add the bot to a Telegram group or a Lark group?`
+      return `Hi, this is Elon from SportLiveAPI. Before I prepare a quote for ${input.site || 'your studio'}, which one is it: your hosts commentate the matches and stream them out, or viewers watch the matches on your website or app?`
     }
     if (input.hasLines && input.hasIptv) {
       return `Hi, this is Elon from SportLiveAPI. I saw ${input.site || 'your site'} and that you are looking at both live match lines${sportsText ? ` (${sportsText})` : ''} and global sports channels. Which one should we set up first?`
@@ -147,8 +147,8 @@ function buildACopy(input: {
   const hello = input.locale === 'zh-TW' ? '你好，我是 SportLiveAPI 的 Elon。' : '你好，我是 SportLiveAPI 的 Elon。'
   if (input.onlyObs) {
     return input.locale === 'zh-TW'
-      ? `${hello}看到你要開通 OBS 直播流機器人，工作室是 ${input.site || '你填的名稱'}。機器人拉進 Telegram 群還是 Lark 群？`
-      : `${hello}看到你要开通 OBS 直播流机器人，工作室是 ${input.site || '你填的名称'}。机器人拉进 Telegram 群还是 Lark 群？`
+      ? `${hello}給 ${input.site || '你的工作室'} 報價之前，先確認一件事：是主播自己解說再播出去，還是要觀眾在網站或 App 裡看比賽？`
+      : `${hello}给 ${input.site || '你的工作室'} 报价之前，先确认一件事：是主播自己解说再播出去，还是要观众在网站或 App 里看比赛？`
   }
   if (input.hasLines && input.hasIptv) {
     return input.locale === 'zh-TW'

@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { isQuoteLocale } from '@/lib/quote-letter'
 import { quoteRequestAllowed } from '@/lib/quote-gate'
-import { listSalesEmails, sendQuoteMail } from '@/lib/quote-mail'
+import { listSalesEmails, sendDetailsMail, sendQuoteMail } from '@/lib/quote-mail'
 
 const PREVIEW_ORIGINS = new Set(['http://127.0.0.1:8765', 'http://localhost:8765'])
 
@@ -40,7 +40,7 @@ export function GET(request: NextRequest) {
 export async function POST(request: NextRequest) {
   if (!quoteAccessAllowed(request)) return deny(request)
   const sales = listSalesEmails()
-  let body: { from?: string; to?: string; locale?: unknown; pdfBase64?: string }
+  let body: { from?: string; to?: string; locale?: unknown; pdfBase64?: string; kind?: string }
   try {
     body = await request.json()
   } catch {
@@ -55,6 +55,10 @@ export async function POST(request: NextRequest) {
   }
   if (!isQuoteLocale(body.locale)) {
     return withCors(request, NextResponse.json({ sent: false, error: 'invalid_locale' }, { status: 400 }))
+  }
+  if (body.kind === 'details') {
+    const result = await sendDetailsMail({ from, to, locale: body.locale })
+    return withCors(request, NextResponse.json(result, { status: result.sent ? 200 : 502 }))
   }
 
   const pdfBase64 = String(body.pdfBase64 || '')

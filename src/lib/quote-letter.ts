@@ -183,3 +183,87 @@ ${contactBlockHtml(locale)}
   )
   return { subject: '您的报价方案 · SportLiveAPI', text, html, docsUrl: docs, filename: file }
 }
+
+export function detailsLetter(locale: QuoteLocale): { subject: string; text: string; html: string } {
+  if (locale === 'en') {
+    const text = `Dear Customer,
+
+I am Elon, your account manager at SportLiveAPI. Thank you for your enquiry. We are putting together an integration and pricing plan for your project.
+
+So we can evaluate which of our products fits your business best, please reply to this email with your product URL. If it is not live yet, please share a reference website or describe the site style and format you plan to build.
+
+Once I have this, I will match the right product plan and send over your formal quotation. You are also welcome to contact me directly on Telegram below so we can discuss the details further.
+
+With kind regards,
+Elon
+Telegram: @${ELON_TG}
+Email: ${ELON_EMAIL}
+`
+    const html = wrapHtml(
+      locale,
+      `<p style="margin:0 0 16px 0;">Dear Customer,</p>
+<p style="margin:0 0 16px 0;">I am Elon, your account manager at SportLiveAPI. Thank you for your enquiry. We are putting together an integration and pricing plan for your project.</p>
+<p style="margin:0 0 16px 0;">So we can evaluate which of our products fits your business best, please reply to this email with <strong>your product URL</strong>. If it is not live yet, please share a <strong>reference website or describe the site style and format you plan to build</strong>.</p>
+<p style="margin:0 0 16px 0;">Once I have this, I will match the right product plan and send over your formal quotation. You are also welcome to contact me directly on Telegram below so we can discuss the details further.</p>
+${contactBlockHtml(locale)}
+<p style="margin:24px 0 0 0;">With kind regards,<br /><strong>Elon</strong></p>`
+    )
+    return { subject: 'Preparing Your Quotation · SportLiveAPI', text, html }
+  }
+
+  if (locale === 'zh-TW') {
+    const text = `尊敬的客戶，您好：
+
+我是 SportLiveAPI 的客戶經理 Elon。感謝您此前提交的諮詢，我們正在為您整理對應的接入與報價方案。
+
+為了評估哪一款產品最契合您的業務，麻煩您回覆本郵件，提供一下您的產品連結；若項目尚未上線，也可以提供一個參考站點，或說明您預期想做成什麼樣的站點樣式。
+
+收到後我會為您匹配合適的產品方案並發送正式報價單。您也可以直接透過下方 Telegram 與我聯繫，我們進一步溝通具體細節。
+
+此致
+敬禮
+
+Elon
+Telegram：@${ELON_TG}
+郵箱：${ELON_EMAIL}
+`
+    const html = wrapHtml(
+      locale,
+      `<p style="margin:0 0 16px 0;">尊敬的客戶，您好：</p>
+<p style="margin:0 0 16px 0;">我是 SportLiveAPI 的客戶經理 Elon。感謝您此前提交的諮詢，我們正在為您整理對應的接入與報價方案。</p>
+<p style="margin:0 0 16px 0;">為了評估哪一款產品最契合您的業務，麻煩您回覆本郵件，提供一下<strong>您的產品連結</strong>；若項目尚未上線，也可以提供一個<strong>參考站點，或說明您預期想做成什麼樣的站點樣式</strong>。</p>
+<p style="margin:0 0 16px 0;">收到後我會為您匹配合適的產品方案並發送正式報價單。您也可以直接透過下方 Telegram 與我聯繫，我們進一步溝通具體細節。</p>
+${contactBlockHtml(locale)}
+<p style="margin:24px 0 0 0;">此致<br />敬禮</p>
+<p style="margin:16px 0 0 0;"><strong>Elon</strong></p>`
+    )
+    return { subject: '為您準備報價方案 · SportLiveAPI', text, html }
+  }
+
+  const text = `尊敬的客户，您好：
+
+我是 SportLiveAPI 的客户经理 Elon。感谢您此前提交的咨询，我们正在为您整理对应的接入与报价方案。
+
+为了评估哪一款产品最契合您的业务，麻烦您回复本邮件，提供一下您的产品链接；如果项目尚未上线，也可以发一个参考站点，或说明您预期想做成什么样的站点样式。
+
+收到后我会为您匹配合适的产品方案并发送正式报价单。您也可以直接通过下方 Telegram 与我联系，我们进一步沟通具体细节。
+
+此致
+敬礼
+
+Elon
+Telegram：@${ELON_TG}
+邮箱：${ELON_EMAIL}
+`
+  const html = wrapHtml(
+    locale,
+    `<p style="margin:0 0 16px 0;">尊敬的客户，您好：</p>
+<p style="margin:0 0 16px 0;">我是 SportLiveAPI 的客户经理 Elon。感谢您此前提交的咨询，我们正在为您整理对应的接入与报价方案。</p>
+<p style="margin:0 0 16px 0;">为了评估哪一款产品最契合您的业务，麻烦您回复本邮件，提供一下<strong>您的产品链接</strong>；如果项目尚未上线，也可以发一个<strong>参考站点，或说明您预期想做成什么样的站点样式</strong>。</p>
+<p style="margin:0 0 16px 0;">收到后我会为您匹配合适的产品方案并发送正式报价单。您也可以直接通过下方 Telegram 与我联系，我们进一步沟通具体细节。</p>
+${contactBlockHtml(locale)}
+<p style="margin:24px 0 0 0;">此致<br />敬礼</p>
+<p style="margin:16px 0 0 0;"><strong>Elon</strong></p>`
+  )
+  return { subject: '为您准备报价方案 · SportLiveAPI', text, html }
+}
